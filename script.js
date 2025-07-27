@@ -1,7 +1,7 @@
 // ───────── AOS Animation Init ─────────
 AOS.init({ duration: 800, once: true });
 
-// ───────── Scroll-to-Top Button (optional) ─────────
+// ───────── Scroll-to-Top Button (if implemented) ─────────
 const scrollBtn = document.querySelector(".scroll-to-top");
 if (scrollBtn) {
   window.addEventListener("scroll", () => {
