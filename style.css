@@ -303,3 +303,50 @@ a {
   text-align: center;
   font-weight: 600;
 }
+
+/* ───────── WhatsApp Floating Button ───────── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  font-size: 2rem;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.whatsapp-float:hover {
+  background: #1ebc57;
+}
+
+/* ───────── Form Styling ───────── */
+form.flex-col input,
+form.flex-col textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form.flex-col textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.light-bg {
+  background: #f8fdfc;
+}
