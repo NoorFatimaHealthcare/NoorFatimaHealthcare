@@ -1,10 +1,16 @@
-// ───────── AOS Animation Init ─────────
-AOS.init({ duration: 800, once: true });
+// script.js
+// — all animations/AOS removed
 
-// ───────── Scroll-to-Top Button (if implemented) ─────────
+// Optional scroll-to-top if you have a .scroll-to-top button
 const scrollBtn = document.querySelector(".scroll-to-top");
 if (scrollBtn) {
   window.addEventListener("scroll", () => {
     scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
   });
 }
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.navbar nav');
+menuToggle?.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});

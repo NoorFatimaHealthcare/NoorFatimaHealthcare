@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Noor Fatima Healthcare Group</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <meta name="description" content="Read our latest healthcare tips, news, and updates to keep you informed and healthy.">
+  <meta property="og:title" content="Blog – Noor Fatima Healthcare Group">
+  <meta property="og:description" content="Explore expert articles on medicines, wellness, and more.">
+  <meta property="og:image" content="/assets/og-image-blog.png">
+  <meta property="og:url" content="https://yourdomain.com/blog.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="navbar">
-      <div class="logo">Noor Fatima Healthcare Group</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="order.html">Buy Medicines</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="navbar">
+    <div class="logo">Noor Fatima Healthcare Group</div>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="order.html">Buy Medicines</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="store.html">Locate a Store</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <section class="hero">
     <h1>Our Blog</h1>
@@ -33,22 +43,46 @@
 
   <section class="section">
     <div class="blog-grid">
-      <div class="blog-card" data-aos="fade-up">
+      <div class="blog-card">
         <h3>5 Tips for Managing Your Daily Medicines</h3>
-        <p>Stay on top of your prescriptions with these practical tips to improve your health routine.</p>
+        <p>Discover easy strategies—like pill organizers, reminder apps, and routine mapping—to stay on top of your prescriptions and maintain your health.</p>
+        <a href="#" class="read-more">Read More</a>
       </div>
-      <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="blog-card">
         <h3>How to Identify Genuine Medicines</h3>
-        <p>Learn how to ensure the medicines you buy are authentic and safe.</p>
+        <p>Learn the telltale signs—batch codes, holograms, and packaging details—that ensure you’re getting authentic, safe medications every time.</p>
+        <a href="#" class="read-more">Read More</a>
       </div>
-      <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>Why Timely Delivery Matters in Healthcare</h3>
-        <p>Understand why quick access to medicines can make a real difference in treatment outcomes.</p>
+      <div class="blog-card">
+        <h3>Why Timely Delivery Matters</h3>
+        <p>Understand the critical role of prompt medicine delivery in treatment success, emergency care, and overall patient well‑being.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <h3>Maintaining a Healthy Lifestyle on a Budget</h3>
+        <p>Tips on nutritious meal planning, affordable exercise routines, and budget‑friendly health checkups to keep you well without overspending.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <h3>Understanding Medicine Interactions</h3>
+        <p>A concise guide to common drug interactions and how to avoid adverse effects by consulting your pharmacist.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <h3>The Importance of Regular Check‑Ups</h3>
+        <p>Why preventive screenings and routine health assessments can save lives—and how to schedule them conveniently through our platform.</p>
+        <a href="#" class="read-more">Read More</a>
       </div>
     </div>
   </section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a> |
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
+  </footer>
 </body>
 </html>

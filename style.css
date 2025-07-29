@@ -1,95 +1,59 @@
+/* style.css */
 /* ───────── Reset & Base Styles ───────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
   background: #f7fdfc;
   color: #333;
   line-height: 1.6;
 }
+a { text-decoration: none; color: inherit; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ───────── Navbar Layout ───────── */
+/* ───────── Navbar ───────── */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #009688;
 }
-
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: 700;
   color: white;
 }
-
 .navbar nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-
 .navbar nav ul li a {
   color: white;
   font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  padding-bottom: 0.25rem;
+  transition: all 0.2s;
 }
-
 .navbar nav ul li a.active,
 .navbar nav ul li a:hover {
-  color: #ffd700;
+  color: white;
+  font-weight: 600;
+  border-bottom: 2px solid #ffc107;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .navbar nav ul {
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1rem;
-  }
-
-  .navbar nav ul li a {
-    font-size: 1.1rem;
-  }
-}
-
-/* ───────── Hero Section ───────── */
+/* ───────── Hero ───────── */
 .hero {
-  background: linear-gradient(to right, #009688cc, #00695ccc),
-    url('https://images.unsplash.com/photo-1588776814546-cfe03b4cce1e') no-repeat center/cover;
+  background: linear-gradient(to right,#009688cc,#00695ccc),url('https://images.unsplash.com/photo-1588776814546-cfe03b4cce1e') no-repeat center/cover;
   color: white;
   padding: 6rem 1rem;
   text-align: center;
 }
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  animation: fadeInDown 1s ease-in-out;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  animation: fadeInUp 1s ease-in-out;
-}
-
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; }
 .cta-button {
   background: white;
   color: #009688;
@@ -97,173 +61,134 @@ a {
   border-radius: 30px;
   font-weight: 600;
   transition: all 0.3s ease;
-  animation: fadeInUp 1.2s ease-in-out;
 }
+.cta-button:hover { background: #00796b; color: white; }
 
-.cta-button:hover {
-  background: #00796b;
-  color: white;
-}
+/* ───────── Sections ───────── */
+.section { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
 
-/* ───────── Services Section ───────── */
-.services {
-  padding: 4rem 1rem;
-  background: #fff;
-  text-align: center;
-}
-
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #009688;
-}
-
+/* Services */
+.services { padding: 4rem 1rem; background: #fff; text-align: center; }
+.services h2 { font-size: 2rem; margin-bottom: 2rem; color: #009688; }
 .service-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  max-width: 1100px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
 }
-
 .service-card {
   background: #f1fefc;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
 }
+.service-card:hover { transform: translateY(-5px); }
+.service-card i { font-size: 2.5rem; margin-bottom: 1rem; color: #00796b; }
+.service-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
 
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
-.service-card i {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #00796b;
-}
-
-.service-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-/* ───────── Testimonials Section ───────── */
-.testimonials {
-  background: #f0fdfa;
-  padding: 4rem 2rem;
-  text-align: center;
-  overflow: hidden;
-}
-
-.testimonials h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  color: #009688;
-  font-weight: 700;
-}
-
-.testimonial-slider {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
+/* Testimonials */
+.testimonials { background: #f0fdfa; padding: 4rem 2rem; text-align: center; overflow: hidden; }
+.testimonials h2 { font-size: 2.2rem; margin-bottom: 2rem; color: #009688; font-weight: 700; }
+.testimonial-slider { overflow: hidden; position: relative; }
 .testimonial-track {
   display: flex;
   width: max-content;
   animation: scrollTestimonials 40s linear infinite;
 }
-
-.testimonial-slider:hover .testimonial-track {
-  animation-play-state: paused;
-}
-
+.testimonial-slider:hover .testimonial-track { animation-play-state: paused; }
 .testimonial-card {
   flex: 0 0 300px;
   margin: 0 1rem;
   padding: 1.5rem;
   border-radius: 10px;
   background: #fff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
 }
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial-card p {
-  font-style: italic;
-  font-size: 1rem;
-  color: #444;
-}
-
-.testimonial-card h4 {
-  margin-top: 1rem;
-  font-weight: 600;
-  color: #009688;
-}
+.testimonial-card:hover { transform: translateY(-5px); }
+.testimonial-card p { font-style: italic; font-size: 1rem; color: #444; }
+.testimonial-card h4 { margin-top: 1rem; font-weight: 600; color: #009688; }
 
 @keyframes scrollTestimonials {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* ───────── Footer ───────── */
-.site-footer {
-  background: #004d40;
-  color: white;
-  text-align: center;
-  padding: 1.5rem 1rem;
-}
-
-/* ───────── Utility & Animations ───────── */
-@keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.content-block,
-.contact-card,
-.feature-box,
-.store-card {
+/* Features & Steps */
+.feature-box {
   background: white;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.steps-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  justify-content: center;    /* ← centers the whole grid */
+}
+.steps-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.steps-card h2 { color: #009688; margin-bottom: 1rem; }
+
+/* Contact & Store & Blog cards */
+.content-block,
+.contact-card,
+.store-card,
+.blog-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   margin-bottom: 1.5rem;
   text-align: center;
 }
+.contact-card i { font-size: 2rem; color: #009688; margin-bottom: 0.5rem; }
 
-.contact-card i {
-  font-size: 2rem;
-  color: #009688;
-  margin-bottom: 0.5rem;
+/* Blog grid */
+.blog-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
 }
 
+/* Store grid */
+.store-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+}
+.directions-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #009688;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.directions-btn:hover { background-color: #00796b; }
+
+/* WhatsApp button */
 .whatsapp-btn {
-  display: block;
   text-align: center;
   margin: 2rem 0;
 }
-
 .whatsapp-btn a {
   display: inline-block;
   background-color: #25d366;
@@ -272,81 +197,61 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 5px;
-  text-decoration: none;
 }
+.whatsapp-btn a:hover { background-color: #1ebc57; }
 
-.whatsapp-btn a:hover {
-  background-color: #1ebc57;
-}
-
-.steps {
-  margin-top: 3rem;
-}
-
-.steps h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.steps ol {
-  padding-left: 1.2rem;
-}
-
-.steps ol li {
-  margin-bottom: 0.8rem;
-}
-
-.expansion-note {
-  margin-top: 3rem;
-  font-size: 1.1rem;
-  color: #444;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* ───────── WhatsApp Floating Button ───────── */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
+/* Footer */
+.site-footer {
+  background: #004d40;
   color: white;
-  font-size: 2rem;
-  padding: 0.8rem 1rem;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: background 0.3s;
-}
-
-.whatsapp-float:hover {
-  background: #1ebc57;
-}
-
-/* ───────── Form Styling ───────── */
-form.flex-col input,
-form.flex-col textarea {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-form.flex-col textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.mt-2 {
-  margin-top: 1rem;
-}
-
-.text-center {
   text-align: center;
+  padding: 1.5rem 1rem;
+}
+/* Hide the toggle by default, show at small widths */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.light-bg {
-  background: #f8fdfc;
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    padding: 0.75rem 1rem;
+  }
+  /* Show the hamburger */
+  .menu-toggle {
+    display: block;
+  }
+  /* Hide the nav links by default */
+  .navbar nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #009688;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  /* Stack links vertically */
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .navbar nav ul li {
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .navbar nav ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+  /* When nav is open… */
+  .navbar nav.open {
+    max-height: 500px; /* large enough for all links */
+  }
 }

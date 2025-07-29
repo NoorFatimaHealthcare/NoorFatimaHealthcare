@@ -1,49 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locate a Store | Noor Fatima Healthcare Group</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <meta name="description" content="Find our Noor Fatima Medical Shop in Chandqna.dehnowabad and more coming soon.">
+  <meta property="og:title" content="Locate a Store – Noor Fatima Healthcare Group">
+  <meta property="og:description" content="Visit our stores—call now or get directions to Chandqna.dehnowabad location.">
+  <meta property="og:image" content="/assets/og-image-store.png">
+  <meta property="og:url" content="https://yourdomain.com/store.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .store-section {
+      max-width: 1200px; margin: 2rem auto; padding: 0 1rem;
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 1.5rem;
+    }
+    .store-card {
+      background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex; flex-direction: column; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .store-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .store-card .header {
+      background: #009688; color: #fff; padding: 1rem;
+      font-size: 1.25rem; font-weight: 600; text-align: center;
+    }
+    .store-card .body {
+      padding: 1rem; flex: 1; display: flex; flex-direction: column; justify-content: center;
+    }
+    .store-card .body p { margin: 0.5rem 0; color: #444; text-align: center; }
+    .store-card .actions {
+      display: flex; gap: 0.5rem; padding: 1rem;
+      background: #f7fdfc; justify-content: center; align-items: center;
+    }
+    .store-card .actions a {
+      flex: 1; text-align: center; padding: 0.75rem; border-radius: 4px;
+      font-weight: 600; text-decoration: none; transition: background 0.3s;
+    }
+    .store-card .actions a.call {
+      background: #25d366; color: #fff;
+    }
+    .store-card .actions a.call:hover { background: #1ebc57; }
+    .store-card .actions a.directions {
+      background: #009688; color: #fff;
+    }
+    .store-card .actions a.directions:hover { background: #00796b; }
+    .expansion-note {
+      text-align: center; font-style: italic; color: #00796b; margin: 2rem 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="navbar">
-      <div class="logo">Noor Fatima Healthcare Group</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="order.html">Buy Medicines</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html" class="active">Locate a Store</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="navbar">
+    <div class="logo">Noor Fatima Healthcare Group</div>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="order.html">Buy Medicines</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="store.html">Locate a Store</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <section class="hero">
-    <h1>Locate a Store</h1>
-    <p>Find our medical stores near you.</p>
+    <h1>Locate a Store Near You</h1>
+    <p>Easily find our stores & experience healthcare made personal.</p>
   </section>
 
-  <section class="section">
-    <div class="store-card" data-aos="fade-up">
-      <h3>Noor Fatima Medical Shop</h3>
-      <p><strong>Location:</strong> Chanduna Deh Nowabad</p>
-      <p><strong>Timing:</strong> Every day from 10 AM to 5 PM</p>
+  <section class="store-section">
+    <div class="store-card">
+      <div class="header">Noor Fatima Medical Shop</div>
+      <div class="body">
+        <p><strong>Location:</strong> Chandqna.dehnowabad</p>
+        <p><strong>Timing:</strong> 11 AM – 5 PM</p>
+      </div>
+      <div class="actions">
+        <a href="tel:+917051899758" class="call"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <a href="https://maps.app.goo.gl/65T7zosZXkHpKVtp7" class="directions" target="_blank"><i class="fas fa-map-marker-alt"></i> Get Directions</a>
+      </div>
     </div>
-
-    <p class="expansion-note" data-aos="fade-up" data-aos-delay="100">
-      Our network is expanding—more locations coming soon!
-    </p>
+    <div class="store-card">
+      <div class="header">Coming Soon</div>
+      <div class="body">
+        <p>New location launching soon.</p>
+        <p>Stay tuned for updates!</p>
+      </div>
+    </div>
+    <div class="store-card">
+      <div class="header">Coming Soon</div>
+      <div class="body">
+        <p>Expanding to serve you better.</p>
+        <p>Watch this space for more stores.</p>
+      </div>
+    </div>
   </section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <p class="expansion-note">Our network is expanding—more locations coming soon!</p>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a> |
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
+  </footer>
 </body>
 </html>

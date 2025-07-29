@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Medicines | Noor Fatima Healthcare Group</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <meta name="description" content="Order medicines easily via WhatsApp—fast delivery, genuine products, and excellent support.">
+  <meta property="og:title" content="Order Medicines – Noor Fatima Healthcare Group">
+  <meta property="og:description" content="Click to send your prescription on WhatsApp and get doorstep delivery.">
+  <meta property="og:image" content="/assets/og-image-order.png">
+  <meta property="og:url" content="https://yourdomain.com/order.html">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="navbar">
-      <div class="logo">Noor Fatima Healthcare Group</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="order.html" class="active">Buy Medicines</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="navbar">
+    <div class="logo">Noor Fatima Healthcare Group</div>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="order.html">Buy Medicines</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="store.html">Locate a Store</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <section class="hero">
     <h1>Order Medicines from Anywhere, Anytime</h1>
@@ -32,34 +42,46 @@
   </section>
 
   <section class="section features">
-    <div class="feature-box" data-aos="fade-up">
+    <div class="feature-box">
       <h3>Same Day Delivery</h3>
       <p>We ensure your medicines reach your door the same day in most areas.</p>
     </div>
-    <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+    <div class="feature-box">
       <h3>100% Genuine Medicines</h3>
       <p>We partner only with licensed pharmacies and verified distributors.</p>
     </div>
-    <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
+    <div class="feature-box">
       <h3>Support on WhatsApp</h3>
       <p>Have a question or need help? Message us anytime on WhatsApp.</p>
     </div>
   </section>
 
-  <section class="section steps">
-    <h2>How to Order</h2>
-    <ol>
-      <li>Click the WhatsApp button below</li>
-      <li>Send us your medicine list or image</li>
-      <li>Our team will confirm and deliver</li>
-    </ol>
+  <section class="section steps-grid">
+    <div class="steps-card">
+      <h2>Step 1</h2>
+      <p>Click the WhatsApp button below</p>
+    </div>
+    <div class="steps-card">
+      <h2>Step 2</h2>
+      <p>Send us your medicine list or image</p>
+    </div>
+    <div class="steps-card">
+      <h2>Step 3</h2>
+      <p>Our team will confirm and deliver</p>
+    </div>
   </section>
 
   <div class="whatsapp-btn">
-    <a href="https://wa.me/917051899758" target="_blank" rel="noopener">Order on WhatsApp</a>
+    <a href="https://wa.me/917051899758?text=Hello%2C%20I%20want%20to%20buy%20medicines." target="_blank">Order on WhatsApp</a>
   </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a> |
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
+  </footer>
 </body>
 </html>
