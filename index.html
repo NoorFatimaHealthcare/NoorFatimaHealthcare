@@ -1,3 +1,4 @@
+<!-- ✅ Fully updated index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,38 +16,32 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-1"></script>
-  <script>
-    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXXX-1');
-  </script>
 </head>
 <body>
   <header>
-  <div class="navbar">
-    <div class="logo">Noor Fatima Healthcare Group</div>
-    <button class="menu-toggle" aria-label="Toggle menu">
-      <i class="fas fa-bars"></i>
-    </button>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="order.html">Buy Medicines</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="store.html">Locate a Store</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+    <div class="navbar">
+      <div class="logo">Noor Fatima Healthcare Group</div>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="store.html">Locate a Store</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <section class="hero">
     <h1>Your Health, Our Priority</h1>
     <p>Trusted medicine delivery from Noor Fatima Healthcare Group — fast, reliable, and caring service every day.</p>
     <a href="order.html" class="cta-button">Order on WhatsApp</a>
+    <a href="tel:+917051899758" class="cta-button" style="margin-left: 10px;">Call to Place Order</a>
   </section>
 
   <section class="services">
@@ -151,5 +146,19 @@
     </div>
     <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
   </footer>
+
+  <!-- ✅ Active Nav Highlighter Script -->
+  <script>
+    const links = document.querySelectorAll('.navbar nav ul li a');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>

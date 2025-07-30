@@ -1,3 +1,4 @@
+<!-- ✅ Fully updated blog.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,24 +18,23 @@
 </head>
 <body>
   <header>
-  <div class="navbar">
-    <div class="logo">Noor Fatima Healthcare Group</div>
-    <button class="menu-toggle" aria-label="Toggle menu">
-      <i class="fas fa-bars"></i>
-    </button>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="order.html">Buy Medicines</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="store.html">Locate a Store</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+    <div class="navbar">
+      <div class="logo">Noor Fatima Healthcare Group</div>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="store.html">Locate a Store</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <section class="hero">
     <h1>Our Blog</h1>
@@ -84,5 +84,18 @@
     </div>
     <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
   </footer>
+
+  <script>
+    const links = document.querySelectorAll('.navbar nav ul li a');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
