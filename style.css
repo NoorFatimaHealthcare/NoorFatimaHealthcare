@@ -76,12 +76,18 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
 }
 .service-card {
-  background: #f1fefc;
-  border-radius: 16px;
+  background: #fff;
+  border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+  box-shadow: 0 8px 20px rgba(0, 150, 136, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 150, 136, 0.15);
+}
+
 .service-card:hover { transform: translateY(-5px); }
 .service-card i { font-size: 2.5rem; margin-bottom: 1rem; color: #00796b; }
 .service-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }

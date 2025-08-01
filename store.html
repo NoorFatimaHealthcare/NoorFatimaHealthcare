@@ -1,4 +1,3 @@
-<!-- ✅ Fully updated store.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +14,69 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #ff5722;
+      color: white;
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .store-card i {
+      color: #00796b;
+      margin-right: 8px;
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .store-card {
+      background: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .store-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    .store-card h3 {
+      color: #00796b;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .store-card p {
+      color: #444;
+      font-size: 1rem;
+    }
+    .directions-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #009688;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .directions-btn:hover {
+      background-color: #00796b;
+    }
+      
+    
+  </style>
 </head>
 <body>
   <header>
@@ -29,31 +91,34 @@
           <li><a href="order.html">Buy Medicines</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
+          <li><a href="store.html" class="active">Locate a Store</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Locate a Store</h1>
-    <p>Find a Noor Fatima store near you for quick assistance and order pickup.</p>
-  </section>
+  <section class="hero" style="background: linear-gradient(to right, #e0f7fa, #ffffff); padding: 4rem 1rem; text-align: center;">
+  <h1 style="font-size: 2.8rem; color: #00796b; margin-bottom: 1rem;">Locate a Store</h1>
+  <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 0 auto;">Use this tool to easily locate your nearest Noor Fatima Healthcare store. Click on the map link or view detailed location and timing.</p>
+</section>
 
   <section class="section">
     <div class="store-grid">
       <div class="store-card">
-        <h3>Srinagar - Main Branch</h3>
-        <p>Nowgam Bypass, Srinagar, J&K 190015</p>
-        <a class="directions-btn" href="https://maps.google.com/?q=Nowgam Bypass Srinagar" target="_blank">Get Directions</a>
+        <h3>Noor Fatima Medical Shop</h3>
+        <p>Chanduna Deh Nowabad</p>
+        <p><strong>Timing:</strong> 11 AM – 5 PM</p>
+        
+        <a class="directions-btn" href="https://maps.app.goo.gl/ZpXDqUvZBEcT6KJm6" target="_blank">Get Directions</a>
+      </div>
       </div>
       <div class="store-card">
         <h3>Baramulla</h3>
         <p>Old Town, Near Masjid Bait-ul-Muqaddas</p>
         <a class="directions-btn" href="https://maps.google.com/?q=Baramulla" target="_blank">Get Directions</a>
       </div>
-      <div class="store-card">
+      <div class="store-card" data-aos="fade-up">
         <h3>Anantnag</h3>
         <p>KP Road, Near District Hospital</p>
         <a class="directions-btn" href="https://maps.google.com/?q=Anantnag" target="_blank">Get Directions</a>
@@ -82,5 +147,6 @@
       }
     });
   </script>
+
 </body>
 </html>
