@@ -111,5 +111,18 @@
     </div>
     <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
   </footer>
+<script>
+  const links = document.querySelectorAll('.navbar nav ul li a');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+</script>
+
 </body>
 </html>
