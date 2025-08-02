@@ -1,62 +1,83 @@
-<!-- future.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Future | Noor Fatima Healthcare Group</title>
+  <title>Our Future | Noor Fatima Healthcare Group</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
-    .future-section {
-      max-width: 900px;
-      margin: 4rem auto;
-      padding: 0 1.5rem;
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    .hero {
+      position: relative;
+      height: 70vh;
+      background: #004d40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .hero .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      font-size: 0.9rem;
+    }
+    .hero .back-link:hover { background: rgba(0,0,0,0.5); }
+    .hero-content h1 {
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .hero-content p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .section {
+      padding: 4rem 1rem;
       text-align: center;
     }
-    .future-section h1 {
-      font-size: 2.8rem;
-      color: #00796b;
-      margin-bottom: 1.5rem;
+    .content-section {
+      max-width: 800px;
+      margin: 0 auto;
     }
-    .future-section p {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #333;
-      margin-bottom: 2rem;
-    }
-    .back-btn {
-      display: inline-block;
-      background-color: #009688;
-      color: white;
-      padding: 0.7rem 1.4rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    .content-section p {
       font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-    .back-btn:hover {
-      background-color: #00796b;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  <header style="padding: 1.5rem; text-align: left;">
-    <button onclick="window.location.href='about.html'" class="back-btn">
-      ← Go Back
-    </button>
-  </header>
-
-  <section class="future-section">
-    <h1>The Future of Healthcare</h1>
-    <p>At Noor Fatima Healthcare Group, the future is not just a destination—it’s a continuous evolution. As we move forward, our commitment to excellence only grows stronger. We envision a healthcare system where accessibility, efficiency, and compassion intersect at every stage of the patient's journey.</p>
-
-    <p>We are actively investing in cutting-edge digital platforms, integrated delivery systems, and next-generation infrastructure. From AI-powered prescription validation to smart delivery logistics, we're building a platform that meets the future head-on while staying rooted in our founding principles of trust and transparency.</p>
-
-    <p>We aim to bridge rural-urban healthcare disparities by developing hyperlocal health networks and expanding our service coverage across underserved areas. Future partnerships will further enhance our clinical capabilities, supply chain resilience, and customer satisfaction. Innovation will be our core driver, but humanity will always lead our decisions.</p>
-
-    <p>The future of Noor Fatima Healthcare Group is about scaling responsibly, transforming thoughtfully, and serving relentlessly. Together with our customers, partners, and team—we’re not just adapting to the future of healthcare. We’re building it.</p>
+  <section class="hero">
+    <a href="about.html" class="back-link">
+      <i class="fas fa-arrow-left" style="margin-right:0.5rem;"></i>Back to About
+    </a>
+    <div class="hero-content">
+      <h1>Our Future</h1>
+      <p>Building on our legacy to pioneer the next generation of accessible healthcare solutions for all.</p>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="content-section">
+      <p>As technology and community needs evolve, we'll expand telehealth, AI-driven diagnostics, and green logistics to ensure healthier tomorrow for every region we serve.</p>
+    </div>
   </section>
 </body>
 </html>
