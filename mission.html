@@ -72,17 +72,61 @@
   <section class="hero">
     <a href="about.html" class="back-link"><i class="fas fa-arrow-left" style="margin-right:0.5rem;"></i>Back to About</a>
     <div class="hero-content">
-      <h1>Our Mission</h1>
-      <p>Empowering every individual and family with fast, reliable access to genuine healthcare at their doorstep.</p>
+      <h1 id="mission-title">Our Mission</h1>
+      <p id="mission-subtitle">Empowering every individual and family with fast, reliable access to genuine healthcare at their doorstep.</p>
     </div>
   </section>
   
   <section class="section">
     <div class="content-section">
-      <h2>What Drives Us</h2>
-      <p>We believe that healthcare is a fundamental right, not a privilege. Our goal is to bridge the gap between quality medical supplies and the communities that need them most.</p>
-      <p>By leveraging technology, compassion, and community partnerships, we strive to deliver not just medicines but peace of mind.</p>
+      <h2 id="mission-tagline">What Drives Us</h2>
+      <p id="mission-copy-1">
+        We believe that healthcare is a fundamental right, not a privilege. Our goal is to bridge the gap between quality medical supplies and the communities that need them most.
+      </p>
+      <p id="mission-copy-2">
+        By leveraging technology, compassion, and community partnerships, we strive to deliver not just medicines but peace of mind.
+      </p>
     </div>
   </section>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB4VUfZ5k0UbrR0TB11ogJm6a-JmPGANHA",
+      authDomain: "noorfatimahealthcaregrou-4419e.firebaseapp.com",
+      databaseURL: "https://noorfatimahealthcaregrou-4419e-default-rtdb.firebaseio.com",
+      projectId: "noorfatimahealthcaregrou-4419e",
+      storageBucket: "noorfatimahealthcaregrou-4419e.firebasestorage.app",
+      messagingSenderId: "608595978890",
+      appId: "1:608595978890:web:a545246db9317ea3745b73",
+      measurementId: "G-DPECH577P8"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadMission() {
+      const ref = doc(db, "mission", "main");
+      const snap = await getDoc(ref);
+
+      if (snap.exists()) {
+        const data = snap.data();
+        document.getElementById("mission-title").textContent = data.title || "Our Mission";
+        document.getElementById("mission-subtitle").textContent = data.short || "";
+        document.getElementById("mission-tagline").textContent = data.tagline || "What Drives Us";
+
+        const fullText = data.copy || "";
+        const parts = fullText.split("\n\n"); // Optional: split on double line breaks if needed
+        document.getElementById("mission-copy-1").textContent = parts[0] || fullText;
+        document.getElementById("mission-copy-2").textContent = parts[1] || "";
+      } else {
+        document.getElementById("mission-title").textContent = "Mission content not found.";
+      }
+    }
+
+    loadMission().catch(console.error);
+  </script>
 </body>
 </html>

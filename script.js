@@ -14,3 +14,12 @@ const nav = document.querySelector('.navbar nav');
 menuToggle?.addEventListener('click', () => {
   nav.classList.toggle('open');
 });
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
+

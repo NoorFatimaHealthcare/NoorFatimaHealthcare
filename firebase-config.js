@@ -1,8 +1,11 @@
-// Import the functions you need from the SDKs you need
+Google account: NoorFatimaHealthcareGroup@gmail.com
+
+
+// firebase-config.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-// Firebase config
+// Your Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyB4VUfZ5k0UbrR0TB11ogJm6a-JmPGANHA",
   authDomain: "noorfatimahealthcaregrou-4419e.firebaseapp.com",
