@@ -80,12 +80,16 @@
   <section class="section contact-section">
     <div class="contact-form">
       <h2>Message Us</h2>
-      <form name="contact" method="POST" data-netlify="true" action="thankyou.html">
+      <form name="contact" method="POST" data-netlify="true" action="/thankyou.html">
+  <input type="hidden" name="form-name" value="contact" />
+  
   <input type="text" name="name" placeholder="Your Name" required />
   <input type="email" name="email" placeholder="Your Email" required />
   <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  
   <button type="submit">Send Message</button>
 </form>
+
 
 
 
