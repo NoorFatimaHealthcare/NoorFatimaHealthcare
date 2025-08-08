@@ -404,3 +404,16 @@ a { text-decoration: none; color: inherit; }
     animation-duration: 50s;
   }
 }
+/* ───────── Ultra Consistent Layout Overrides ───────── */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+.section,
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+}

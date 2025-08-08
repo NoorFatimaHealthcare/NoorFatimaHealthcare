@@ -1,33 +1,69 @@
-<!-- ✅ Fully updated contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Get in touch with Noor Fatima Healthcare Group for orders, support, or general inquiries.">
-  <meta property="og:title" content="Contact Us – Noor Fatima Healthcare Group">
-  <meta property="og:description" content="We're here to help—reach out via phone, email, or WhatsApp.">
-  <meta property="og:image" content="/assets/og-image-contact.png">
-  <meta property="og:url" content="https://yourdomain.com/contact.html">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Contact Noor Fatima Healthcare Group for any queries, help, or support regarding medicine delivery." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 2rem;
+    }
+    .contact-form,
+    .contact-info {
+      flex: 1 1 400px;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+    .contact-form button {
+      background: #009688;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover {
+      background: #00796b;
+    }
+    .contact-info p {
+      margin: 0.75rem 0;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="navbar">
       <div class="logo">Noor Fatima Healthcare Group</div>
       <button class="menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="order.html">Buy Medicines</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="store.html">Locate a Store</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -38,24 +74,30 @@
 
   <section class="hero">
     <h1>Contact Us</h1>
-    <p>We're here to help. Reach out anytime.</p>
+    <p>We're here to help you with orders, queries, or anything else.</p>
   </section>
 
-  <section class="section">
-    <div class="contact-card">
-      <i class="fas fa-phone-alt"></i>
-      <p><strong>Phone:</strong> <a href="tel:+917051899758">7051899758</a></p>
+  <section class="section contact-section">
+    <div class="contact-form">
+      <h2>Message Us</h2>
+      <form action="https://formsubmit.co/NoorFatimaHealthcareGroup@gmail.com" method="POST">
+  <input type="hidden" name="_redirect" value="thankyou.html" />
+  <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="_honey" style="display:none">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
     </div>
-    <div class="contact-card">  
-      <i class="fas fa-phone-alt"></i>
-      <p><strong>Phone:</strong> <a href="tel:+919103211416">9103211416</a></p>
-    </div>
-    <div class="contact-card">
-      <i class="fas fa-envelope"></i>
-      <p><strong>Email:</strong> <a href="mailto:NoorFatimaHealthcareGroup@gmail.com">NoorFatimaHealthcareGroup@gmail.com</a></p>
-    </div>
-    <div class="whatsapp-btn">
-      <a href="https://wa.me/917051899758" target="_blank" rel="noopener">Message on WhatsApp</a>
+
+    <div class="contact-info">
+      <h2>Contact Info</h2>
+      <p><strong>Email:</strong> support@noorfatimahealthcare.com</p>
+      <p><strong>Phone:</strong> +91 7051899758</p>
+      <p><strong>Hours:</strong> 11:00 AM – 5:00 PM (Monday to Saturday)</p>
+      <p><strong>Address:</strong> Srinagar, Jammu and Kashmir, India</p>
     </div>
   </section>
 
@@ -68,7 +110,6 @@
     <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
   </footer>
 
-  <!-- ✅ Active Nav Highlighter Script -->
   <script>
     const links = document.querySelectorAll('.navbar nav ul li a');
     const currentPage = window.location.pathname.split('/').pop();
@@ -83,9 +124,3 @@
   </script>
 </body>
 </html>
-
-<!-- ✅ Fully updated about.html -->
-<!-- (same header/footer/JS, only body changes) -->
-
-<!-- ✅ Fully updated blog.html -->
-<!-- (same header/footer/JS, only body changes) -->
