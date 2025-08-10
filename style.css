@@ -417,3 +417,62 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
 }
+/* ───────── Our Pillars ───────── */
+.our-pillars {
+  background: #f0fdfa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.our-pillars h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #009688;
+  margin-bottom: 2rem;
+}
+
+.pillars-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pillar-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.pillar-icon {
+  font-size: 2.5rem;
+  color: #009688;
+  margin-bottom: 1rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00796b;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .our-pillars {
+    padding: 3rem 1rem;
+  }
+}

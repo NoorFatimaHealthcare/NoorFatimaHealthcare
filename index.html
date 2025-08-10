@@ -25,127 +25,704 @@
         <i class="fas fa-bars"></i>
       </button>
       <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="order.html">Buy Medicines</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </nav>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="order.html">Buy Medicines</a></li>
+    <li><a href="hospitals.html">Hospitals</a></li>
+    <li><a href="clinics.html">Clinics</a></li>
+    <li><a href="diagnostics.html">Diagnostics</a></li>
+    <li><a href="pharmacy.html">Pharmacy</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Your Health, Our Priority</h1>
-    <p>Trusted medicine delivery from Noor Fatima Healthcare Group — fast, reliable, and caring service every day.</p>
-    <a href="order.html" class="cta-button">Order on WhatsApp</a>
-    <a href="tel:+917051899758" class="cta-button" style="margin-left: 10px;">Call to Place Order</a>
-  </section>
+<!-- 🌟 HERO CAROUSEL -->
+<section class="hero-carousel" aria-label="Our health services carousel">
+  <div class="carousel-bg" aria-hidden="true"></div>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <i class="fas fa-capsules"></i>
-        <h3>Buy Medicines</h3>
-        <p>Order medicines directly via WhatsApp with real-time order tracking.</p>
+  <div class="carousel-viewport">
+    <button class="carousel-btn prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+
+    <div class="carousel-track" role="list">
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-hospital slide-icon"></i>
+          <h3>Hospitals</h3>
+          <p>Specialist care, emergency & inpatient services.</p>
+          <a class="explore-btn" href="coming-soon.html">Explore More</a>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-clinic-medical slide-icon"></i>
+          <h3>Clinics</h3>
+          <p>Walk-in consultations & family medicine nearby.</p>
+          <a class="explore-btn" href="coming-soon.html">Explore More</a>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-capsules slide-icon"></i>
+          <h3>Pharmacies</h3>
+          <p>Genuine medicines, OTC essentials & advice.</p>
+          <a class="explore-btn" href="order.html">Explore More</a>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-truck-medical slide-icon"></i>
+          <h3>Online Medicine Delivery</h3>
+          <p>Fast, reliable doorstep delivery—upload prescription.</p>
+          <a class="explore-btn" href="order.html">Explore More</a>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-vials slide-icon"></i>
+          <h3>Diagnostics & Labs</h3>
+          <p>Accurate lab tests and quick digital reports.</p>
+          <a class="explore-btn" href="coming-soon.html">Explore More</a>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-book-medical slide-icon"></i>
+          <h3>Health & Wellness Blog</h3>
+          <p>Practical tips and expert articles for wellbeing.</p>
+          <a class="explore-btn" href="blog.html">Explore More</a>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-hands-helping slide-icon"></i>
+          <h3>Community Initiatives</h3>
+          <p>Health camps, awareness drives and outreach programs.</p>
+          <a class="explore-btn" href="coming-soon.html">Explore More</a>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-inner">
+          <i class="fa-solid fa-briefcase-medical slide-icon"></i>
+          <h3>Careers & Partnerships</h3>
+          <p>Work with us — careers, suppliers and franchise opportunities.</p>
+          <a class="explore-btn" href="coming-soon.html">Explore More</a>
+        </div>
+      </article>
+    </div>
+
+    <button class="carousel-btn next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <div class="carousel-dots"></div>
+</section>
+
+<style>
+.hero-carousel {
+  position: relative;
+  padding: 2rem 0;
+  height: 62vh;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow: visible;
+}
+.carousel-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(0,150,136,0.14), rgba(0,150,136,0.06) 8%),
+              radial-gradient(circle at 90% 80%, rgba(0,105,92,0.12), rgba(0,105,92,0.03) 12%),
+              linear-gradient(180deg, rgba(245,255,252,0.6), rgba(240,255,250,0.35));
+  filter: blur(10px) saturate(1.05);
+  z-index: 0;
+}
+.carousel-viewport {
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  gap: 150px;
+  align-items: center;
+  transition: transform 0.65s cubic-bezier(.22,.9,.37,1);
+  will-change: transform;
+}
+.slide {
+  flex: 0 0 35%;
+  height: calc(62vh - 72px);
+  min-height: 340px;
+  max-height: 620px;
+  border-radius: 14px;
+  background-image: linear-gradient(140deg, rgba(0,120,94,0.08), rgba(0,150,136,0.06));
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(2,40,34,0.18);
+  display: flex;
+  align-items: flex-end;
+  padding: 26px;
+  box-sizing: border-box;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.slide-inner {
+  z-index: 3;
+  max-width: 72%;
+}
+.slide-icon {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+.slide h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin: 0 0 .45rem 0;
+}
+.slide p {
+  margin: 0 0 14px 0;
+  color: rgba(255,255,255,0.92);
+}
+.explore-btn {
+  display: inline-block;
+  background: #fff;
+  color: #00796b;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+.carousel-btn {
+  background: rgba(255,255,255,0.92);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #00796b;
+  font-size: 1.05rem;
+}
+.carousel-dots {
+  margin-top: 18px;
+  display:flex;
+  gap: 8px;
+  justify-content:center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.dot.active {
+  background: #fff;
+}
+@media (max-width: 640px) {
+  .slide { flex-basis: 90%; }
+}
+</style>
+
+<script>
+(function(){
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const viewport = document.querySelector('.carousel-viewport');
+  const prev = document.querySelector('.carousel-btn.prev');
+  const next = document.querySelector('.carousel-btn.next');
+  const dotsRow = document.querySelector('.carousel-dots');
+  let currentIndex = 0;
+  let autoTimer = null;
+
+  slides.forEach((s, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot';
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+    dotsRow.appendChild(dot);
+  });
+  const dots = Array.from(dotsRow.children);
+
+  function getGapPx() {
+    const g = getComputedStyle(track).gap;
+    return parseFloat(g) || 24;
+  }
+  function updatePosition() {
+    const gap = getGapPx();
+    const slideW = slides[0].getBoundingClientRect().width;
+    const viewportW = viewport.clientWidth;
+    const centerOffset = (viewportW - slideW) / 2;
+    const offset = slides[currentIndex].offsetLeft;
+    const translate = offset - centerOffset;
+    track.style.transform = `translateX(-${translate}px)`;
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === currentIndex));
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+  function goTo(index) {
+    currentIndex = (index + slides.length) % slides.length;
+    updatePosition();
+  }
+  function nextSlide() { goTo(currentIndex + 1); }
+  function prevSlide() { goTo(currentIndex - 1); }
+  next.addEventListener('click', () => { nextSlide(); resetAuto(); });
+  prev.addEventListener('click', () => { prevSlide(); resetAuto(); });
+
+  function startAuto() { stopAuto(); autoTimer = setInterval(nextSlide, 4200); }
+  function stopAuto() { if (autoTimer) clearInterval(autoTimer); }
+  function resetAuto() { stopAuto(); startAuto(); }
+
+  track.addEventListener('mouseenter', stopAuto);
+  track.addEventListener('mouseleave', startAuto);
+
+  window.addEventListener('load', () => { updatePosition(); startAuto(); });
+  window.addEventListener('resize', () => {
+    clearTimeout(window.__carouselResize);
+    window.__carouselResize = setTimeout(updatePosition, 90);
+  });
+})();
+</script>
+
+
+
+
+
+
+
+
+<!-- START: Our Health Network (Ultra Pro Max) -->
+<section class="health-network" aria-labelledby="hn-title">
+  <style>
+    /* Health Network block - self-contained styles */
+    .health-network {
+      background: linear-gradient(180deg,#f8fffd,#ffffff);
+      padding: 56px 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .health-network .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .health-network h2 {
+      text-align: center;
+      color: #00796b; /* darker green for headings */
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.2px;
+    }
+    .health-network .sub {
+      text-align: center;
+      color: #41645f;
+      max-width: 860px;
+      margin: 0 auto 2rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .hn-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 1.25rem;
+    }
+
+    .hn-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      transition: transform .28s ease, box-shadow .28s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 160px;
+    }
+    .hn-card:focus-within,
+    .hn-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+
+    .hn-icon {
+      background: linear-gradient(135deg,#e6fffb,#d0fff5);
+      color: #009688;
+      width: 56px;
+      height: 56px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 10px;
+      font-size: 20px;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    .hn-title {
+      color: #00594f;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hn-desc {
+      color: #475657;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      margin-top: auto; /* push to bottom when content short */
+    }
+
+    .hn-cta {
+      margin-top: 14px;
+      align-self: stretch;
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      text-decoration: none;
+      color: #00796b;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+    .hn-cta .arrow {
+      display: inline-block;
+      transform: translateX(0);
+      transition: transform .2s ease;
+    }
+    .hn-card:hover .hn-cta .arrow { transform: translateX(6px); }
+
+    /* responsive */
+    @media (max-width: 1100px) {
+      .hn-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 820px) {
+      .hn-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .hn-grid { grid-template-columns: 1fr; }
+      .health-network { padding: 40px 14px; }
+      .hn-card { min-height: 140px; padding: 18px; }
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      .health-network { background: linear-gradient(180deg,#022a28,#00251f); }
+      .health-network h2 { color: #8feadc; }
+      .health-network .sub { color: #bfeee3; }
+      .hn-card { background: linear-gradient(180deg,#003634,#00312c); box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
+      .hn-desc { color: #d7efe9; }
+      .hn-title { color: #dff7f0; }
+      .hn-icon { background: linear-gradient(135deg,#004d44,#00695c); color: #e9fff8; }
+      .hn-cta { color: #bff4e8; }
+    }
+  </style>
+
+  <div class="container">
+    <h2 id="hn-title">Our Health Network</h2>
+    <p class="sub">Comprehensive healthcare across hospitals, clinics, pharmacies, diagnostics and community programs — built to serve every stage of life. (Click any card to learn more.)</p>
+
+    <div class="hn-grid" role="list">
+      <!-- 1 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn1">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-hospital"></i></div>
+        <h3 id="hn1" class="hn-title">Hospitals</h3>
+        <p class="hn-desc">Full-service hospitals with specialist care, emergency services and inpatient treatment across multiple cities.</p>
+        <a class="hn-cta" href="coming-soon.html">Learn more <span class="arrow">→</span></a>
+      </article>
+
+      <!-- 2 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn2">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-clinic-medical"></i></div>
+        <h3 id="hn2" class="hn-title">Clinics</h3>
+        <p class="hn-desc">Community clinics providing walk-in consultations, follow-ups and family medicine services close to you.</p>
+        <a class="hn-cta" href="coming-soon.html">Learn more <span class="arrow">→</span></a>
+      </article>
+
+      <!-- 3 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn3">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-capsules"></i></div>
+        <h3 id="hn3" class="hn-title">Pharmacies</h3>
+        <p class="hn-desc">Trusted medical shops offering genuine medicines, OTC essentials and expert dispensing advice.</p>
+        <a class="hn-cta" href="order.html">Order medicines <span class="arrow">→</span></a>
+      </article>
+
+      <!-- 4 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn4">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-truck-medical"></i></div>
+        <h3 id="hn4" class="hn-title">Online Medicine Delivery</h3>
+        <p class="hn-desc">Fast, reliable doorstep delivery — upload prescriptions or message us on WhatsApp to place an order.</p>
+        <a class="hn-cta" href="order.html">Order now <span class="arrow">→</span></a>
+      </article>
+
+      <!-- 5 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn5">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-vials"></i></div>
+        <h3 id="hn5" class="hn-title">Diagnostics & Labs</h3>
+        <p class="hn-desc">Accurate lab testing and diagnostic imaging with fast turnaround times and digital reports.</p>
+        <a class="hn-cta" href="coming-soon.html">Book a test <span class="arrow">→</span></a>
+      </article>
+
+      <!-- 6 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn6">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-book-medical"></i></div>
+        <h3 id="hn6" class="hn-title">Health & Wellness Blog</h3>
+        <p class="hn-desc">Expert articles, practical health tips and easy-to-follow wellness guides written by professionals.</p>
+        <a class="hn-cta" href="blog.html">Read articles <span class="arrow">→</span></a>
+      </article>
+
+      <!-- 7 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn7">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-hands-helping"></i></div>
+        <h3 id="hn7" class="hn-title">Community Initiatives</h3>
+        <p class="hn-desc">Free health camps, awareness drives and outreach programs that bring care to underserved areas.</p>
+        <a class="hn-cta" href="coming-soon.html">See initiatives <span class="arrow">→</span></a>
+      </article>
+
+      <!-- 8 -->
+      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn8">
+        <div class="hn-icon" aria-hidden="true"><i class="fas fa-briefcase-medical"></i></div>
+        <h3 id="hn8" class="hn-title">Careers & Partnerships</h3>
+        <p class="hn-desc">Work with us — careers, supplier partnerships and franchise opportunities across the network.</p>
+        <a class="hn-cta" href="coming-soon.html">Join & partner <span class="arrow">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- END: Our Health Network (Ultra Pro Max) -->
+
+  <!-- ───────── Our Impact + Why Choose Us Section ───────── -->
+<section class="section impact-why" style="background:#f0fdfa; padding:4rem 2rem;">
+  <div style="max-width:1200px; margin:0 auto; text-align:center;">
+    
+    <!-- Our Impact -->
+    <h2 style="color:#009688; font-size:2.4rem; font-weight:700; margin-bottom:2rem;">Our Impact</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; margin-bottom:3rem;">
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1);">
+        <h3 class="counter" data-target="50000" style="font-size:2rem; font-weight:700; color:#009688;">0</h3>
+        <p style="color:#444; font-weight:500;">Medicines Delivered</p>
       </div>
-      <div class="service-card">
-        <i class="fas fa-user-nurse"></i>
-        <h3>Healthcare Guidance</h3>
-        <p>Get expert advice on prescriptions, dosages, and interactions.</p>
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1);">
+        <h3 class="counter" data-target="12000" style="font-size:2rem; font-weight:700; color:#009688;">0</h3>
+        <p style="color:#444; font-weight:500;">Happy Patients</p>
       </div>
-      <div class="service-card">
-        <i class="fas fa-bullhorn"></i>
-        <h3>Awareness Campaigns</h3>
-        <p>Join community health drives on prevention and wellness.</p>
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1);">
+        <h3 class="counter" data-target="50" style="font-size:2rem; font-weight:700; color:#009688;">0</h3>
+        <p style="color:#444; font-weight:500;">Clinics & Pharmacies</p>
       </div>
-      <div class="service-card">
-        <i class="fas fa-brain"></i>
-        <h3>Mental Health Support</h3>
-        <p>Confidential counseling sessions for stress, anxiety, and more.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-baby"></i>
-        <h3>Mother & Baby Care</h3>
-        <p>Essentials and expert tips for new mothers and infants.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-bell"></i>
-        <h3>Refill Reminders</h3>
-        <p>Automated alerts so you never miss a dose or refill.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-first-aid"></i>
-        <h3>Health Packages</h3>
-        <p>Preventive check-ups: diabetes, heart, family wellness.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-truck-medical"></i>
-        <h3>Home Delivery</h3>
-        <p>Safe and fast doorstep delivery across the region.</p>
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1);">
+        <h3 class="counter" data-target="10" style="font-size:2rem; font-weight:700; color:#009688;">0</h3>
+        <p style="color:#444; font-weight:500;">Cities Covered</p>
       </div>
     </div>
-  </section>
 
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial-track">
-        <div class="testimonial-card">
-          <p>“Noor Fatima’s service is incredible. Got my medicine in just 2 hours!”</p>
-          <h4>– Aisha Khan</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“So convenient to order via WhatsApp. Fast and friendly service.”</p>
-          <h4>– Danish Bhat</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“Highly professional and trustworthy team. Always helpful!”</p>
-          <h4>– Dr. Sana Mir</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“Saved my time and effort. Reliable delivery every time.”</p>
-          <h4>– Ruqaya</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“I recommend Noor Fatima to all my friends and family.”</p>
-          <h4>– Parveen Akhtar</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“Exceptional service—quality guaranteed every time.”</p>
-          <h4>– Imran Sheikh</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“Professional, prompt, and caring. Exactly what I needed.”</p>
-          <h4>– Meera Khan</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“Their reminders keep me on track with my medications.”</p>
-          <h4>– Farah Malik</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“Great range of services beyond just delivery.”</p>
-          <h4>– Arif Hussain</h4>
-        </div>
-        <div class="testimonial-card">
-          <p>“User-friendly and reliable. My go‑to healthcare partner.”</p>
-          <h4>– Saba Qureshi</h4>
-        </div>
+    <!-- Why Choose Us -->
+    <h2 style="color:#009688; font-size:2.4rem; font-weight:700; margin-bottom:2rem;">Why Choose Us</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;">
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1); text-align:left;">
+        <i class="fas fa-user-md" style="font-size:2rem; color:#009688; margin-bottom:1rem;"></i>
+        <h4 style="font-weight:700; margin-bottom:0.5rem;">Expert Healthcare Team</h4>
+        <p style="color:#555;">Skilled doctors, pharmacists, and healthcare professionals at your service.</p>
+      </div>
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1); text-align:left;">
+        <i class="fas fa-hospital" style="font-size:2rem; color:#009688; margin-bottom:1rem;"></i>
+        <h4 style="font-weight:700; margin-bottom:0.5rem;">Comprehensive Services</h4>
+        <p style="color:#555;">From hospitals and clinics to online pharmacy and diagnostics.</p>
+      </div>
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1); text-align:left;">
+        <i class="fas fa-shipping-fast" style="font-size:2rem; color:#009688; margin-bottom:1rem;"></i>
+        <h4 style="font-weight:700; margin-bottom:0.5rem;">Fast Delivery</h4>
+        <p style="color:#555;">Quick, reliable delivery of medicines and healthcare products to your doorstep.</p>
+      </div>
+      <div style="background:white; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,150,136,0.1); text-align:left;">
+        <i class="fas fa-hand-holding-heart" style="font-size:2rem; color:#009688; margin-bottom:1rem;"></i>
+        <h4 style="font-weight:700; margin-bottom:0.5rem;">Patient-Centric Care</h4>
+        <p style="color:#555;">Your health and well-being are always our top priority.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="site-footer">
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Service</a> |
-      <a href="contact.html">Contact</a>
+<!-- Counter Animation Script -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      counter.innerText = '0';
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCounter, 10);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      updateCounter();
+    });
+  };
+
+  // Animate when section is visible
+  const section = document.querySelector('.impact-why');
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      animateCounters();
+      observer.disconnect();
+    }
+  }, { threshold: 0.3 });
+
+  observer.observe(section);
+</script>
+
+
+
+  <footer style="background: #ffffff; border-top: 4px solid #009688; padding: 3rem 1rem 1rem; color: #009688; font-family: 'Poppins', sans-serif; box-shadow: 0 -4px 12px rgba(0,0,0,0.05);">
+  <style>
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding-bottom: 2rem;
+    }
+    .footer-column h3 {
+      font-weight: 800;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #00796b; /* darker green for both modes */
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-column ul li {
+      margin-bottom: 0.6rem;
+    }
+    .footer-column ul li a {
+      color: #00796b; /* match heading color */
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .footer-column ul li a:hover {
+      text-decoration: underline;
+      color: #004d40;
+    }
+    .social-icons {
+      display: flex;
+      gap: 0.6rem;
+    }
+    .social-icons a {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #009688;
+      color: white;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      background: #00695c;
+      transform: translateY(-3px);
+    }
+    .footer-bottom {
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding-top: 1.5rem;
+      color: #004d40;
+      border-top: 2px solid rgba(0, 150, 136, 0.2);
+    }
+    @media (max-width: 600px) {
+      .footer-container {
+        text-align: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+    }
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      footer {
+        background: #002f2b;
+        color: #e0f2f1;
+      }
+      .footer-column h3,
+      .footer-column ul li a {
+        color: #80cbc4; /* slightly lighter for dark mode but still strong */
+      }
+      .footer-column ul li a:hover {
+        color: #b2dfdb;
+      }
+    }
+  </style>
+
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Products</h3>
+      <ul>
+        <li><a href="order.html">Buy Medicines</a></li>
+        <li><a href="store.html">Locate a Store</a></li>
+      </ul>
     </div>
-    <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
-  </footer>
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Schedules</a></li>
+        <li><a href="#">Community Initiatives</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
+  </div>
+</footer>
+
+
+
+
 
   <!-- ✅ Active Nav Highlighter Script -->
   <script>
