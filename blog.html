@@ -1,86 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Blog | Noor Fatima Healthcare Group</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health & Wellness Blog | Noor Fatima Healthcare Group</title>
+  <meta name="description" content="Read expert health articles, wellness tips, and practical guides written by professionals at Noor Fatima Healthcare Group.">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-index.css">
+  <link rel="stylesheet" href="style-blog.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="navbar">
-      <div class="logo">Noor Fatima Healthcare Group</div>
-      <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
-      <nav>
+      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="primary-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="clinics.html">Clinics</a></li>
+          <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="pharmacy.html">Pharmacy</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="section blog">
-    <h2 style="text-align:center; color:#009688; margin-bottom:2rem;">Latest Blog Posts</h2>
-    <div class="blog-grid">
-
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1611078489935-0cb9642b6d3d" alt="SSRI pills" style="width:100%; border-radius:8px; height:180px; object-fit:cover; margin-bottom:1rem;">
-        <h3 style="color:#009688;">Understanding SSRIs: Uses, Benefits & Considerations</h3>
-        <p style="font-size: 0.95rem;">Explore how SSRIs work, what they treat, their side effects, and when they’re prescribed—based on real medical insights.</p>
-        <p style="font-size: 0.85rem; color: #777; margin: 0.5rem 0;">By Dr. A. Rahman • Aug 2025</p>
-        <a href="blog-posts/ssri-explained.html" class="directions-btn">Read More</a>
+  <!-- Main -->
+  <main>
+    <section class="blog-header">
+      <div class="container">
+        <h1>Health & Wellness Blog</h1>
+        <p>Your trusted source for practical tips, medical insights, and wellness guides written by healthcare professionals.</p>
       </div>
+    </section>
 
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1588776814546-cfe03b4cce1e" alt="Healthy lifestyle" style="width:100%; border-radius:8px; height:180px; object-fit:cover; margin-bottom:1rem;">
-        <h3 style="color:#009688;">5 Healthy Habits That Boost Mental Health</h3>
-        <p style="font-size: 0.95rem;">From mindful mornings to proper hydration—small routines that enhance emotional well-being and productivity.</p>
-        <p style="font-size: 0.85rem; color: #777; margin: 0.5rem 0;">By Dr. Jibran War • July 2025</p>
-        <a href="blog-posts/healthy-habits.html" class="directions-btn">Read More</a>
+<div class="blog-search">
+  <input type="text" id="blogSearch" placeholder="Search articles by title or tag...">
+</div>
+
+
+
+    <section class="blog-list container">
+      <!-- Article 1 -->
+      <article class="blog-card">
+        <img src="images/blog1.jpg" alt="Healthy lifestyle tips" class="blog-img">
+        <div class="blog-content">
+          <h2><a href="#">10 Daily Habits for a Healthier Life</a></h2>
+          <p>Discover simple lifestyle changes that can make a big difference to your health and energy levels.</p>
+          <a href="#" class="read-more">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card">
+        <img src="images/blog2.jpg" alt="Understanding diabetes" class="blog-img">
+        <div class="blog-content">
+          <h2><a href="#">Understanding Diabetes: A Beginner’s Guide</a></h2>
+          <p>Learn the causes, symptoms, and prevention strategies for one of the most common health conditions.</p>
+          <a href="#" class="read-more">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card">
+        <img src="images/blog3.jpg" alt="Mental health awareness" class="blog-img">
+        <div class="blog-content">
+          <h2><a href="#">Why Mental Health Matters</a></h2>
+          <p>Breaking the stigma: how to care for your mental wellbeing and support others in your community.</p>
+          <a href="#" class="read-more">Read more →</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="store.html">Locate a Store</a></li>
+        </ul>
       </div>
-
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Weightlifting and mental health" style="width:100%; border-radius:8px; height:180px; object-fit:cover; margin-bottom:1rem;">
-        <h3 style="color:#009688;">Weightlifting and Mood: The Brain-Muscle Connection</h3>
-        <p style="font-size: 0.95rem;">Explore the powerful link between strength training and mental health, backed by science and clinical experience.</p>
-        <p style="font-size: 0.85rem; color: #777; margin: 0.5rem 0;">By Dr. Qaisar War • May 2025</p>
-        <a href="blog-posts/lifting-and-mood.html" class="directions-btn">Read More</a>
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="#">Schedules</a></li>
+          <li><a href="#">Community Initiatives</a></li>
+        </ul>
       </div>
-
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1588774069260-423dfc23f2fc" alt="Blood pressure monitoring" style="width:100%; border-radius:8px; height:180px; object-fit:cover; margin-bottom:1rem;">
-        <h3 style="color:#009688;">Managing Hypertension for a Calmer Mind</h3>
-        <p style="font-size: 0.95rem;">High blood pressure doesn’t just affect the heart—it impacts mental clarity and stress response. Here’s how to take control.</p>
-        <p style="font-size: 0.85rem; color: #777; margin: 0.5rem 0;">By Dr. Jibran War • April 2025</p>
-        <a href="blog-posts/hypertension-and-mind.html" class="directions-btn">Read More</a>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
       </div>
-
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1" alt="Sleep and health" style="width:100%; border-radius:8px; height:180px; object-fit:cover; margin-bottom:1rem;">
-        <h3 style="color:#009688;">The Importance of Sleep in Mental Health</h3>
-        <p style="font-size: 0.95rem;">Sleep affects everything—mood, memory, energy. Learn how to improve your sleep hygiene and feel better every day.</p>
-        <p style="font-size: 0.85rem; color: #777; margin: 0.5rem 0;">By Dr. Qaisar War • March 2025</p>
-        <a href="blog-posts/sleep-and-health.html" class="directions-btn">Read More</a>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
-
     </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a> | 
-      <a href="contact.html">Contact</a>
+    <div class="footer-bottom">
+      &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
     </div>
-    <p>&copy; 2025 Noor Fatima Healthcare Group</p>
   </footer>
+
+  <script src="script-index.js" defer></script>
 </body>
 </html>
