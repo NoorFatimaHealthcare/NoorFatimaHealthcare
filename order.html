@@ -1,226 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Order Medicines | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Order medicines easily via WhatsApp or phone call — fast delivery, genuine products, and excellent support." />
-  <meta property="og:title" content="Order Medicines – Noor Fatima Healthcare Group" />
-  <meta property="og:description" content="Place your medicine orders via WhatsApp or a simple phone call." />
-  <meta property="og:image" content="/assets/og-image-order.png" />
-  <meta property="og:url" content="https://yourdomain.com/order.html" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" alt="Noor Fatima Healthcare Icon" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buy Medicine Online | Noor Fatima Healthcare Group</title>
 
-  <!-- ✅ Preconnect for Font Performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- fonts & icons (same as index) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <!-- ✅ Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- page styles (main content in order.css) -->
+  <link rel="stylesheet" href="order.css">
 
-  <!-- ✅ Extra Styles -->
+  <!-- Inline navbar CSS copied from index so header is pixel-perfect -->
   <style>
-    @media (min-width: 900px) {
-      .steps-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-      }
+    /* NAVBAR: exact styling used on index.html */
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-
-    .faq-question {
-      background: #fff;
+    .navbar .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
       color: #009688;
+      line-height: 1;
+    }
+    .navbar nav { margin-left: 20px; }
+    .navbar nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    .navbar nav ul li a {
+      text-decoration: none;
+      color: #00796b;
       font-weight: 600;
-      border: 2px solid #009688;
-      border-radius: 8px;
-      width: 100%;
-      text-align: left;
-      padding: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      margin-bottom: 0.5rem;
+      padding: 8px 6px;
+    }
+    .navbar nav ul li a:hover,
+    .navbar nav ul li a.active {
+      color: #004d40;
     }
 
-    .faq-question:hover {
-      background: #e0f2f1;
-    }
-
-    .faq-answer {
+    /* Hamburger (mobile) */
+    .menu-toggle {
       display: none;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1rem;
-      background: #f9f9f9;
-      border-left: 4px solid #009688;
-      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: #009688;
+      background: none;
+      border: none;
+      padding: 6px;
     }
 
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
+    /* Mobile responsive nav */
     @media (max-width: 768px) {
-      #testimonial-track {
-        animation-duration: 80s;
+      .navbar nav ul {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.28s ease-in-out;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       }
+      .navbar nav ul.active {
+        max-height: 320px;
+      }
+      .navbar nav ul li {
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f6f5;
+      }
+      .menu-toggle { display: block; }
+    }
+
+    /* keep small visual parity on very small screens */
+    @media (max-width: 420px) {
+      .navbar { padding: 10px 12px; }
+      .navbar .logo { font-size: 1.05rem; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ===== HEADER / NAVBAR (exact structure from index.html) ===== -->
   <header>
     <div class="navbar">
       <div class="logo">Noor Fatima Healthcare Group</div>
+
       <button class="menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars" aria-hidden="true"></i>
+        <i class="fas fa-bars"></i>
       </button>
-      <nav role="navigation" aria-label="Main site navigation">
+
+      <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="order.html" class="active">Buy Medicines</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="clinics.html">Clinics</a></li>
+          <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="pharmacy.html">Pharmacy</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-          <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Order Medicines from Anywhere, Anytime</h1>
-    <p>Fast delivery. Verified products. Trusted by hundreds daily.</p>
-  </section>
-
-  <section class="section features">
-    <div class="feature-box">
-      <h3><i class="fas fa-shipping-fast"></i> Same Day Delivery</h3>
-      <p>We ensure your medicines reach your door the same day in most areas.</p>
-    </div>
-    <div class="feature-box">
-      <h3><i class="fas fa-certificate"></i> 100% Genuine Medicines</h3>
-      <p>We partner only with licensed pharmacies and verified distributors.</p>
-    </div>
-    <div class="feature-box">
-      <h3><i class="fab fa-whatsapp"></i> Support on WhatsApp</h3>
-      <p>Have a question or need help? Message us anytime on WhatsApp.</p>
+  <!-- ===== HERO (premium, static) ===== -->
+  <section class="order-hero">
+    <h1>Buy Medicine Online</h1>
+    <p>Fast, reliable, and trusted medicine delivery at your doorstep. Upload your prescription or order instantly through our platform.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/1234567890" target="_blank" class="cta-btn"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+      <a href="tel:+1234567890" class="cta-btn"><i class="fas fa-phone-alt"></i> Call to Place Order</a>
     </div>
   </section>
 
-  <section class="section" style="padding: 0.8rem 0; margin: 0 auto; max-width: 840px;" aria-labelledby="whatsappOrder">
-    <h2 id="whatsappOrder" style="text-align: center;">Place Order on WhatsApp</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 1rem;">
-      Ordering through WhatsApp is quick and easy — just follow these steps and we’ll take care of the rest.
-    </p>
-    <div class="steps-grid">
-      <div class="steps-card"><h2>1</h2><p>Click the WhatsApp button below</p></div>
-      <div class="steps-card"><h2>2</h2><p>Send us a message with your medicine names or a clear image</p></div>
-      <div class="steps-card"><h2>3</h2><p>We’ll confirm your delivery address and order details</p></div>
-      <div class="steps-card"><h2>4</h2><p>Your order will be processed and dispatched promptly</p></div>
-    </div>
-    <div class="whatsapp-btn">
-      <a href="https://wa.me/917051899758?text=Hello%2C%20I%20want%20to%20buy%20medicines." target="_blank" aria-label="Order on WhatsApp">
-        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>Order on WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <section class="section" style="padding: 0.8rem 0; margin: 0 auto; max-width: 840px;" aria-labelledby="callOrder">
-    <h2 id="callOrder" style="text-align: center;">Prefer Calling?</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 1rem;">
-      You can also place your order through a simple phone call. Our team is ready to assist — especially helpful for ordering for family members in remote areas.
-    </p>
-    <div class="steps-grid">
-      <div class="steps-card"><h2>1</h2><p>Tap the call button below</p></div>
-      <div class="steps-card"><h2>2</h2><p>Tell us your medicine names or read from your prescription</p></div>
-      <div class="steps-card"><h2>3</h2><p>We’ll confirm your delivery address and order details</p></div>
-      <div class="steps-card"><h2>4</h2><p>Your order will be processed and dispatched for delivery</p></div>
-    </div>
-    <div class="whatsapp-btn">
-      <a href="tel:+917051899758" aria-label="Call to Place Order">
-        <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call to Place Order
-      </a>
-    </div>
-  </section>
-
-  <section class="section" style="max-width: 960px; margin: 2rem auto;" aria-labelledby="trustBadges">
-    <h2 id="trustBadges" style="text-align: center; margin-bottom: 2rem;">Why Customers Trust Us</h2>
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
-      <div style="flex: 0 0 260px; background: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center;">
-        <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: #009688; margin-bottom: 0.8rem;"></i>
-        <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem;">SSL Secured</h4>
-        <p style="font-size: 0.95rem; color: #666;">Your data is encrypted and protected at all steps.</p>
-      </div>
-      <div style="flex: 0 0 260px; background: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center;">
-        <i class="fas fa-certificate" style="font-size: 2.5rem; color: #009688; margin-bottom: 0.8rem;"></i>
-        <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem;">Verified Sources</h4>
-        <p style="font-size: 0.95rem; color: #666;">We only use licensed pharmacies and certified partners.</p>
-      </div>
-      <div style="flex: 0 0 260px; background: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center;">
-        <i class="fas fa-user-nurse" style="font-size: 2.5rem; color: #009688; margin-bottom: 0.8rem;"></i>
-        <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem;">Healthcare Support</h4>
-        <p style="font-size: 0.95rem; color: #666;">Our team includes trained staff for accurate guidance.</p>
+  <!-- ===== Premium Cards (How It Works) ===== -->
+  <section class="premium-section">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="sub">Our simple, streamlined ordering process ensures you get your medicines quickly and safely — every time.</p>
+      <div class="premium-grid">
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-file-prescription"></i></div>
+          <h3>Upload Prescription</h3>
+          <p>Upload your prescription securely via our portal or WhatsApp in seconds.</p>
+        </div>
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-phone-volume"></i></div>
+          <h3>Confirm Order</h3>
+          <p>Our pharmacist will call you to verify details and confirm your order.</p>
+        </div>
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-truck"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>Receive your medicines right at your doorstep — often within hours.</p>
+        </div>
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-user-md"></i></div>
+          <h3>Expert Support</h3>
+          <p>Get professional dosage guidance and usage instructions from our pharmacists.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="max-width: 800px; margin: 2rem auto;" aria-labelledby="faq">
-    <h2 id="faq" style="text-align: center; margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
-    <div class="faq">
-      <div class="faq-item"><button class="faq-question">Do I need a prescription to order?</button><div class="faq-answer">In most cases, yes. However, for over-the-counter medicines, a prescription may not be needed. You can also upload a picture of your prescription on WhatsApp.</div></div>
-      <div class="faq-item"><button class="faq-question">Is delivery available in remote villages?</button><div class="faq-answer">Yes, we try our best to cover even remote areas. Just send your address and we’ll confirm availability.</div></div>
-      <div class="faq-item"><button class="faq-question">Are medicines verified and genuine?</button><div class="faq-answer">Absolutely. We source only from licensed pharmacies and trusted distributors.</div></div>
-      <div class="faq-item"><button class="faq-question">How can I track my order?</button><div class="faq-answer">You will get a WhatsApp confirmation once dispatched. You can always message us to check the status.</div></div>
-    </div>
-  </section>
-
-  <section style="background: linear-gradient(135deg, #e0f7fa, #f0fdfa); padding: 3rem 1rem;">
-    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
-        <i class="fas fa-star" style="color: #ffc107; font-size: 1.6rem;"></i>
-        <h3 style="font-size: 1.6rem; color: #00796b; font-weight: 700; margin: 0;">
-          Rated 4.9★ by 10,000+ Happy Customers
-        </h3>
+  <!-- ===== Trust Section (premium cards) ===== -->
+  <section class="premium-section">
+    <div class="container">
+      <h2>Why Trust Us?</h2>
+      <p class="sub">We’ve built our reputation on quality, reliability, and transparency — here’s why customers choose us.</p>
+      <div class="premium-grid">
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>100% Genuine Medicines</h3>
+          <p>We source directly from verified suppliers to ensure authenticity.</p>
+        </div>
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-user-md"></i></div>
+          <h3>Verified Pharmacists</h3>
+          <p>All prescriptions are checked by licensed professionals before delivery.</p>
+        </div>
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-clock"></i></div>
+          <h3>24/7 Availability</h3>
+          <p>Order medicines anytime — our team is always ready to assist you.</p>
+        </div>
+        <div class="premium-card">
+          <div class="premium-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Nationwide Reach</h3>
+          <p>We deliver to cities and towns across the country without compromise.</p>
+        </div>
       </div>
-      <p style="font-size: 1.15rem; color: #222; font-weight: 500; line-height: 1.6;">
-        Kashmir’s most trusted pharmacy for fast delivery, verified medicines, and real human support — every single day.
-      </p>
     </div>
   </section>
 
-  <a href="https://wa.me/917051899758?text=Hello%2C%20I%20need%20help%20ordering%20medicines" target="_blank" aria-label="Chat on WhatsApp"
-    style="position: fixed; bottom: 24px; right: 24px; background: #25d366; color: white; padding: 14px 18px; border-radius: 50px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999; display: flex; align-items: center; font-weight: 600;">
-    <i class="fab fa-whatsapp" style="font-size: 20px; margin-right: 8px;"></i> Chat
-  </a>
-
-  <footer class="site-footer">
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Service</a> |
-      <a href="contact.html">Contact</a>
+  <!-- ===== FOOTER (same as index) ===== -->
+  <footer style="background:#fff;border-top:4px solid #009688;padding:3rem 1rem 1rem;color:#009688;font-family:'Poppins',sans-serif;box-shadow:0 -4px 12px rgba(0,0,0,0.05);">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Products</h3>
+        <ul><li><a href="order.html">Buy Medicines</a></li><li><a href="store.html">Locate a Store</a></li></ul>
+      </div>
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li></ul>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul><li><a href="contact.html">Contact Us</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
+    <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
 
+  <!-- active link highlighting (same logic as index) -->
   <script>
-    const links = document.querySelectorAll('.navbar nav ul li a');
-    const currentPage = window.location.pathname.split('/').pop();
-    links.forEach(link => {
-      if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        item.classList.toggle('open');
+    (function(){
+      // highlight active nav link
+      const links = document.querySelectorAll('.navbar nav ul li a');
+      const currentPage = window.location.pathname.split('/').pop();
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
       });
-    });
+
+      // mobile menu toggle
+      const toggle = document.querySelector('.menu-toggle');
+      const navList = document.querySelector('.navbar nav ul');
+      toggle.addEventListener('click', function(){
+        navList.classList.toggle('active');
+      });
+    })();
   </script>
 </body>
 </html>

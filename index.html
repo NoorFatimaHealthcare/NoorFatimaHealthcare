@@ -1,783 +1,210 @@
-<!-- ✅ Fully updated index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- ✅ Fixed viewport: allow zooming for accessibility -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Noor Fatima Healthcare Group</title>
   <meta name="description" content="Noor Fatima Healthcare Group — trusted medicine delivery, healthcare guidance, and more. Fast, reliable service at your doorstep.">
+
+  <!-- ✅ Social & SEO meta -->
   <meta property="og:title" content="Noor Fatima Healthcare Group">
   <meta property="og:description" content="Trusted medicine delivery & healthcare support—delivering compassion, quality, and convenience.">
   <meta property="og:image" content="/assets/og-image.png">
   <meta property="og:url" content="https://yourdomain.com/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Noor Fatima Healthcare Group">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ✅ Canonical -->
+  <link rel="canonical" href="https://yourdomain.com/">
+
+  <!-- ✅ Theme Color -->
+  <meta name="theme-color" content="#009688">
+
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- ✅ Preconnect for faster fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Global styles -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-index.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Noor Fatima Healthcare Group",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/assets/logo.png",
+    "sameAs": [
+      "https://facebook.com/yourpage",
+      "https://instagram.com/yourpage",
+      "https://twitter.com/yourpage",
+      "https://linkedin.com/company/yourpage"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "Customer Service",
+      "areaServed": "IN",
+      "availableLanguage": "English"
+    }]
+  }
+  </script>
 </head>
 <body>
+  <!-- ✅ Skip link for accessibility -->
+  <a href="#hero-tv-ultramax" class="skip-link">Skip to main content</a>
+
   <header>
     <div class="navbar">
-      <div class="logo">Noor Fatima Healthcare Group</div>
-      <button class="menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
+      <!-- ✅ Logo as link -->
+      <a href="index.html" class="logo" aria-label="Noor Fatima Healthcare Group Home">
+        Noor Fatima Healthcare Group
+      </a>
+
+      <!-- ✅ Accessible mobile menu toggle -->
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
-      <nav>
-  <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="order.html">Buy Medicines</a></li>
-    <li><a href="hospitals.html">Hospitals</a></li>
-    <li><a href="clinics.html">Clinics</a></li>
-    <li><a href="diagnostics.html">Diagnostics</a></li>
-    <li><a href="pharmacy.html">Pharmacy</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+
+      <nav id="primary-nav">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="clinics.html">Clinics</a></li>
+          <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="pharmacy.html">Pharmacy</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-<!-- ===== ULTRA PRO MAX TV HERO (Final) ===== -->
-<section id="hero-tv-ultramax" aria-label="Noor Fatima Healthcare - key divisions">
-  <div class="tv-wall">
-    <!-- tagline moved to top -->
-    <div class="hero-tag">
-      <h1>Redefining healthcare excellence — from hospitals to home delivery</h1>
-      <p>Complete care for every stage of life. Explore our network or get in touch to partner with us.</p>
-    </div>
+  <!-- ✅ Wrap main content -->
+  <main>
 
-    <div class="tv-frame" role="img" aria-hidden="true">
-      <div class="tv-screen">
-        <div class="hero-track">
-          <!-- 8 slides matching Our Health Network -->
-          <article class="hero-slide active">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-hospital"></i></div>
-              <h2>Hospitals</h2>
-              <p>State-of-the-art hospitals: specialist care, emergency & inpatient services.</p>
-              <a class="explore-btn" href="hospitals.html">Explore</a>
-            </div>
+
+
+    <!-- START: Our Health Network -->
+    <section class="health-network" aria-labelledby="hn-title">
+      <div class="container">
+        <h2 id="hn-title">Our Health Network</h2>
+        <p class="sub">Comprehensive healthcare across hospitals, clinics, pharmacies, diagnostics and community programs — built to serve every stage of life. (Click any card to learn more.)</p>
+
+        <div class="hn-grid" role="list">
+          <!-- Card 1 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn1">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-hospital" aria-hidden="true"></i></div>
+            <h3 id="hn1" class="hn-title">Hospitals</h3>
+            <p class="hn-desc">Full-service hospitals with specialist care, emergency services and inpatient treatment across multiple cities.</p>
+            <a class="hn-cta" href="coming-soon.html">Learn more <span class="arrow">→</span></a>
           </article>
-
-          <article class="hero-slide">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-clinic-medical"></i></div>
-              <h2>Clinics</h2>
-              <p>Accessible community clinics for walk-ins, follow-ups and family care.</p>
-              <a class="explore-btn" href="clinics.html">Explore</a>
-            </div>
+          <!-- Card 2 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn2">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-clinic-medical" aria-hidden="true"></i></div>
+            <h3 id="hn2" class="hn-title">Clinics</h3>
+            <p class="hn-desc">Community clinics providing walk-in consultations, follow-ups and family medicine services close to you.</p>
+            <a class="hn-cta" href="coming-soon.html">Learn more <span class="arrow">→</span></a>
           </article>
-
-          <article class="hero-slide">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-capsules"></i></div>
-              <h2>Pharmacies</h2>
-              <p>Genuine medicines, OTC essentials, and expert dispensing advice.</p>
-              <a class="explore-btn" href="order.html">Explore</a>
-            </div>
+          <!-- Card 3 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn3">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-capsules" aria-hidden="true"></i></div>
+            <h3 id="hn3" class="hn-title">Pharmacies</h3>
+            <p class="hn-desc">Trusted medical shops offering genuine medicines, OTC essentials and expert dispensing advice.</p>
+            <a class="hn-cta" href="order.html">Order medicines <span class="arrow">→</span></a>
           </article>
-
-          <article class="hero-slide">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-truck-medical"></i></div>
-              <h2>Online Medicine Delivery</h2>
-              <p>Fast, reliable doorstep delivery — upload prescriptions or message on WhatsApp.</p>
-              <a class="explore-btn" href="order.html">Explore</a>
-            </div>
+          <!-- Card 4 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn4">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-truck-medical" aria-hidden="true"></i></div>
+            <h3 id="hn4" class="hn-title">Online Medicine Delivery</h3>
+            <p class="hn-desc">Fast, reliable doorstep delivery — upload prescriptions or message us on WhatsApp to place an order.</p>
+            <a class="hn-cta" href="order.html">Order now <span class="arrow">→</span></a>
           </article>
-
-          <article class="hero-slide">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-vials"></i></div>
-              <h2>Diagnostics & Labs</h2>
-              <p>Accurate lab testing and imaging with quick digital reports.</p>
-              <a class="explore-btn" href="coming-soon.html">Explore</a>
-            </div>
+          <!-- Card 5 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn5">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-vials" aria-hidden="true"></i></div>
+            <h3 id="hn5" class="hn-title">Diagnostics & Labs</h3>
+            <p class="hn-desc">Accurate lab testing and diagnostic imaging with fast turnaround times and digital reports.</p>
+            <a class="hn-cta" href="coming-soon.html">Book a test <span class="arrow">→</span></a>
           </article>
-
-          <article class="hero-slide">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-book-medical"></i></div>
-              <h2>Health & Wellness</h2>
-              <p>Expert articles and practical wellness guides — learn & stay well.</p>
-              <a class="explore-btn" href="blog.html">Explore</a>
-            </div>
+          <!-- Card 6 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn6">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-book-medical" aria-hidden="true"></i></div>
+            <h3 id="hn6" class="hn-title">Health & Wellness Blog</h3>
+            <p class="hn-desc">Expert articles, practical health tips and easy-to-follow wellness guides written by professionals.</p>
+            <a class="hn-cta" href="blog.html">Read articles <span class="arrow">→</span></a>
           </article>
-
-          <article class="hero-slide">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-hands-helping"></i></div>
-              <h2>Community Initiatives</h2>
-              <p>Health camps, outreach and awareness drives in underserved areas.</p>
-              <a class="explore-btn" href="coming-soon.html">Explore</a>
-            </div>
+          <!-- Card 7 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn7">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-hands-helping" aria-hidden="true"></i></div>
+            <h3 id="hn7" class="hn-title">Community Initiatives</h3>
+            <p class="hn-desc">Free health camps, awareness drives and outreach programs that bring care to underserved areas.</p>
+            <a class="hn-cta" href="coming-soon.html">See initiatives <span class="arrow">→</span></a>
           </article>
-
-          <article class="hero-slide">
-            <div class="slide-inner">
-              <div class="slide-icon"><i class="fas fa-briefcase-medical"></i></div>
-              <h2>Careers & Partnerships</h2>
-              <p>Work with us — careers, supplier partnerships, and franchise opportunities.</p>
-              <a class="explore-btn" href="coming-soon.html">Explore</a>
-            </div>
+          <!-- Card 8 -->
+          <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn8">
+            <div class="hn-icon" aria-hidden="true"><i class="fas fa-briefcase-medical" aria-hidden="true"></i></div>
+            <h3 id="hn8" class="hn-title">Careers & Partnerships</h3>
+            <p class="hn-desc">Work with us — careers, supplier partnerships and franchise opportunities across the network.</p>
+            <a class="hn-cta" href="coming-soon.html">Join & partner <span class="arrow">→</span></a>
           </article>
         </div>
       </div>
-      <div class="glass-sheen" aria-hidden="true"></div>
-    </div>
-  </div>
-</section>
+    </section>
+    <!-- END: Our Health Network -->
+  </main>
 
-<style>
-#hero-tv-ultramax { --accent:#009688; font-family: 'Poppins', sans-serif; }
-.tv-wall {
-  min-height: 80vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding: 40px 16px;
-  background: linear-gradient(135deg,#e8fffb, #f2fff9 55%);
-  position: relative;
-  overflow: hidden;
-}
-.tv-wall::before{
-  content:"";
-  position:absolute; inset:0;
-  background: radial-gradient(circle at 10% 20%, rgba(0,150,136,0.06), transparent 8%),
-              radial-gradient(circle at 90% 80%, rgba(0,105,92,0.04), transparent 12%);
-  pointer-events:none;
-}
-.tv-frame {
-  width: 90%;
-  max-width:1300px;
-  height: 70vh;
-  border-radius: 26px;
-  padding: 14px;
-  background: linear-gradient(180deg,#e9f8f5, #e2f7f2);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position: relative;
-  box-shadow: 0 0 30px rgba(0,150,136,0.35), 0 0 60px rgba(0,150,136,0.25);
-  animation: glowPulse 5s ease-in-out infinite;
-}
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 30px rgba(0,150,136,0.35), 0 0 60px rgba(0,150,136,0.25); }
-  50% { box-shadow: 0 0 40px rgba(0,150,136,0.5), 0 0 80px rgba(0,150,136,0.35); }
-}
-.tv-screen {
-  width:100%;
-  height:100%;
-  border-radius:14px;
-  overflow:hidden;
-  position:relative;
-  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
-  display:flex;
-  align-items:center;
-}
-.hero-track {
-  display:flex;
-  height:100%;
-  transition: transform 650ms cubic-bezier(.22,.9,.37,1);
-  will-change: transform;
-}
-.hero-slide {
-  min-width:100%;
-  height:100%;
-  padding: 36px;
-  display:flex;
-  align-items:flex-end;
-  justify-content:flex-start;
-  color: #fff;
-  position:relative;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.hero-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-.hero-slide:nth-child(1){ background: linear-gradient(180deg, rgba(0,120,94,0.22), rgba(0,105,92,0.08)); }
-.hero-slide:nth-child(2){ background: linear-gradient(180deg, rgba(0,130,95,0.20), rgba(0,105,92,0.06)); }
-.hero-slide:nth-child(3){ background: linear-gradient(180deg, rgba(0,150,100,0.18), rgba(0,120,94,0.05)); }
-.hero-slide:nth-child(4){ background: linear-gradient(180deg, rgba(0,105,92,0.22), rgba(0,85,74,0.06)); }
-.hero-slide:nth-child(5){ background: linear-gradient(180deg, rgba(0,140,100,0.20), rgba(0,110,90,0.06)); }
-.hero-slide:nth-child(6){ background: linear-gradient(180deg, rgba(0,125,95,0.20), rgba(0,100,80,0.06)); }
-.hero-slide:nth-child(7){ background: linear-gradient(180deg, rgba(0,135,98,0.20), rgba(0,105,86,0.06)); }
-.hero-slide:nth-child(8){ background: linear-gradient(180deg, rgba(0,128,92,0.20), rgba(0,105,84,0.06)); }
-.slide-inner { max-width: 58%; }
-.slide-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
-  color: #e9fff8;
-}
-.hero-slide h2 {
-  margin:0 0 8px;
-  font-size: 2.05rem;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  color: #eafff7;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-.hero-slide p {
-  margin:0 0 14px;
-  color: rgba(255,255,255,0.92);
-  font-size: 1.02rem;
-  line-height:1.4;
-}
-.explore-btn {
-  display:inline-block;
-  padding: 6px 10px;
-  font-size: 0.86rem;
-  border-radius: 6px;
-  background: #ffffff;
-  color: var(--accent);
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-  position: relative;
-  overflow: hidden;
-}
-.explore-btn::before {
-  content: "";
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0,150,136,0.25), transparent);
-  animation: buttonShine 3s linear infinite;
-}
-@keyframes buttonShine {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
-}
-.glass-sheen {
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-}
-.glass-sheen::before{
-  content:"";
-  position:absolute;
-  left:-40%;
-  top:-10%;
-  width:40%;
-  height:120%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.14), rgba(255,255,255,0.02) 60%);
-  transform: skewX(-20deg);
-  filter: blur(8px);
-  opacity: 0.85;
-  animation: sheenMove 6.2s linear infinite;
-}
-@keyframes sheenMove {
-  0% { left:-40%; opacity:0.0; }
-  10% { opacity:0.55; }
-  50% { left:100%; opacity:0.25; }
-  100% { left:140%; opacity:0; }
-}
-.hero-tag {
-  margin-bottom: 20px;
-  text-align:center;
-  max-width: 1100px;
-}
-.hero-tag h1 {
-  margin: 8px 0 6px;
-  font-size: 1.8rem;
-  color: #004d40;
-  font-weight: 800;
-}
-.hero-tag p {
-  margin:0;
-  color: #23534b;
-  font-weight:500;
-}
-@media (max-width:1100px){
-  .tv-frame{ width:92%; height:65vh; }
-  .slide-inner{ max-width:70%; }
-}
-@media (max-width:720px){
-  .tv-frame{ width:96%; height:54vh; padding:10px; border-radius:18px; }
-  .slide-inner{ max-width:100%; }
-  .hero-slide h2{ font-size:1.45rem; }
-  .hero-tag h1{ font-size:1.12rem; }
-  .hero-tag p{ font-size:0.95rem; }
-}
-</style>
-
-<script>
-(function(){
-  const track = document.querySelector('#hero-tv-ultramax .hero-track');
-  const slides = document.querySelectorAll('#hero-tv-ultramax .hero-slide');
-  if(!track || slides.length === 0) return;
-
-  // clone for infinite loop
-  const firstClone = slides[0].cloneNode(true);
-  const lastClone = slides[slides.length - 1].cloneNode(true);
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, slides[0]);
-
-  let index = 1;
-  const total = track.children.length;
-  const INTERVAL = 4200;
-  let timer;
-
-  const setPosition = (instant=false) => {
-    track.style.transition = instant ? 'none' : 'transform 650ms cubic-bezier(.22,.9,.37,1)';
-    track.style.transform = `translateX(-${index * 100}%)`;
-    if(instant) void track.offsetHeight;
-  };
-  const moveTo = (nextIndex) => {
-    index = nextIndex;
-    setPosition(false);
-    updateActive();
-  };
-  const updateActive = () => {
-    document.querySelectorAll('#hero-tv-ultramax .hero-slide').forEach((s, i) => {
-      s.classList.toggle('active', i === index);
-    });
-  };
-  const start = () => { stop(); timer = setInterval(()=> moveTo(index + 1), INTERVAL); };
-  const stop = () => { if(timer) clearInterval(timer); timer = null; };
-
-  track.addEventListener('transitionend', () => {
-    if(track.children[index].classList.contains('clone') && index === total - 1){
-      index = 1; setPosition(true); updateActive();
-    }
-    if(track.children[index].classList.contains('clone') && index === 0){
-      index = total - 2; setPosition(true); updateActive();
-    }
-  });
-
-  const frame = document.querySelector('#hero-tv-ultramax .tv-frame');
-  frame.addEventListener('mouseenter', stop);
-  frame.addEventListener('mouseleave', start);
-
-  window.addEventListener('load', () => {
-    setTimeout(()=> { setPosition(true); updateActive(); start(); }, 60);
-  });
-  window.addEventListener('resize', () => {
-    setTimeout(()=> setPosition(true), 100);
-  });
-})();
-</script>
-<!-- ===== END ULTRA PRO MAX TV HERO ===== -->
-
-<script>
-(function(){
-  const track = document.querySelector('.carousel-track');
-  const slides = Array.from(track.children);
-  const viewport = document.querySelector('.carousel-viewport');
-  const prev = document.querySelector('.carousel-btn.prev');
-  const next = document.querySelector('.carousel-btn.next');
-  const dotsRow = document.querySelector('.carousel-dots');
-  let currentIndex = 0;
-  let autoTimer = null;
-
-  slides.forEach((s, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'dot';
-    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
-    dotsRow.appendChild(dot);
-  });
-  const dots = Array.from(dotsRow.children);
-
-  function getGapPx() {
-    const g = getComputedStyle(track).gap;
-    return parseFloat(g) || 24;
-  }
-  function updatePosition() {
-    const gap = getGapPx();
-    const slideW = slides[0].getBoundingClientRect().width;
-    const viewportW = viewport.clientWidth;
-    const centerOffset = (viewportW - slideW) / 2;
-    const offset = slides[currentIndex].offsetLeft;
-    const translate = offset - centerOffset;
-    track.style.transform = `translateX(-${translate}px)`;
-    slides.forEach((s, i) => s.classList.toggle('is-active', i === currentIndex));
-    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
-  }
-  function goTo(index) {
-    currentIndex = (index + slides.length) % slides.length;
-    updatePosition();
-  }
-  function nextSlide() { goTo(currentIndex + 1); }
-  function prevSlide() { goTo(currentIndex - 1); }
-  next.addEventListener('click', () => { nextSlide(); resetAuto(); });
-  prev.addEventListener('click', () => { prevSlide(); resetAuto(); });
-
-  function startAuto() { stopAuto(); autoTimer = setInterval(nextSlide, 4200); }
-  function stopAuto() { if (autoTimer) clearInterval(autoTimer); }
-  function resetAuto() { stopAuto(); startAuto(); }
-
-  track.addEventListener('mouseenter', stopAuto);
-  track.addEventListener('mouseleave', startAuto);
-
-  window.addEventListener('load', () => { updatePosition(); startAuto(); });
-  window.addEventListener('resize', () => {
-    clearTimeout(window.__carouselResize);
-    window.__carouselResize = setTimeout(updatePosition, 90);
-  });
-})();
-</script>
-
-
-
-
-
-
-
-
-<!-- START: Our Health Network (Ultra Pro Max) -->
-<section class="health-network" aria-labelledby="hn-title">
-  <style>
-    /* Health Network block - self-contained styles */
-    .health-network {
-      background: linear-gradient(180deg,#f8fffd,#ffffff);
-      padding: 56px 16px;
-      font-family: 'Poppins', sans-serif;
-    }
-    .health-network .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .health-network h2 {
-      text-align: center;
-      color: #00796b; /* darker green for headings */
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.2px;
-    }
-    .health-network .sub {
-      text-align: center;
-      color: #41645f;
-      max-width: 860px;
-      margin: 0 auto 2rem;
-      font-weight: 500;
-      line-height: 1.5;
-    }
-
-    .hn-grid {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 1.25rem;
-    }
-
-    .hn-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-      transition: transform .28s ease, box-shadow .28s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 160px;
-    }
-    .hn-card:focus-within,
-    .hn-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
-    }
-
-    .hn-icon {
-      background: linear-gradient(135deg,#e6fffb,#d0fff5);
-      color: #009688;
-      width: 56px;
-      height: 56px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 10px;
-      font-size: 20px;
-      margin-bottom: 12px;
-      flex-shrink: 0;
-    }
-
-    .hn-title {
-      color: #00594f;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .hn-desc {
-      color: #475657;
-      font-size: 0.98rem;
-      line-height: 1.45;
-      margin-top: auto; /* push to bottom when content short */
-    }
-
-    .hn-cta {
-      margin-top: 14px;
-      align-self: stretch;
-      display: inline-flex;
-      gap: .5rem;
-      align-items: center;
-      text-decoration: none;
-      color: #00796b;
-      font-weight: 700;
-      font-size: .95rem;
-    }
-    .hn-cta .arrow {
-      display: inline-block;
-      transform: translateX(0);
-      transition: transform .2s ease;
-    }
-    .hn-card:hover .hn-cta .arrow { transform: translateX(6px); }
-
-    /* responsive */
-    @media (max-width: 1100px) {
-      .hn-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 820px) {
-      .hn-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px) {
-      .hn-grid { grid-template-columns: 1fr; }
-      .health-network { padding: 40px 14px; }
-      .hn-card { min-height: 140px; padding: 18px; }
-    }
-
-    /* Dark mode */
-    @media (prefers-color-scheme: dark) {
-      .health-network { background: linear-gradient(180deg,#022a28,#00251f); }
-      .health-network h2 { color: #8feadc; }
-      .health-network .sub { color: #bfeee3; }
-      .hn-card { background: linear-gradient(180deg,#003634,#00312c); box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
-      .hn-desc { color: #d7efe9; }
-      .hn-title { color: #dff7f0; }
-      .hn-icon { background: linear-gradient(135deg,#004d44,#00695c); color: #e9fff8; }
-      .hn-cta { color: #bff4e8; }
-    }
-  </style>
-
-  <div class="container">
-    <h2 id="hn-title">Our Health Network</h2>
-    <p class="sub">Comprehensive healthcare across hospitals, clinics, pharmacies, diagnostics and community programs — built to serve every stage of life. (Click any card to learn more.)</p>
-
-    <div class="hn-grid" role="list">
-      <!-- 1 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn1">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-hospital"></i></div>
-        <h3 id="hn1" class="hn-title">Hospitals</h3>
-        <p class="hn-desc">Full-service hospitals with specialist care, emergency services and inpatient treatment across multiple cities.</p>
-        <a class="hn-cta" href="coming-soon.html">Learn more <span class="arrow">→</span></a>
-      </article>
-
-      <!-- 2 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn2">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-clinic-medical"></i></div>
-        <h3 id="hn2" class="hn-title">Clinics</h3>
-        <p class="hn-desc">Community clinics providing walk-in consultations, follow-ups and family medicine services close to you.</p>
-        <a class="hn-cta" href="coming-soon.html">Learn more <span class="arrow">→</span></a>
-      </article>
-
-      <!-- 3 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn3">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-capsules"></i></div>
-        <h3 id="hn3" class="hn-title">Pharmacies</h3>
-        <p class="hn-desc">Trusted medical shops offering genuine medicines, OTC essentials and expert dispensing advice.</p>
-        <a class="hn-cta" href="order.html">Order medicines <span class="arrow">→</span></a>
-      </article>
-
-      <!-- 4 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn4">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-truck-medical"></i></div>
-        <h3 id="hn4" class="hn-title">Online Medicine Delivery</h3>
-        <p class="hn-desc">Fast, reliable doorstep delivery — upload prescriptions or message us on WhatsApp to place an order.</p>
-        <a class="hn-cta" href="order.html">Order now <span class="arrow">→</span></a>
-      </article>
-
-      <!-- 5 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn5">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-vials"></i></div>
-        <h3 id="hn5" class="hn-title">Diagnostics & Labs</h3>
-        <p class="hn-desc">Accurate lab testing and diagnostic imaging with fast turnaround times and digital reports.</p>
-        <a class="hn-cta" href="coming-soon.html">Book a test <span class="arrow">→</span></a>
-      </article>
-
-      <!-- 6 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn6">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-book-medical"></i></div>
-        <h3 id="hn6" class="hn-title">Health & Wellness Blog</h3>
-        <p class="hn-desc">Expert articles, practical health tips and easy-to-follow wellness guides written by professionals.</p>
-        <a class="hn-cta" href="blog.html">Read articles <span class="arrow">→</span></a>
-      </article>
-
-      <!-- 7 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn7">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-hands-helping"></i></div>
-        <h3 id="hn7" class="hn-title">Community Initiatives</h3>
-        <p class="hn-desc">Free health camps, awareness drives and outreach programs that bring care to underserved areas.</p>
-        <a class="hn-cta" href="coming-soon.html">See initiatives <span class="arrow">→</span></a>
-      </article>
-
-      <!-- 8 -->
-      <article class="hn-card" role="listitem" tabindex="0" aria-labelledby="hn8">
-        <div class="hn-icon" aria-hidden="true"><i class="fas fa-briefcase-medical"></i></div>
-        <h3 id="hn8" class="hn-title">Careers & Partnerships</h3>
-        <p class="hn-desc">Work with us — careers, supplier partnerships and franchise opportunities across the network.</p>
-        <a class="hn-cta" href="coming-soon.html">Join & partner <span class="arrow">→</span></a>
-      </article>
-    </div>
-  </div>
-</section>
-<!-- END: Our Health Network (Ultra Pro Max) -->
-
-
-
-
-
-
-  
-  <footer style="background: #ffffff; border-top: 4px solid #009688; padding: 3rem 1rem 1rem; color: #009688; font-family: 'Poppins', sans-serif; box-shadow: 0 -4px 12px rgba(0,0,0,0.05);">
-  <style>
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding-bottom: 2rem;
-    }
-    .footer-column h3 {
-      font-weight: 800;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      color: #00796b; /* darker green for both modes */
-    }
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-column ul li {
-      margin-bottom: 0.6rem;
-    }
-    .footer-column ul li a {
-      color: #00796b; /* match heading color */
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .footer-column ul li a:hover {
-      text-decoration: underline;
-      color: #004d40;
-    }
-    .social-icons {
-      display: flex;
-      gap: 0.6rem;
-    }
-    .social-icons a {
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #009688;
-      color: white;
-      font-size: 1rem;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .social-icons a:hover {
-      background: #00695c;
-      transform: translateY(-3px);
-    }
-    .footer-bottom {
-      text-align: center;
-      font-weight: 800;
-      font-size: 0.95rem;
-      padding-top: 1.5rem;
-      color: #004d40;
-      border-top: 2px solid rgba(0, 150, 136, 0.2);
-    }
-    @media (max-width: 600px) {
-      .footer-container {
-        text-align: center;
-      }
-      .social-icons {
-        justify-content: center;
-      }
-    }
-    /* Dark mode support */
-    @media (prefers-color-scheme: dark) {
-      footer {
-        background: #002f2b;
-        color: #e0f2f1;
-      }
-      .footer-column h3,
-      .footer-column ul li a {
-        color: #80cbc4; /* slightly lighter for dark mode but still strong */
-      }
-      .footer-column ul li a:hover {
-        color: #b2dfdb;
-      }
-    }
-  </style>
-
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>Products</h3>
-      <ul>
-        <li><a href="order.html">Buy Medicines</a></li>
-        <li><a href="store.html">Locate a Store</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>About</h3>
-      <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#">Schedules</a></li>
-        <li><a href="#">Community Initiatives</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Support</h3>
-      <ul>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="store.html">Locate a Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#">Schedules</a></li>
+          <li><a href="#">Community Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="footer-bottom">
+      &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
+    </div>
+  </footer>
 
-  <div class="footer-bottom">
-    &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
-  </div>
-</footer>
-
-
-
-
-
-  <!-- ✅ Active Nav Highlighter Script -->
-  <script>
-    const links = document.querySelectorAll('.navbar nav ul li a');
-    const currentPage = window.location.pathname.split('/').pop();
-
-    links.forEach(link => {
-      if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  </script>
+  <script src="script-index.js" defer></script>
 </body>
 </html>
