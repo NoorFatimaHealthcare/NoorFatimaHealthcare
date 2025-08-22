@@ -159,8 +159,69 @@ form button:hover {
   animation: fadeIn 1.2s ease;
 }
 
-/* ✅ Footer is not overridden here 
-   — uses same footer styles from index.css */
+/* ===== Footer ===== */
+footer {
+  background: #ffffff;
+  border-top: 4px solid #009688;
+  padding: 3rem 1rem 1rem;
+  color: #009688;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+.footer-column h3 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #00796b;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li { margin-bottom: 0.6rem; }
+.footer-column ul li a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.footer-column ul li a:hover { text-decoration: underline; color: #004d40; }
+.social-icons {
+  display: flex;
+  gap: 0.6rem;
+}
+.social-icons a {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #009688;
+  color: white;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.social-icons a:hover { background: #00695c; transform: translateY(-3px); }
+.footer-bottom {
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding-top: 1.5rem;
+  color: #004d40;
+  border-top: 2px solid rgba(0, 150, 136, 0.2);
+}
+@media (max-width: 600px) {
+  .footer-container { text-align: center; }
+  .social-icons { justify-content: center; }
+}
 
 /* Responsive */
 @media (max-width: 992px) {
