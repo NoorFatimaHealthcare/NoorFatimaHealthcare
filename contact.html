@@ -1,118 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Get in touch with Noor Fatima Healthcare Group. Contact us for medicine delivery, appointments, or healthcare guidance.">
-
-  <!-- SEO & Social -->
-  <meta property="og:title" content="Contact Noor Fatima Healthcare Group">
-  <meta property="og:description" content="Reach us easily for healthcare support, medicine delivery, and service inquiries.">
-  <meta property="og:image" content="/assets/og-image.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com/contact.html">
-  <meta property="og:site_name" content="Noor Fatima Healthcare Group">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Noor Fatima Healthcare Group</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style-contact.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header { background: #009688; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    header a.logo { color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
-    header nav ul { list-style: none; display: flex; gap: 1.2rem; margin: 0; padding: 0; }
-    header nav a { color: #fff; text-decoration: none; font-weight: 500; }
-    .hero { background: linear-gradient(to right, #009688, #00bfa5); color: #fff; padding: 4rem 2rem; text-align: center; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.2rem; }
+    /* ===== Contact Page Styles ===== */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #0f3d2e, #1a5e3b);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    .contact-section { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; }
-    .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .card { background: #fff; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-4px); }
-    .card i { font-size: 1.8rem; color: #009688; margin-bottom: 0.8rem; }
-    .card h3 { margin: 0 0 0.5rem; }
-    .card p { margin: 0; color: #555; }
+    main.contact-page {
+      flex: 1;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+    }
 
-    form { background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
-    form label { display: block; margin: 0.8rem 0 0.3rem; font-weight: 500; }
-    form input, form textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 0.6rem; }
-    form textarea { resize: vertical; height: 120px; }
-    form button { background: #009688; color: #fff; padding: 0.9rem 1.5rem; border: none; border-radius: 0.6rem; font-weight: 600; margin-top: 1rem; cursor: pointer; }
-    form button:hover { background: #00796b; }
+    .contact-page h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #a5f0c5;
+      text-align: center;
+    }
 
-    .map { margin: 3rem auto; max-width: 1200px; border-radius: 1rem; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
+    .contact-page p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #d9f5e6;
+    }
 
-    footer { background: #333; color: #fff; padding: 2rem; text-align: center; margin-top: 3rem; }
-    footer a { color: #00bfa5; text-decoration: none; }
+    .contact-page form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-page label {
+      margin: 10px 0 6px;
+      font-weight: 600;
+      color: #c8e8d4;
+    }
+
+    .contact-page input,
+    .contact-page textarea {
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      margin-bottom: 18px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-page input:focus,
+    .contact-page textarea:focus {
+      box-shadow: 0 0 8px #4caf7d;
+      border: 1px solid #4caf7d;
+    }
+
+    .contact-page button {
+      background: #1a5e3b;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .contact-page button:hover {
+      background: #267c53;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="order.html">Buy Medicines</a></li>
-        <li><a href="hospitals.html">Hospitals</a></li>
-        <li><a href="clinics.html">Clinics</a></li>
-        <li><a href="diagnostics.html">Diagnostics</a></li>
-        <li><a href="pharmacy.html">Pharmacy</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
+  <!-- ===== Contact Section ===== -->
+  <main class="contact-page">
     <h1>Contact Us</h1>
-    <p>We’re here to help with medicines, appointments, and healthcare support.</p>
-  </section>
+    <p>We’d love to hear from you. Please fill out the form below and our team will get back to you shortly.</p>
 
-  <section class="contact-section">
-    <div class="contact-cards">
-      <div class="card">
-        <i class="fas fa-phone-alt"></i>
-        <h3>Call Us</h3>
-        <p>+91-9876543210</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p>support@noorfatimahealthcare.com</p>
-      </div>
-      <div class="card">
-        <i class="fab fa-whatsapp"></i>
-        <h3>WhatsApp</h3>
-        <p>+91-9876543210</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Address</h3>
-        <p>Noor Fatima Healthcare Group, Main Street, Your City</p>
-      </div>
-    </div>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <h2>Send us a message</h2>
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="_replyto" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
       <label for="message">Message</label>
-      <textarea id="message" name="message" required></textarea>
+      <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
 
-      <button type="submit">Send Message</button>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
     </form>
-  </section>
+  </main>
 
+  <!-- ===== Footer (loaded from footer.html or paste footer here) ===== -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -142,10 +141,10 @@
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
@@ -153,7 +152,6 @@
       &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
     </div>
   </footer>
+
 </body>
 </html>
-
-
