@@ -1,70 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Noor Fatima Healthcare Group</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style-contact.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Noor Fatima Healthcare Group</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Contact Info Cards */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: #0077b6;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 800px;
+      margin: 3rem auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 1.5rem;
+      color: #0077b6;
+      text-align: center;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      outline: none;
+      font-size: 1rem;
+      background: #f9fafb;
+      transition: border 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #0077b6;
+      background: #fff;
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      font-size: 0.95rem;
+      color: #777;
+      transition: all 0.2s;
+      pointer-events: none;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+      top: -8px;
+      left: 10px;
+      background: #fff;
+      padding: 0 6px;
+      font-size: 0.8rem;
+      color: #0077b6;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: linear-gradient(135deg, #005f87, #0089a7);
+    }
+
+    /* Map Section */
+    .map {
+      margin: 3rem auto;
+      max-width: 1000px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ddd;
+      padding: 3rem 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin: 0.5rem 0;
+    }
+
+    .footer-column ul li a {
+      color: #bbb;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #00b4d8;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      background: #222;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: #00b4d8;
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #333;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
-<body class="contact-page">
-
-  <!-- ===== NAVBAR ===== -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Noor Fatima Healthcare</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="order.html">Buy Medicines</a></li>
-          <li><a href="hospitals.html">Hospitals</a></li>
-          <li><a href="clinics.html">Clinics</a></li>
-          <li><a href="diagnostics.html">Diagnostics</a></li>
-          <li><a href="pharmacy.html">Pharmacy</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="contact-hero">
-    <h1>Get in Touch</h1>
-    <p>Have questions, feedback, or need support? We're here to help you with all your healthcare needs.</p>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Get in touch with our team.</p>
   </section>
 
-  <!-- ===== CONTACT FORM ===== -->
-  <section class="contact-form-section">
-    <form class="contact-form" action="#" method="post">
-      <div class="form-group">
-        <input type="text" id="name" name="name" required placeholder=" " />
-        <label for="name">Your Name</label>
-      </div>
+  <!-- Info Cards -->
+  <section class="contact-info">
+    <div class="card">
+      <h3>📍 Address</h3>
+      <p>123 Healthcare Street, New Delhi, India</p>
+    </div>
+    <div class="card">
+      <h3>📞 Phone</h3>
+      <p>+91 98765 43210</p>
+    </div>
+    <div class="card">
+      <h3>📧 Email</h3>
+      <p>support@noorfatimahealth.com</p>
+    </div>
+    <div class="card">
+      <h3>⏰ Hours</h3>
+      <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+    </div>
+  </section>
 
+  <!-- Contact Form -->
+  <section class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form>
       <div class="form-group">
-        <input type="email" id="email" name="email" required placeholder=" " />
+        <input type="text" id="name" placeholder=" " required>
+        <label for="name">Full Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder=" " required>
         <label for="email">Email Address</label>
       </div>
-
       <div class="form-group">
-        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+        <input type="text" id="subject" placeholder=" " required>
+        <label for="subject">Subject</label>
+      </div>
+      <div class="form-group">
+        <textarea id="message" rows="5" placeholder=" " required></textarea>
         <label for="message">Your Message</label>
       </div>
-
       <button type="submit">Send Message</button>
     </form>
   </section>
 
-  <!-- ===== CONTACT INFO ===== -->
-  <section class="contact-info">
-    <h2>Contact Information</h2>
-    <ul>
-      <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-      <li><i class="fas fa-envelope"></i> support@noorfatimahealthcare.com</li>
-      <li><i class="fas fa-map-marker-alt"></i> Noor Fatima Healthcare Group, New Delhi, India</li>
-    </ul>
+  <!-- Map -->
+  <section class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14012.09754440522!2d77.2090!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b54e0b2c39%3A0x8f9fb6b0dd0dfc5c!2sNew%20Delhi!5e0!3m2!1sen!2sin!4v1692000000000!5m2!1sen!2sin"></iframe>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -105,7 +336,5 @@
       &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
     </div>
   </footer>
-
 </body>
 </html>
-
