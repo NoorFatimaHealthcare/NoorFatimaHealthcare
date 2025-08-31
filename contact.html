@@ -1,235 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Noor Fatima Healthcare Group</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Get in touch with Noor Fatima Healthcare Group — we are here to help with medicines, healthcare services, and support.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-index.css">
+
   <style>
-    :root {
-      --primary-green: #064420; /* darker green */
-      --accent-green: #0b8457;
-      --light: #ffffff;
-      --gray: #f7f7f7;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      background: var(--gray);
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      background: linear-gradient(135deg, var(--primary-green), #0f5f36);
-      color: var(--light);
-      padding: 6rem 2rem 8rem;
+    /* ===== Hero Section ===== */
+    .contact-hero {
+      background: linear-gradient(-45deg, #009688, #00695c, #00796b, #004d40);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: white;
+      padding: 90px 20px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
-    .hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+    .contact-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      animation: fadeInUp 1.2s ease;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      background: url('https://raw.githubusercontent.com/NoorFatimaHealthcare/NoorFatimaHealthcare/main/assets/wave.svg') no-repeat center/cover;
+    .contact-hero p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto;
+      opacity: 0.95;
+      animation: fadeInUp 1.6s ease;
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform:translateY(20px);}
+      to {opacity:1; transform:translateY(0);}
     }
 
-    /* ---------- CARDS ---------- */
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: auto;
+    /* ===== Contact Section ===== */
+    .contact-section {
+      background: linear-gradient(180deg,#f8fffd,#ffffff);
+      padding: 70px 16px;
+      font-family: 'Poppins', sans-serif;
     }
-    .info-card {
+    .contact-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    }
+
+    /* Contact Cards */
+    .contact-card {
       background: #fff;
       border-radius: 16px;
       padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+    }
+    .icon-wrap {
+      width: 70px; height: 70px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      font-size: 1.6rem;
       transition: all 0.3s ease;
     }
-    .info-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    .contact-card:hover .icon-wrap {
+      transform: scale(1.1);
+      box-shadow: 0 0 18px rgba(0,150,136,0.4);
     }
-    .info-card i {
-      font-size: 2rem;
-      color: var(--light);
-      background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
-      padding: 1rem;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-    .info-card h3 {
-      margin: 0.5rem 0;
-      font-size: 1.2rem;
-      color: var(--primary-green);
-    }
+    .icon-wrap.call { background:#e0f7f4; color:#009688; }
+    .icon-wrap.email { background:#e3f2fd; color:#1976d2; }
+    .icon-wrap.map { background:#ffebee; color:#c62828; }
+    .icon-wrap.whatsapp { background:#e8f5e9; color:#25d366; }
 
-    /* ---------- FORM ---------- */
-    .contact-form-section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .form-card {
+    .contact-card h3 { margin-bottom: 0.5rem; color:#00594f; font-weight:700; }
+    .contact-card p { color:#555; font-size:1rem; }
+
+    /* ===== Contact Form ===== */
+    .contact-form {
       background: #fff;
-      border-radius: 20px;
-      padding: 3rem;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
     }
-    .form-card h2 {
-      margin-bottom: 1rem;
-      color: var(--primary-green);
+    .contact-form h2 {
+      color: #00796b;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
+    .contact-form form { display: grid; gap: 1rem; }
+    .contact-form input,
+    .contact-form textarea {
       padding: 0.9rem 1rem;
-      border: 1px solid #ddd;
       border-radius: 10px;
+      border: 1px solid #ddd;
       font-size: 1rem;
-      transition: border-color 0.3s;
+      transition: all 0.3s ease;
     }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent-green);
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #009688;
+      box-shadow: 0 0 0 3px rgba(0,150,136,0.15);
       outline: none;
     }
-    button {
-      background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+    .contact-form button {
+      padding: 1rem;
+      background: linear-gradient(135deg,#009688,#00695c);
       color: #fff;
-      border: none;
-      padding: 0.9rem 2rem;
-      border-radius: 12px;
       font-size: 1rem;
       font-weight: 600;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
-    button:hover {
-      opacity: 0.9;
+    .contact-form button:hover {
       transform: translateY(-2px);
+      background: linear-gradient(135deg,#00796b,#004d40);
     }
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: var(--primary-green);
-      color: #fff;
-      padding: 3rem 2rem 1rem;
-      margin-top: 3rem;
+    /* ===== FAQ ===== */
+    .faq {
+      margin-top: 4rem;
+      max-width: 800px;
+      margin-left:auto;
+      margin-right:auto;
     }
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
+    .faq h2 {
+      text-align:center;
+      color:#00796b;
+      margin-bottom:1.5rem;
     }
-    .footer-column h3 {
+    .faq-item {
       margin-bottom: 1rem;
+      border:1px solid #ddd;
+      border-radius:8px;
+      overflow:hidden;
     }
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
+    .faq-question {
+      background:#f9fdfc;
+      padding:1rem;
+      cursor:pointer;
+      font-weight:600;
+      color:#009688;
     }
-    .footer-column li {
-      margin: 0.5rem 0;
+    .faq-answer {
+      display:none;
+      padding:1rem;
+      background:#fff;
+      border-top:1px solid #ddd;
     }
-    .footer-column a {
-      color: #ddd;
-      text-decoration: none;
-      transition: 0.3s;
+    .faq-item.open .faq-answer { display:block; }
+
+    /* ===== Map ===== */
+    .map {
+      margin-top:3rem;
+      max-width: 1000px;
+      margin-left:auto; margin-right:auto;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 24px rgba(0,0,0,0.1);
     }
-    .footer-column a:hover {
-      color: #fff;
-    }
-    .social-icons a {
-      margin-right: 1rem;
-      color: #ddd;
-      font-size: 1.2rem;
-    }
-    .social-icons a:hover {
-      color: #fff;
-    }
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      opacity: 0.8;
+    .map iframe {
+      width:100%; height:350px; border:0;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="clinics.html">Clinics</a></li>
+          <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="pharmacy.html">Pharmacy</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- Hero -->
+  <section class="contact-hero">
     <h1>Contact Us</h1>
-    <p>We’re here to help you 24/7. Get in touch with our team today.</p>
+    <p>We’re here to answer your questions, support your health, and connect you to the right care.</p>
   </section>
 
-  <!-- CONTACT CARDS -->
-  <section class="contact-info">
-    <div class="info-card">
-      <i class="fas fa-phone-alt"></i>
-      <h3>Call Us</h3>
-      <p>+91 12345 67890</p>
+  <!-- Contact Cards -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <div class="icon-wrap call"><i class="fas fa-phone-alt"></i></div>
+        <h3>Call Us</h3>
+        <p>+91-9876543210</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon-wrap email"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p>support@noorfatimahealthcare.com</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon-wrap map"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Location</h3>
+        <p>Noor Fatima Healthcare, Model Town, Lahore</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon-wrap whatsapp"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/919876543210" target="_blank">Chat with us</a></p>
+      </div>
     </div>
-    <div class="info-card">
-      <i class="fas fa-envelope"></i>
-      <h3>Email Us</h3>
-      <p>support@noorfatimahealthcare.com</p>
-    </div>
-    <div class="info-card">
-      <i class="fas fa-map-marker-alt"></i>
-      <h3>Visit Us</h3>
-      <p>123, Main Road, City, Country</p>
-    </div>
-  </section>
 
-  <!-- CONTACT FORM -->
-  <section class="contact-form-section">
-    <div class="form-card">
-      <h2>Send us a Message</h2>
-      <form>
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <input type="text" placeholder="Subject" required>
-        </div>
-        <div class="form-group">
-          <textarea rows="5" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit">Send Message</button>
-      </form>
+    <!-- Form -->
+    <div class="container" style="margin-top:3rem;">
+      <div class="contact-form">
+        <h2>Send us a message</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -259,10 +282,10 @@
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -270,5 +293,22 @@
       &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
     </div>
   </footer>
+
+  <script>
+    // Navbar active + toggle
+    (function(){
+      const toggle=document.querySelector('.menu-toggle');
+      const nav=document.querySelector('.navbar nav');
+      toggle.addEventListener('click',()=>nav.classList.toggle('open'));
+    })();
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
