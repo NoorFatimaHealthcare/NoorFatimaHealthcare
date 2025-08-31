@@ -6,6 +6,7 @@
   backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(255, 255, 255, 0.85);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar-container {
@@ -111,5 +112,45 @@
     align-items: flex-start;
     padding: 1rem;
     gap: 0.75rem;
+  }
+}
+
+/* ================= DARK MODE ================= */
+@media (prefers-color-scheme: dark) {
+  .site-header {
+    background-color: rgba(20, 20, 20, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .logo {
+    color: #4dd0e1;
+  }
+  .logo:hover {
+    color: #00acc1;
+  }
+  .logo-icon {
+    color: #4dd0e1;
+  }
+
+  .nav-links a {
+    color: #e0e0e0;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #4dd0e1;
+  }
+
+  .nav-links a::after {
+    background-color: #4dd0e1;
+  }
+
+  .menu-toggle {
+    color: #e0e0e0;
+  }
+
+  .nav-links {
+    background: rgba(20, 20, 20, 0.97);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
   }
 }
