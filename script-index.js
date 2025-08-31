@@ -1,9 +1,10 @@
-/* ===== HERO REMOVED: script-index.js (placeholder) =====
-   Hero/slider functionality removed temporarily as requested.
-   This file intentionally contains no hero logic so there are no runtime errors.
-   If you want the hero restored later, tell me and I'll re-add the slider code.
-*/
-(function(){
-  // Intentionally empty: hero removed.
-  // Keep this file so other imports/links still work.
-})();
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", !expanded);
+    nav.classList.toggle("open");
+  });
+});
