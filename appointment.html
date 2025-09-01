@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment | Noor Fatima Healthcare Group</title>
+  <meta name="description" content="Book your appointment with Noor Fatima Healthcare Group hospitals and clinics. Easy, reliable and fast appointment booking.">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-index.css">
+  <link rel="stylesheet" href="style-appointment.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ✅ NAVBAR -->
+  <header class="site-header">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="primary-nav" class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="clinics.html">Clinics</a></li>
+          <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="pharmacy.html">Pharmacy</a></li>
+          <li><a href="appointment.html" class="active">Appointment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ✅ MAIN CONTENT -->
+  <main>
+    <section class="appointment-section">
+      <div class="form-container">
+        <h1>Book an Appointment</h1>
+        <p class="subtitle">Fill in your details and our team will confirm your appointment shortly.</p>
+
+        <form class="appointment-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+          </div>
+
+          <div class="form-group">
+            <label for="department"><i class="fas fa-hospital"></i> Department</label>
+            <select id="department" name="department" required>
+              <option value="">Select Department</option>
+              <option value="general">General Medicine</option>
+              <option value="pediatrics">Pediatrics</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="orthopedics">Orthopedics</option>
+              <option value="gynecology">Gynecology</option>
+              <option value="dermatology">Dermatology</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date"><i class="fas fa-calendar"></i> Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="time"><i class="fas fa-clock"></i> Preferred Time</label>
+            <input type="time" id="time" name="time" required>
+          </div>
+
+          <div class="form-group">
+            <label for="notes"><i class="fas fa-notes-medical"></i> Notes</label>
+            <textarea id="notes" name="notes" placeholder="Additional details (optional)"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Submit Appointment
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="store.html">Locate a Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#">Schedules</a></li>
+          <li><a href="#">Community Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ✅ Navbar toggle -->
+  <script>
+    (function(){
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+      const links = document.querySelectorAll('.nav-links a');
+      const current = location.pathname.split('/').pop() || 'index.html';
+      links.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === current);
+      });
+    })();
+  </script>
+</body>
+</html>
