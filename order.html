@@ -4,108 +4,233 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Buy Medicine Online | Noor Fatima Healthcare Group</title>
+  <meta name="description" content="Buy medicine online with Noor Fatima Healthcare Group. Trusted delivery, genuine medicines, and expert guidance at your doorstep.">
 
-  <!-- fonts & icons (same as index) -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-  <!-- page styles (main content in order.css) -->
-  <link rel="stylesheet" href="order.css">
-
-  <!-- Inline navbar CSS copied from index so header is pixel-perfect -->
+  <!-- Premium Inline Styles -->
   <style>
-    /* NAVBAR: exact styling used on index.html */
+    :root {
+      --primary: #009688;
+      --primary-dark: #00796b;
+      --secondary: #004d40;
+      --light-bg: #f9fdfd;
+      --text: #333;
+      --radius: 14px;
+      --shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--light-bg);
+    }
+
+    /* NAVBAR (from index, slightly refined) */
     .navbar {
-      background-color: white;
+      background: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      padding: 14px 22px;
+      box-shadow: var(--shadow);
       position: sticky;
       top: 0;
       z-index: 999;
     }
     .navbar .logo {
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: #009688;
-      line-height: 1;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-decoration: none;
     }
-    .navbar nav { margin-left: 20px; }
     .navbar nav ul {
-      list-style: none;
       display: flex;
+      list-style: none;
       gap: 18px;
       margin: 0;
       padding: 0;
-      align-items: center;
     }
     .navbar nav ul li a {
       text-decoration: none;
-      color: #00796b;
+      color: var(--primary-dark);
       font-weight: 600;
       padding: 8px 6px;
+      transition: color 0.25s;
     }
     .navbar nav ul li a:hover,
     .navbar nav ul li a.active {
-      color: #004d40;
+      color: var(--secondary);
     }
-
-    /* Hamburger (mobile) */
     .menu-toggle {
       display: none;
       cursor: pointer;
-      font-size: 1.4rem;
-      color: #009688;
+      font-size: 1.5rem;
+      color: var(--primary);
       background: none;
       border: none;
-      padding: 6px;
     }
-
-    /* Mobile responsive nav */
     @media (max-width: 768px) {
       .navbar nav ul {
         position: absolute;
         top: 64px;
         right: 0;
-        background: white;
         flex-direction: column;
+        background: #fff;
         width: 100%;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.28s ease-in-out;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        transition: max-height 0.3s ease;
       }
-      .navbar nav ul.active {
-        max-height: 320px;
-      }
-      .navbar nav ul li {
-        text-align: center;
-        padding: 12px 0;
-        border-bottom: 1px solid #f0f6f5;
-      }
+      .navbar nav ul.active { max-height: 360px; }
+      .navbar nav ul li { text-align: center; padding: 14px 0; border-bottom: 1px solid #eee; }
       .menu-toggle { display: block; }
     }
 
-    /* keep small visual parity on very small screens */
-    @media (max-width: 420px) {
-      .navbar { padding: 10px 12px; }
-      .navbar .logo { font-size: 1.05rem; }
+    /* HERO */
+    .order-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .order-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .order-hero p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 1.1rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .cta-btn {
+      background: #fff;
+      color: var(--primary);
+      padding: 12px 22px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+    .cta-btn i { margin-right: 8px; }
+    .cta-btn:hover {
+      background: var(--secondary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Premium Section */
+    .premium-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .premium-section h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      color: var(--primary-dark);
+    }
+    .premium-section .sub {
+      font-size: 1rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+    .premium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
+    }
+    .premium-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .premium-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    }
+    .premium-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .premium-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--secondary);
+    }
+    .premium-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* FOOTER (same as index) */
+    footer {
+      background: #fff;
+      padding: 60px 20px 20px;
+      box-shadow: var(--shadow);
+      margin-top: 60px;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .footer-column h3 {
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+      color: var(--primary-dark);
+    }
+    .footer-column ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-column ul li { margin-bottom: 8px; }
+    .footer-column ul li a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .footer-column ul li a:hover { color: var(--primary); }
+    .social-icons a {
+      font-size: 1.2rem;
+      margin-right: 12px;
+      color: var(--primary-dark);
+      transition: color 0.25s;
+    }
+    .social-icons a:hover { color: var(--primary); }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      border-top: 1px solid #eee;
+      padding-top: 18px;
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== HEADER / NAVBAR (exact structure from index.html) ===== -->
+  <!-- NAVBAR -->
   <header>
     <div class="navbar">
-      <div class="logo">Noor Fatima Healthcare Group</div>
-
-      <button class="menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-      </button>
-
+      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
+      <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -120,7 +245,7 @@
     </div>
   </header>
 
-  <!-- ===== HERO (premium, static) ===== -->
+  <!-- HERO -->
   <section class="order-hero">
     <h1>Buy Medicine Online</h1>
     <p>Fast, reliable, and trusted medicine delivery at your doorstep. Upload your prescription or order instantly through our platform.</p>
@@ -130,66 +255,63 @@
     </div>
   </section>
 
-  <!-- ===== Premium Cards (How It Works) ===== -->
+  <!-- HOW IT WORKS -->
   <section class="premium-section">
-    <div class="container">
-      <h2>How It Works</h2>
-      <p class="sub">Our simple, streamlined ordering process ensures you get your medicines quickly and safely — every time.</p>
-      <div class="premium-grid">
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-file-prescription"></i></div>
-          <h3>Upload Prescription</h3>
-          <p>Upload your prescription securely via our portal or WhatsApp in seconds.</p>
-        </div>
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-phone-volume"></i></div>
-          <h3>Confirm Order</h3>
-          <p>Our pharmacist will call you to verify details and confirm your order.</p>
-        </div>
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-truck"></i></div>
-          <h3>Fast Delivery</h3>
-          <p>Receive your medicines right at your doorstep — often within hours.</p>
-        </div>
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-user-md"></i></div>
-          <h3>Expert Support</h3>
-          <p>Get professional dosage guidance and usage instructions from our pharmacists.</p>
-        </div>
+    <h2>How It Works</h2>
+    <p class="sub">Our simple, streamlined ordering process ensures you get your medicines quickly and safely — every time.</p>
+    <div class="premium-grid">
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-file-prescription"></i></div>
+        <h3>Upload Prescription</h3>
+        <p>Upload your prescription securely via our portal or WhatsApp in seconds.</p>
+      </div>
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-phone-volume"></i></div>
+        <h3>Confirm Order</h3>
+        <p>Our pharmacist will call you to verify details and confirm your order.</p>
+      </div>
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-truck"></i></div>
+        <h3>Fast Delivery</h3>
+        <p>Receive your medicines right at your doorstep — often within hours.</p>
+      </div>
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-user-md"></i></div>
+        <h3>Expert Support</h3>
+        <p>Get professional dosage guidance and usage instructions from our pharmacists.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== Trust Section (premium cards) ===== -->
+  <!-- TRUST -->
   <section class="premium-section">
-    <div class="container">
-      <h2>Why Trust Us?</h2>
-      <p class="sub">We’ve built our reputation on quality, reliability, and transparency — here’s why customers choose us.</p>
-      <div class="premium-grid">
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>100% Genuine Medicines</h3>
-          <p>We source directly from verified suppliers to ensure authenticity.</p>
-        </div>
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-user-md"></i></div>
-          <h3>Verified Pharmacists</h3>
-          <p>All prescriptions are checked by licensed professionals before delivery.</p>
-        </div>
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-clock"></i></div>
-          <h3>24/7 Availability</h3>
-          <p>Order medicines anytime — our team is always ready to assist you.</p>
-        </div>
-        <div class="premium-card">
-          <div class="premium-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3>Nationwide Reach</h3>
-          <p>We deliver to cities and towns across the country without compromise.</p>
-        </div>
+    <h2>Why Trust Us?</h2>
+    <p class="sub">We’ve built our reputation on quality, reliability, and transparency — here’s why customers choose us.</p>
+    <div class="premium-grid">
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>100% Genuine Medicines</h3>
+        <p>We source directly from verified suppliers to ensure authenticity.</p>
+      </div>
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-user-md"></i></div>
+        <h3>Verified Pharmacists</h3>
+        <p>All prescriptions are checked by licensed professionals before delivery.</p>
+      </div>
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-clock"></i></div>
+        <h3>24/7 Availability</h3>
+        <p>Order medicines anytime — our team is always ready to assist you.</p>
+      </div>
+      <div class="premium-card">
+        <div class="premium-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Nationwide Reach</h3>
+        <p>We deliver to cities and towns across the country without compromise.</p>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -219,39 +341,29 @@
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
-    </div>
+    <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
 
-
-  <!-- active link highlighting (same logic as index) -->
+  <!-- JS -->
   <script>
     (function(){
-      // highlight active nav link
       const links = document.querySelectorAll('.navbar nav ul li a');
       const currentPage = window.location.pathname.split('/').pop();
       links.forEach(link => {
         if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
           link.classList.add('active');
-        } else {
-          link.classList.remove('active');
         }
       });
-
-      // mobile menu toggle
       const toggle = document.querySelector('.menu-toggle');
       const navList = document.querySelector('.navbar nav ul');
-      toggle.addEventListener('click', function(){
-        navList.classList.toggle('active');
-      });
+      toggle.addEventListener('click', () => navList.classList.toggle('active'));
     })();
   </script>
 </body>
