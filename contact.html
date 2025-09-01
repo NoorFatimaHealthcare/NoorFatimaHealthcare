@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Get in touch with Noor Fatima Healthcare Group — we are here to help with medicines, healthcare services, and support.">
+  <meta name="description" content="Get in touch with Noor Fatima Healthcare Group — customer service, inquiries, and support.">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <!-- Global site styles -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style-index.css">
-
-  <!-- Contact page styles -->
-  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="style-contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
+  <a href="#contact-form" class="skip-link">Skip to main content</a>
+
   <header>
     <div class="navbar">
-      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
-      <nav>
+      <a href="index.html" class="logo" aria-label="Noor Fatima Healthcare Group Home">
+        Noor Fatima Healthcare Group
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="primary-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="order.html">Buy Medicines</a></li>
@@ -33,56 +30,71 @@
           <li><a href="clinics.html">Clinics</a></li>
           <li><a href="diagnostics.html">Diagnostics</a></li>
           <li><a href="pharmacy.html">Pharmacy</a></li>
-          <li><a href="contact.html" class="active">Contact Us</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="contact-hero">
-    <h1>Contact Us</h1>
-    <p>We’re here to answer your questions, support your health, and connect you to the right care.</p>
-  </section>
+  <main>
+    <!-- Hero -->
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="container">
+        <h1 id="contact-title">Contact Us</h1>
+        <p class="sub">We’re here to help. Reach out for inquiries, feedback, or support.</p>
+      </div>
+    </section>
 
-  <!-- Contact Cards -->
-  <section class="contact-section">
-    <div class="container">
-      <div class="contact-card">
-        <div class="icon-wrap call"><i class="fas fa-phone-alt"></i></div>
-        <h3>Call Us</h3>
-        <p>+91-9876543210</p>
+    <!-- Contact Info Cards -->
+    <section class="contact-info" aria-labelledby="info-title">
+      <div class="container">
+        <h2 id="info-title">Our Contact Information</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p>+91-XXXXXXXXXX</p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>support@yourdomain.com</p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Address</h3>
+            <p>123, Healthcare Street, City, State, India</p>
+          </div>
+        </div>
       </div>
-      <div class="contact-card">
-        <div class="icon-wrap email"><i class="fas fa-envelope"></i></div>
-        <h3>Email</h3>
-        <p>NoorFatimaHealthcareGroup@gmail.com</p>
-      </div>
-      <div class="contact-card">
-        <div class="icon-wrap whatsapp"><i class="fab fa-whatsapp"></i></div>
-        <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/919876543210" target="_blank">Chat with us</a></p>
-      </div>
-    </div>
+    </section>
 
-    <!-- Form -->
-    <div class="container" style="margin-top:3rem;">
-      <div class="contact-form">
-        <h2>Send us a message</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
+    <!-- Contact Form -->
+    <section class="contact-form-section" aria-labelledby="form-title">
+      <div class="container">
+        <h2 id="form-title">Send Us a Message</h2>
+        <form id="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91-XXXXXXXXXX">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
         </form>
       </div>
-    </div>
-
-    <!-- Map -->
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.123456!2d74.325!3d31.520!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904abcd123%3ANoorFatimaHealthcare!5e0!3m2!1sen!2s!4v000000000" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-container">
@@ -113,10 +125,10 @@
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
@@ -124,14 +136,5 @@
       &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
     </div>
   </footer>
-
-  <script>
-    // Navbar active + toggle
-    (function(){
-      const toggle=document.querySelector('.menu-toggle');
-      const nav=document.querySelector('.navbar nav');
-      toggle.addEventListener('click',()=>nav.classList.toggle('open'));
-    })();
-  </script>
 </body>
 </html>
