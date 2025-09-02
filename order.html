@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buy Medicines — Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Buy medicines online — upload prescription or chat on WhatsApp to order. Fast delivery and reliable brands.">
+  <meta name="description" content="Buy medicines via call or WhatsApp. Fast delivery, genuine medicines, secure packaging. Contact us to place your order.">
 
   <!-- ===================== SOCIAL & SEO META ===================== -->
   <meta property="og:title" content="Noor Fatima Healthcare Group">
@@ -24,109 +24,102 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ===================== INLINED & COMBINED CSS (index + order page) ===================== -->
+  <!-- ===================== INLINED CSS (clean & premium) ===================== -->
   <style>
-    /* ------------------------------------------------------------------------
-       Combined & cleaned CSS
-       - Includes navbar + footer styles from index.html (unchanged)
-       - Includes order page specific styles (product grid, cart, prescription)
-       ------------------------------------------------------------------------ */
-
-    /* ===== Reset & Base Styles ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; min-height: 100%; overflow-x: hidden; font-size: clamp(14px, 1.2vw, 18px); }
+    /* ========== RESET & BASE ========== */
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html,body { height:100%; width:100%; }
     body {
       font-family: 'Poppins', sans-serif;
       background: #f7fdfc;
-      color: #333;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      color: #103;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      font-size:16px;
     }
-    a { text-decoration: none; color: inherit; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
 
-    /* ===== Accessibility: Skip Link & Focus outlines ===== */
+    .container { max-width:1200px; margin:0 auto; padding:0 1rem; }
+
+    /* ========== Accessibility ========== */
     .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #009688;
-      color: #fff;
-      padding: 8px 16px;
-      z-index: 1000;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: top 0.3s ease;
+      position:absolute; left:0; top:-48px;
+      background:#009688; color:#fff; padding:8px 14px; border-radius:6px;
+      font-weight:700; z-index:9999; transition: top .25s;
     }
-    .skip-link:focus { top: 10px; }
-
+    .skip-link:focus { top:12px; }
     :focus { outline: 3px solid #009688; outline-offset: 3px; }
-    button:focus, a:focus, input:focus, textarea:focus, select:focus {
-      outline: 3px solid #009688;
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
-    header a:focus, footer a:focus, .navbar a:focus { background: rgba(0, 150, 136, 0.15); }
-    button:focus-visible { box-shadow: 0 0 0 4px rgba(0,150,136,0.3); }
 
-    /* ===== Navbar (index styles) ===== */
+    /* ========== Navbar (exact style from index) ========== */
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 1rem 2rem;
-      background: #009688;
-      gap: 1rem;
+      display:flex; justify-content:space-between; align-items:center;
+      width:100%; padding:1rem 2rem; background:#009688; gap:1rem;
     }
-    .navbar .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: white;
-      line-height: 1;
-    }
-    .navbar nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.25rem;
-      align-items: center;
-    }
-    .navbar nav ul li a {
-      color: white;
-      font-weight: 500;
-      padding-bottom: 0.25rem;
-      transition: all 0.2s;
-    }
+    .navbar .logo { font-size:1.25rem; font-weight:700; color:#fff; }
+    .navbar nav ul { list-style:none; display:flex; gap:1.25rem; align-items:center; }
+    .navbar nav ul li a { color:white; font-weight:500; padding-bottom:.25rem; transition: all .2s; }
     .navbar nav ul li a.active,
-    .navbar nav ul li a:hover {
-      color: white;
-      font-weight: 600;
-      border-bottom: 2px solid #ffc107;
-    }
+    .navbar nav ul li a:hover { color:white; font-weight:600; border-bottom:2px solid #ffc107; }
 
-    /* Mobile menu toggle (hamburger) */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+    .menu-toggle { display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; }
 
-    /* ===== Health Network (not used here but kept) ===== */
-    .health-network {
-      background: linear-gradient(180deg,#f8fffd,#ffffff);
-      padding: 56px 16px;
-      font-family: 'Poppins', sans-serif;
+    /* ========== Hero ========== */
+    .hero {
+      background: linear-gradient(180deg,#e9fffb,#ffffff);
+      padding:48px 0;
+      border-bottom:1px solid rgba(0,0,0,0.04);
     }
-    .health-network .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .hero .wrap { display:flex; align-items:center; gap:2rem; justify-content:space-between; flex-wrap:wrap; }
+    .hero-left { max-width:680px; }
+    .eyebrow { display:inline-block; background:#e6fffb; color:#00796b; padding:6px 12px; border-radius:999px; font-weight:700; margin-bottom:1rem; }
+    .hero h1 { font-size:2.15rem; color:#00594f; margin-bottom:.6rem; line-height:1.08; }
+    .hero p { color:#375; font-weight:600; margin-bottom:1.15rem; font-size:1.02rem; }
 
-    /* ===== Footer (index styles) ===== */
+    .cta-row { display:flex; gap:.8rem; flex-wrap:wrap; align-items:center; }
+    .btn-call, .btn-wa {
+      display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.15rem; border-radius:10px; font-weight:800;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06); cursor:pointer;
+    }
+    .btn-call { background:#00796b; color:white; }
+    .btn-wa { background:#25d366; color:white; }
+
+    .hero-right { min-width:260px; display:flex; justify-content:center; align-items:center; }
+    .card-contact {
+      background: #fff; padding:16px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); width:100%;
+      text-align:center;
+    }
+    .phone-large { font-size:1.25rem; font-weight:900; color:#004d40; margin-bottom:.25rem; }
+    .small-note { color:#466; font-weight:600; font-size:.95rem; }
+
+    /* ========== How it works (steps) ========== */
+    .steps { padding:36px 0; }
+    .steps-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:1rem; }
+    .step {
+      background:#fff; border-radius:12px; padding:18px; box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+      text-align:left;
+    }
+    .step .icon { width:54px; height:54px; border-radius:10px; display:inline-grid; place-items:center; font-size:20px; color:#00796b; background:linear-gradient(135deg,#e6fffb,#d0fff5); margin-bottom:.75rem; }
+    .step h4 { font-size:1rem; color:#004d40; font-weight:800; margin-bottom:.4rem; }
+    .step p { color:#456; font-weight:600; font-size:.95rem; line-height:1.4; }
+
+    /* ========== Premium features ========== */
+    .features { padding:36px 0; background:linear-gradient(180deg,#ffffff,#fbfffe); }
+    .features-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
+    .feature {
+      background:#fff; border-radius:12px; padding:18px; box-shadow:0 10px 24px rgba(0,0,0,0.04);
+    }
+    .feature h5 { color:#006; font-weight:800; margin-bottom:.5rem; }
+    .feature p { color:#445; font-weight:600; }
+
+    /* ========== FAQ ========== */
+    .faq { padding:36px 0; }
+    .faq-item { background:#fff; border-radius:10px; margin-bottom:.6rem; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.04); }
+    .faq-q { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; cursor:pointer; font-weight:800; color:#00594f; }
+    .faq-a { padding:12px 16px; border-top:1px solid rgba(0,0,0,0.04); color:#445; font-weight:600; display:none; }
+
+    /* ========== Footer (exact index styles) ========== */
     footer {
       background: #ffffff;
       border-top: 4px solid #009688;
@@ -181,204 +174,32 @@
       border-top: 2px solid rgba(0, 150, 136, 0.2);
     }
 
-    /* ===== Utility section container constraint used on page ===== */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-
-    /* ===== Responsive breakpoints for index elements ===== */
-    @media (max-width: 1100px) { .hn-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 820px) { .hn-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 768px) {
-      .navbar {
-        position: relative;
-        padding: 0.75rem 1rem;
-      }
-      .menu-toggle { display: block; }
-      .navbar nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #009688;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-      .navbar nav ul { flex-direction: column; gap: 0; padding: 0; }
-      .navbar nav ul li { border-top: 1px solid rgba(255,255,255,0.2); }
-      .navbar nav ul li a { display: block; padding: 0.75rem 1rem; }
-      .navbar nav.open { max-height: 500px; }
-      .hn-grid { grid-template-columns: 1fr; }
-      .health-network { padding: 40px 14px; }
-      .hn-card { min-height: 140px; padding: 18px; }
-      .footer-container { text-align: center; }
-      .social-icons { justify-content: center; }
-    }
-    @media (max-width: 520px) {
-      .hn-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ===== Dark mode support (index elements) ===== */
-    @media (prefers-color-scheme: dark) {
-      .health-network { background: linear-gradient(180deg,#022a28,#00251f); }
-      .health-network h2 { color: #8feadc; }
-      .health-network .sub { color: #bfeee3; }
-      .hn-card { background: linear-gradient(180deg,#003634,#00312c); box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
-      .hn-desc { color: #d7efe9; }
-      .hn-title { color: #dff7f0; }
-      .hn-icon { background: linear-gradient(135deg,#004d44,#00695c); color: #e9fff8; }
-      .hn-cta { color: #bff4e8; }
-
-      footer { background: #002f2b; color: #e0f2f1; }
-      .footer-column h3, .footer-column ul li a { color: #80cbc4; }
-      .footer-column ul li a:hover { color: #b2dfdb; }
-    }
-
-    /* ------------------------------------------------------------------------
-       ORDER PAGE SPECIFIC STYLES (product grid, cart, prescription)
-       These are appended after index styles to avoid conflicts and to preserve
-       the exact navbar/footer visuals from index.
-       ------------------------------------------------------------------------ */
-
-    /* ===== Base / Reset (order page) ===== */
-    /* (some duplication is ok; these rules are harmless) */
-    html,body { height: 100%; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    /* ===== Page hero ===== */
-    .hero {
-      background: linear-gradient(180deg,#e9fffb,#ffffff);
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-    }
-    .hero .row { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
-    .hero h1 { color:#00796b; font-size:1.8rem; margin-bottom: .25rem; }
-    .hero p { color:#455; font-weight:600; }
-
-    /* ===== Main layout ===== */
-    .main-grid {
-      display:grid;
-      grid-template-columns: 1fr 360px;
-      gap: 1.5rem;
-      margin-top: 1.25rem;
-      align-items:start;
-    }
-
-    /* ===== Product grid ===== */
-    .products {
-      background: #fff; border-radius: 12px; padding: 1.1rem; box-shadow: 0 10px 24px rgba(0,0,0,0.04);
-    }
-    .products-header { display:flex; justify-content:space-between; gap:1rem; align-items:center; margin-bottom:1rem; }
-    .search {
-      flex:1; display:flex; gap:.5rem; align-items:center;
-    }
-    .search input {
-      width:100%; padding: .7rem .9rem; border-radius:8px; border:1px solid rgba(0,0,0,0.08);
-      font-weight:600;
-    }
-    .filter {
-      min-width:160px;
-    }
-    .product-grid {
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    .product-card {
-      display:flex; gap:1rem; align-items:flex-start; background:#f8fffb; padding:12px; border-radius:10px;
-      border:1px solid rgba(0,0,0,0.03);
-    }
-    .product-image {
-      width:96px; height:96px; border-radius:8px; background:#fff; display:flex; align-items:center; justify-content:center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-      flex-shrink:0;
-    }
-    .product-meta { flex:1; display:flex; flex-direction:column; gap:.5rem; }
-    .product-title { font-weight:700; color:#00594f; }
-    .product-desc { color:#375; font-size:.95rem; }
-    .product-bottom { display:flex; justify-content:space-between; align-items:center; gap:.5rem; margin-top:auto; }
-    .price { font-weight:800; color:#00796b; }
-    .add-btn {
-      background: #009688; color:#fff; padding: .45rem .8rem; border-radius:8px; border:none; cursor:pointer; font-weight:700;
-    }
-    .add-btn:active { transform: translateY(1px); }
-
-    /* ===== Cart (right column) ===== */
-    .cart {
-      background: linear-gradient(180deg,#ffffff,#f7fffc);
-      border-radius:12px; padding: 1rem; box-shadow: 0 10px 28px rgba(0,0,0,0.06);
-      position:sticky; top:18px;
-    }
-    .cart h3 { color:#00796b; margin-bottom:.75rem; font-weight:800; }
-    .cart-empty { color:#446; padding:1rem 0; text-align:center; }
-    .cart-list { display:flex; flex-direction:column; gap:.75rem; max-height: 320px; overflow:auto; padding-right:.25rem; }
-    .cart-item {
-      display:flex; gap:.8rem; align-items:center; padding:.5rem; background:#fff; border-radius:8px;
-      border:1px solid rgba(0,0,0,0.03);
-    }
-    .ci-thumb { width:56px; height:56px; border-radius:6px; background:#f1fffb; display:flex; align-items:center; justify-content:center; }
-    .ci-meta { flex:1; }
-    .ci-title { font-weight:700; color:#014d44; font-size:.95rem; }
-    .ci-qty { display:flex; gap:.4rem; align-items:center; margin-top:.35rem; }
-    .qty-btn { padding:.25rem .5rem; border-radius:6px; border:1px solid rgba(0,0,0,0.06); background:#fff; cursor:pointer; }
-    .remove-btn { background:none; border:none; color:#b00020; font-size:.95rem; cursor:pointer; }
-
-    .cart-footer { margin-top:1rem; display:flex; flex-direction:column; gap:.5rem; }
-    .subtotal { display:flex; justify-content:space-between; font-weight:800; color:#00594f; }
-    .checkout-btn { background:#00796b; color:#fff; padding:.8rem 1rem; border-radius:8px; border:none; cursor:pointer; font-weight:800; }
-    .clear-btn { background:none; border:1px solid rgba(0,0,0,0.06); padding:.6rem; border-radius:8px; cursor:pointer; }
-
-    /* ===== Prescription upload ===== */
-    .prescription {
-      margin-top: 1rem;
-      padding: .85rem;
-      background: #fff;
-      border-radius: 8px;
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-    .prescription label { display:block; font-weight:700; color:#006; margin-bottom:.45rem; }
-    .prescription input[type="file"] { display:block; }
-    .pres-preview { margin-top:.75rem; display:flex; gap:.5rem; align-items:center; }
-    .pres-preview img { width:64px; height:64px; object-fit:cover; border-radius:6px; border:1px solid rgba(0,0,0,0.05); }
-
-    /* ===== Floating WhatsApp button ===== */
-    .whatsapp-floating {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 9999;
-      display:flex; flex-direction:column; gap:.5rem;
-    }
-    .whatsapp-floating a {
-      background:#25d366; color:#fff; padding:.9rem 1rem; border-radius:50px; font-weight:800; display:flex; gap:.6rem; align-items:center;
-      box-shadow: 0 12px 28px rgba(37,211,102,0.18);
-    }
-
-    /* ===== Responsive for order page ===== */
-    @media (max-width: 980px) {
-      .main-grid { grid-template-columns: 1fr; }
-      .product-grid { grid-template-columns: 1fr; }
+    /* ========== Responsive ========== */
+    @media (max-width:1100px) { .steps-grid { grid-template-columns: repeat(2,1fr); } .features-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width:768px) {
       .menu-toggle { display:block; }
-      nav { display:none; }
-      nav.open { display:block; }
-      .cart { position:relative; top:auto; }
+      .navbar nav { position:absolute; top:100%; left:0; width:100%; background:#009688; max-height:0; overflow:hidden; transition:max-height .3s; }
+      .navbar nav ul { flex-direction:column; }
+      .hero .wrap { gap:1rem; }
+      .hero-right { order:2; width:100%; }
+    }
+    @media (max-width:520px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size:1.6rem; }
     }
 
-    /* ===== Focus / accessibility helpers ===== */
-    :focus { outline: 3px solid #009688; outline-offset: 2px; border-radius:6px; }
-    button, input[type="file"] { font-family: inherit; }
-
-    /* ===== Dark mode support (order page) ===== */
+    /* ========== Dark mode ========== */
     @media (prefers-color-scheme: dark) {
       body { background:#031f1c; color:#dff6f0; }
-      .products, .cart, .prescription { background: linear-gradient(180deg,#012a27,#00251f); color:#dff6f0; border-color: rgba(255,255,255,0.04); }
-      .product-card { background: linear-gradient(180deg,#003a36,#00312c); }
-      .add-btn { background:#00a588; }
-      .checkout-btn { background:#00a588; }
+      .hero { background: linear-gradient(180deg,#001b19,#001713); }
+      .card-contact, .step, .feature, .faq-item { background: linear-gradient(180deg,#002a27,#00251f); color:#dff6f0; box-shadow: none; }
+      footer { background:#002f2b; color:#e0f2f1; }
+      .footer-column h3, .footer-column ul li a { color: #80cbc4; }
     }
   </style>
 
-  <!-- ===================== JSON-LD STRUCTURED DATA ===================== -->
+  <!-- JSON-LD (keeps consistent) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -394,7 +215,7 @@
     ],
     "contactPoint": [{
       "@type": "ContactPoint",
-      "telephone": "+91-XXXXXXXXXX",
+      "telephone": "+91-9999999999",
       "contactType": "Customer Service",
       "areaServed": "IN",
       "availableLanguage": "English"
@@ -403,31 +224,28 @@
   </script>
 </head>
 <body>
-  <!-- ===================== ACCESSIBILITY: SKIP LINK (copied from index) ===================== -->
-  <a href="#hero-tv-ultramax" class="skip-link">Skip to main content</a>
+  <!-- skip to main content -->
+  <a href="#order-main" class="skip-link">Skip to main content</a>
 
-  <!-- ===================== HEADER / NAVBAR (exactly as in index.html) ===================== -->
+  <!-- ===================== HEADER / NAVBAR (exact markup from index with active on Buy Medicines) ===================== -->
   <header>
     <div class="navbar">
-      <!-- ✅ Logo -->
       <a href="index.html" class="logo" aria-label="Noor Fatima Healthcare Group Home">
         Noor Fatima Healthcare Group
       </a>
 
-      <!-- ✅ Mobile Menu Toggle -->
       <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
 
-      <!-- ✅ Primary Navigation -->
       <nav id="primary-nav">
         <ul>
-          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html" class="active" aria-current="page">Buy Medicines</a></li>
           <li><a href="hospitals.html">Hospitals</a></li>
           <li><a href="clinics.html">Clinics</a></li>
           <li><a href="diagnostics.html">Diagnostics</a></li>
-          <li><a href="appointment.html" class="active">Appointment</a></li>
+          <li><a href="appointment.html">Appointment</a></li>
           <li><a href="pharmacy.html">Pharmacy</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -435,72 +253,124 @@
     </div>
   </header>
 
-  <!-- ===================== MAIN CONTENT: Order Page (unchanged except header/footer swap) ===================== -->
-  <!-- ===== Hero / Intro ===== -->
-  <section class="hero">
-    <div class="container">
-      <div class="row">
-        <div>
-          <h1>Buy Medicines Online</h1>
-          <p>Upload prescription, add medicines to cart, and place your order. Fast doorstep delivery across our network.</p>
-        </div>
-        <div>
-          <a class="directions-btn" href="#products" aria-label="Browse products" style="background:#009688;color:#fff;padding:.7rem .9rem;border-radius:8px;font-weight:700;">Browse Products</a>
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main id="order-main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="wrap">
+          <div class="hero-left">
+            <span class="eyebrow">Order by Call or WhatsApp</span>
+            <h1>Fast, genuine medicines — place your order in seconds</h1>
+            <p>We keep the ordering process simple: call us or send a WhatsApp message with your medicine list. Our team confirms availability and delivers to your doorstep.</p>
+
+            <div class="cta-row">
+              <!-- Replace tel: and wa.me number with your real number -->
+              <a class="btn-call" href="tel:+919999999999" aria-label="Call us to place order"><i class="fas fa-phone"></i> Call +91 99999 99999</a>
+              <a class="btn-wa" id="waPrimary" href="https://wa.me/919999999999?text=Hello%20Noor%20Fatima%20Healthcare%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" aria-label="Order via WhatsApp"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
+            </div>
+
+            <p style="margin-top:1rem;color:#446;font-weight:600;">Prefer a callback? Call and ask for a callback — we'll return within 15–30 minutes.</p>
+          </div>
+
+          <div class="hero-right">
+            <div class="card-contact" role="region" aria-label="Contact card">
+              <div class="phone-large">+91 99999 99999</div>
+              <div class="small-note">Mon–Sat: 9:00 AM — 8:00 PM</div>
+              <div style="margin-top:12px;">
+                <a href="tel:+919999999999" class="btn-call" style="display:inline-block"><i class="fas fa-phone"></i> Call Now</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== Main ===== -->
-  <main class="container" id="products" style="padding:1.25rem 0 3rem;">
-    <div class="main-grid">
-      <!-- Left: Products -->
-      <section class="products" aria-labelledby="products-heading">
-        <div class="products-header">
-          <div class="search" role="search" aria-label="Search products">
-            <input id="searchInput" type="search" placeholder="Search medicines, e.g., Paracetamol, Cough syrup..." aria-label="Search medicines" />
-          </div>
-          <div class="filter">
-            <select id="categoryFilter" aria-label="Filter by category" style="width:100%; padding:.65rem; border-radius:8px;">
-              <option value="">All categories</option>
-              <option value="pain">Pain & Fever</option>
-              <option value="cough">Cough & Cold</option>
-              <option value="vitamins">Vitamins</option>
-              <option value="digestive">Digestive</option>
-            </select>
-          </div>
+    <!-- HOW IT WORKS -->
+    <section class="steps container" aria-labelledby="how-heading">
+      <h2 id="how-heading" style="color:#00594f; font-size:1.6rem; margin-bottom:1rem; font-weight:800;">How to place an order</h2>
+      <div class="steps-grid" role="list">
+        <div class="step" role="listitem">
+          <div class="icon"><i class="fas fa-list"></i></div>
+          <h4>Step 1 — Prepare your list</h4>
+          <p>Write the medicine names, strength, and quantity (e.g., Paracetamol 500mg — 1 strip).</p>
+        </div>
+        <div class="step" role="listitem">
+          <div class="icon"><i class="fas fa-phone"></i></div>
+          <h4>Step 2 — Call or WhatsApp</h4>
+          <p>Call us at <strong>+91 99999 99999</strong> or send the list on WhatsApp. Attach a photo of your prescription if you want — not required.</p>
+        </div>
+        <div class="step" role="listitem">
+          <div class="icon"><i class="fas fa-check-circle"></i></div>
+          <h4>Step 3 — Confirm & pay</h4>
+          <p>We confirm availability, price and delivery time. Pay on delivery or by the method we agree on.</p>
+        </div>
+        <div class="step" role="listitem">
+          <div class="icon"><i class="fas fa-truck"></i></div>
+          <h4>Step 4 — Fast delivery</h4>
+          <p>Get same-day or next-day delivery depending on your location. Secure packaging and genuine products guaranteed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREMIUM FEATURES -->
+    <section class="features container" aria-labelledby="features-heading">
+      <h2 id="features-heading" style="color:#00594f; font-size:1.6rem; margin-bottom:1rem; font-weight:800;">Why order with us</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <h5>Verified Medicines</h5>
+          <p>All medicines sourced from licensed suppliers and inspected before dispatch.</p>
+        </div>
+        <div class="feature">
+          <h5>Same-day Dispatch</h5>
+          <p>Quick processing — same-day dispatch for orders placed before our cutoff time.</p>
+        </div>
+        <div class="feature">
+          <h5>Secure Packaging</h5>
+          <p>Tamper-evident packaging and hygienic handling to keep your medicines safe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq container" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" style="color:#00594f; font-size:1.6rem; margin-bottom:1rem; font-weight:800;">Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0">Do I need a prescription?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a">For most OTC medicines no prescription is required. For prescription-only medicines it helps to send a photo of the prescription on WhatsApp for faster processing.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0">What payment methods do you accept?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a">We accept cash on delivery, UPI, and online payment links when available. Confirm payment method while placing your order.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0">How quickly will my order arrive?<i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a">Delivery times vary by area. We aim for same-day delivery in nearby zones and next-day in remote areas. We'll share an estimated time when confirming your order.</div>
+      </div>
+    </section>
+
+    <!-- CONTACT HIGHLIGHTS -->
+    <section class="container" style="padding:36px 0;">
+      <div style="display:flex; gap:1rem; align-items:stretch; flex-wrap:wrap;">
+        <div style="flex:1; min-width:240px; background:#fff; padding:18px; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,0.04);">
+          <h4 style="color:#004d40; margin-bottom:.5rem;">Contact details</h4>
+          <p style="font-weight:700;">Phone: <a href="tel:+919999999999">+91 99999 99999</a></p>
+          <p style="font-weight:700;">WhatsApp: <a href="https://wa.me/919999999999?text=Hello%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
+          <p style="margin-top:.5rem;color:#446;">Business hours: Mon–Sat 9:00 AM — 8:00 PM</p>
         </div>
 
-        <div id="productGrid" class="product-grid" aria-live="polite">
-          <!-- Product cards injected by JS -->
+        <div style="flex:1; min-width:240px; background:#fff; padding:18px; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,0.04);">
+          <h4 style="color:#004d40; margin-bottom:.5rem;">Pickup & Delivery</h4>
+          <p style="font-weight:700;">Pickup available at our nearest store on request. Delivery charge depends on your location — we will confirm when you call.</p>
         </div>
-      </section>
-
-      <!-- Right: Cart & Prescription -->
-      <aside class="cart" aria-labelledby="cart-heading">
-        <h3 id="cart-heading">Your Cart (<span id="cartCount">0</span>)</h3>
-        <div id="cartList" class="cart-list" aria-live="polite">
-          <div class="cart-empty" id="cartEmpty">No items in cart. Add medicines to get started.</div>
-        </div>
-
-        <div class="cart-footer">
-          <div class="subtotal"><span>Subtotal</span> <span id="cartSubtotal">₹0.00</span></div>
-          <button id="checkoutBtn" class="checkout-btn" aria-label="Checkout">Checkout</button>
-          <button id="clearCartBtn" class="clear-btn" aria-label="Clear cart">Clear cart</button>
-        </div>
-
-        <div class="prescription" id="prescriptionBox">
-          <label for="presUpload">Upload prescription (optional)</label>
-          <input id="presUpload" type="file" accept="image/*,application/pdf" aria-describedby="pres-note" />
-          <div id="presPreviewArea" class="pres-preview" aria-hidden="true"></div>
-          <small id="pres-note" style="display:block;margin-top:.5rem;color:#446;">Accepted: jpg, png, pdf. If image is uploaded we show a preview. Large files may not persist.</small>
-          <button id="removePres" style="margin-top:.6rem; display:none; padding:.5rem; border-radius:8px; border:1px solid rgba(0,0,0,0.06); background:none; cursor:pointer;">Remove uploaded file</button>
-        </div>
-      </aside>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ===================== FOOTER (exactly as in index.html) ===================== -->
+  <!-- ===================== FOOTER (exact markup from index) ===================== -->
   <footer>
     <div class="footer-container">
       <!-- Column 1 -->
@@ -545,17 +415,23 @@
       </div>
     </div>
 
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
       &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
     </div>
   </footer>
 
+  <!-- ===================== FLOATING WHATSAPP BUTTON ===================== -->
+  <div style="position:fixed; right:18px; bottom:18px; z-index:9999;">
+    <a href="https://wa.me/919999999999?text=Hello%20Noor%20Fatima%20Healthcare%2C%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:.6rem; background:#25d366; color:#fff; padding:.9rem 1rem; border-radius:999px; font-weight:800; box-shadow:0 12px 28px rgba(37,211,102,0.18);">
+      <i class="fab fa-whatsapp"></i> Order on WhatsApp
+    </a>
+  </div>
+
   <!-- ===================== SCRIPTS ===================== -->
-  <!-- Keep external script reference if you use it elsewhere -->
+  <!-- Keep any shared script reference (index used script-index.js); optional -->
   <script src="script-index.js" defer></script>
 
-  <!-- Mobile nav toggle script (same as index) -->
+  <!-- Mobile nav toggle (keeps same behavior as index) -->
   <script>
     (function() {
       const toggle = document.querySelector('.menu-toggle');
@@ -569,303 +445,19 @@
     })();
   </script>
 
-  <!-- Inlined JS for order functionality (cart, products, prescription) -->
+  <!-- Small JS for FAQ toggles (lightweight) -->
   <script>
-    /* ===== Simple product catalog (sample items) ===== */
-    const PRODUCTS = [
-      { id: 'p1', title: 'Paracetamol 500mg (Strip of 10)', price: 40, desc: 'Effective for fever and mild pain', category: 'pain', img: '' },
-      { id: 'p2', title: 'Cough Syrup 100ml', price: 120, desc: 'Soothing cough syrup', category: 'cough', img: '' },
-      { id: 'p3', title: 'Vitamin C 500mg (30 tablets)', price: 180, desc: 'Immune support', category: 'vitamins', img: '' },
-      { id: 'p4', title: 'Antacid Tablets (20)', price: 95, desc: 'Relief for acidity', category: 'digestive', img: '' },
-      { id: 'p5', title: 'Ibuprofen 200mg (Strip of 10)', price: 55, desc: 'Pain & inflammation', category: 'pain', img: '' },
-      { id: 'p6', title: 'Multivitamin Syrup 200ml', price: 240, desc: 'For kids & adults', category: 'vitamins', img: '' }
-    ];
-
-    const formatCurrency = (v) => '₹' + Number(v).toFixed(2);
-    const LS_CART = 'mf_cart_v1';
-    const LS_ORDERS = 'mf_orders_v1';
-    const LS_PRES = 'mf_pres_v1';
-
-    let cart = {};
-    let pres = null;
-
-    const productGrid = document.getElementById('productGrid');
-    const cartList = document.getElementById('cartList');
-    const cartCount = document.getElementById('cartCount');
-    const cartSubtotal = document.getElementById('cartSubtotal');
-    const cartEmpty = document.getElementById('cartEmpty');
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    const clearCartBtn = document.getElementById('clearCartBtn');
-    const presUpload = document.getElementById('presUpload');
-    const presPreviewArea = document.getElementById('presPreviewArea');
-    const removePresBtn = document.getElementById('removePres');
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-
-    function init() {
-      loadFromStorage();
-      renderProducts();
-      renderCart();
-      wireEvents();
-    }
-
-    function loadFromStorage(){
-      try {
-        const saved = localStorage.getItem(LS_CART);
-        cart = saved ? JSON.parse(saved) : {};
-      } catch(e) { cart = {}; }
-      try {
-        const presSaved = localStorage.getItem(LS_PRES);
-        pres = presSaved ? JSON.parse(presSaved) : null;
-        if (pres) renderPresPreview(pres);
-      } catch(e){ pres = null; }
-    }
-
-    function saveCart() {
-      localStorage.setItem(LS_CART, JSON.stringify(cart));
-    }
-
-    function savePres(p) {
-      if (!p) { localStorage.removeItem(LS_PRES); pres = null; presPreviewArea.innerHTML=''; removePresBtn.style.display='none'; return; }
-      localStorage.setItem(LS_PRES, JSON.stringify(p)); pres = p; renderPresPreview(p);
-    }
-
-    function renderProducts() {
-      const q = (searchInput.value || '').trim().toLowerCase();
-      const cat = categoryFilter.value;
-      const filtered = PRODUCTS.filter(p => {
-        const matchesQ = !q || (p.title + ' ' + p.desc).toLowerCase().includes(q);
-        const matchesCat = !cat || p.category === cat;
-        return matchesQ && matchesCat;
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const a = q.nextElementSibling;
+        const open = a.style.display === 'block';
+        document.querySelectorAll('.faq-a').forEach(x => x.style.display = 'none');
+        if (!open) a.style.display = 'block';
       });
-
-      productGrid.innerHTML = '';
-      if (filtered.length === 0) {
-        productGrid.innerHTML = '<div style="padding:1rem;color:#355;">No medicines found.</div>';
-        return;
-      }
-
-      filtered.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-          <div class="product-image" aria-hidden="true">
-            <i class="fas fa-pills" style="font-size:28px;color:#009688;"></i>
-          </div>
-          <div class="product-meta">
-            <div class="product-title">${escapeHtml(p.title)}</div>
-            <div class="product-desc">${escapeHtml(p.desc)}</div>
-            <div class="product-bottom">
-              <div class="price">${formatCurrency(p.price)}</div>
-              <div>
-                <button class="add-btn" data-id="${p.id}" aria-label="Add ${escapeHtml(p.title)} to cart">Add</button>
-              </div>
-            </div>
-          </div>
-        `;
-        productGrid.appendChild(card);
+      q.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
       });
-
-      productGrid.querySelectorAll('.add-btn').forEach(btn=>{
-        btn.addEventListener('click', (e)=>{
-          const id = btn.getAttribute('data-id');
-          addToCart(id, 1);
-        });
-      });
-    }
-
-    function addToCart(productId, qty = 1) {
-      if (!PRODUCTS.find(p=>p.id===productId)) return;
-      cart[productId] = (cart[productId] || 0) + qty;
-      if (cart[productId] <= 0) delete cart[productId];
-      saveCart();
-      renderCart();
-    }
-
-    function setCartQty(productId, qty) {
-      if (qty <= 0) { delete cart[productId]; } else { cart[productId] = qty; }
-      saveCart();
-      renderCart();
-    }
-
-    function clearCart() {
-      cart = {};
-      saveCart();
-      renderCart();
-    }
-
-    function renderCart() {
-      const ids = Object.keys(cart);
-      cartCount.textContent = ids.reduce((s,id)=>s+cart[id], 0);
-      if (ids.length === 0) {
-        cartList.innerHTML = '';
-        cartEmpty.style.display = 'block';
-        cartList.appendChild(cartEmpty);
-        cartSubtotal.textContent = formatCurrency(0);
-        return;
-      }
-      cartEmpty.style.display = 'none';
-      cartList.innerHTML = ''; // clear
-      let subtotal = 0;
-      ids.forEach(id=>{
-        const product = PRODUCTS.find(p=>p.id===id);
-        const qty = cart[id];
-        const itemTotal = product.price * qty;
-        subtotal += itemTotal;
-
-        const item = document.createElement('div');
-        item.className = 'cart-item';
-        item.innerHTML = `
-          <div class="ci-thumb" aria-hidden="true"><i class="fas fa-box-open" style="color:#009688;"></i></div>
-          <div class="ci-meta">
-            <div class="ci-title">${escapeHtml(product.title)}</div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <div class="ci-qty">
-                <button class="qty-btn dec" data-id="${id}" aria-label="Decrease quantity">-</button>
-                <div style="min-width:28px; text-align:center; font-weight:700;">${qty}</div>
-                <button class="qty-btn inc" data-id="${id}" aria-label="Increase quantity">+</button>
-              </div>
-              <div style="text-align:right;">
-                <div style="font-weight:800">${formatCurrency(itemTotal)}</div>
-                <button class="remove-btn" data-id="${id}" aria-label="Remove item">Remove</button>
-              </div>
-            </div>
-          </div>
-        `;
-        cartList.appendChild(item);
-      });
-
-      cartSubtotal.textContent = formatCurrency(subtotal);
-
-      cartList.querySelectorAll('.qty-btn.inc').forEach(b=>b.addEventListener('click', (e)=>{
-        const id = b.getAttribute('data-id'); addToCart(id, 1);
-      }));
-      cartList.querySelectorAll('.qty-btn.dec').forEach(b=>b.addEventListener('click', (e)=>{
-        const id = b.getAttribute('data-id'); setCartQty(id, (cart[id]||0) - 1);
-      }));
-      cartList.querySelectorAll('.remove-btn').forEach(b=>b.addEventListener('click', (e)=>{
-        const id = b.getAttribute('data-id'); setCartQty(id, 0);
-      }));
-    }
-
-    checkoutBtn.addEventListener('click', ()=> {
-      const ids = Object.keys(cart);
-      if (ids.length === 0) { alert('Your cart is empty. Add medicines first.'); return; }
-
-      const order = {
-        id: 'ORD-' + Date.now(),
-        createdAt: new Date().toISOString(),
-        items: ids.map(id => {
-          const p = PRODUCTS.find(x=>x.id===id);
-          return { id: p.id, title: p.title, price: p.price, qty: cart[id] };
-        }),
-        prescription: pres || null,
-        subtotal: ids.reduce((s,id)=> s + (PRODUCTS.find(p=>p.id===id).price * cart[id]), 0),
-        status: 'pending'
-      };
-
-      try {
-        const raw = localStorage.getItem(LS_ORDERS);
-        const orders = raw ? JSON.parse(raw) : [];
-        orders.unshift(order);
-        localStorage.setItem(LS_ORDERS, JSON.stringify(orders));
-      } catch(e) {
-        console.warn('Could not save order to localStorage', e);
-      }
-
-      let message = `Order placed — ${order.id}\nSubtotal: ${formatCurrency(order.subtotal)}\nItems:\n`;
-      order.items.forEach(it=> message += ` - ${it.title} × ${it.qty} (₹${it.price})\n`);
-      if (order.prescription) message += 'Prescription: attached\n';
-      message += '\nWe saved your order locally. For a real checkout integrate a server or Firebase.';
-
-      alert(message);
-
-      const waText = encodeURIComponent(`Hello, I placed an order ${order.id}. Subtotal: ${formatCurrency(order.subtotal)}. Please confirm.`);
-      window.open('https://wa.me/919999999999?text=' + waText, '_blank');
-
-      clearCart();
     });
-
-    clearCartBtn.addEventListener('click', ()=> {
-      if (!confirm('Clear all items from cart?')) return;
-      clearCart();
-    });
-
-    presUpload.addEventListener('change', async (e)=> {
-      const file = e.target.files && e.target.files[0];
-      if (!file) return;
-      if (file.type.startsWith('image/')) {
-        const reader = new FileReader();
-        reader.onload = function(ev) {
-          const dataUrl = ev.target.result;
-          const obj = { name: file.name, dataUrl, type: file.type, size: file.size };
-          savePres(obj);
-        };
-        reader.readAsDataURL(file);
-      } else {
-        const obj = { name: file.name, dataUrl: null, type: file.type, size: file.size };
-        savePres(obj);
-        renderPresPreview(obj);
-      }
-    });
-
-    function renderPresPreview(obj) {
-      presPreviewArea.innerHTML = '';
-      if (!obj) { presPreviewArea.setAttribute('aria-hidden','true'); removePresBtn.style.display='none'; return; }
-      presPreviewArea.setAttribute('aria-hidden','false');
-      removePresBtn.style.display='inline-block';
-      if (obj.dataUrl) {
-        const img = document.createElement('img');
-        img.src = obj.dataUrl;
-        img.alt = 'Prescription preview';
-        presPreviewArea.appendChild(img);
-        const name = document.createElement('div');
-        name.textContent = obj.name;
-        name.style.fontWeight = '700';
-        presPreviewArea.appendChild(name);
-      } else {
-        const pdfIcon = document.createElement('div');
-        pdfIcon.style.display='flex';
-        pdfIcon.style.alignItems='center';
-        pdfIcon.innerHTML = '<i class="fas fa-file-pdf" style="font-size:28px;color:#c62828;"></i>';
-        presPreviewArea.appendChild(pdfIcon);
-        const name = document.createElement('div'); name.textContent = obj.name; name.style.fontWeight='700';
-        presPreviewArea.appendChild(name);
-      }
-    }
-
-    removePresBtn.addEventListener('click', ()=>{
-      if (!confirm('Remove uploaded prescription?')) return;
-      presUpload.value = '';
-      savePres(null);
-    });
-
-    function wireEvents() {
-      searchInput.addEventListener('input', () => {
-        renderProducts();
-      });
-      categoryFilter.addEventListener('change', () => {
-        renderProducts();
-      });
-
-      const mbtn = document.querySelector('.menu-toggle');
-      const nav = document.getElementById('primary-nav');
-      if (mbtn && nav) {
-        mbtn.addEventListener('click', ()=>{
-          const open = nav.classList.toggle('open');
-          mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
-    }
-
-    function escapeHtml(str) {
-      return String(str).replace(/[&<>"']/g, function(m) {
-        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m];
-      });
-    }
-
-    init();
   </script>
-
 </body>
 </html>
