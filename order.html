@@ -1,257 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ===================== META BASICS ===================== -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buy Medicines — Noor Fatima Healthcare Group</title>
   <meta name="description" content="Buy medicines via call or WhatsApp. Fast delivery, genuine medicines, secure packaging. Contact us to place your order.">
 
-  <!-- ===================== SOCIAL & SEO META ===================== -->
-  <meta property="og:title" content="Noor Fatima Healthcare Group">
-  <meta property="og:description" content="Trusted medicine delivery & healthcare support—delivering compassion, quality, and convenience.">
-  <meta property="og:image" content="/assets/og-image.png">
-  <meta property="og:url" content="https://yourdomain.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Noor Fatima Healthcare Group">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- ===================== ICONS & FONTS ===================== -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ===================== INLINED & COMBINED CSS (index + order page) with navbar normalization ===================== -->
   <style>
-    /* ------------------------------------------------------------------------
-       Combined & cleaned CSS
-       - Includes normalized navbar rules to match index exactly
-       - Includes order page specific styles (hero, features, etc.)
-       ------------------------------------------------------------------------ */
-
-    /* ===== Reset & Base Styles ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; min-height: 100%; overflow-x: hidden; font-size: clamp(14px, 1.2vw, 18px); }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f7fdfc;
+      margin: 0;
+      background: #f9fbfa;
       color: #333;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* ===== Accessibility: Skip Link & Focus outlines ===== */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #009688;
-      color: #fff;
-      padding: 8px 16px;
-      z-index: 1000;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: top 0.3s ease;
-    }
-    .skip-link:focus { top: 10px; }
-
-    :focus { outline: 3px solid #009688; outline-offset: 3px; }
-    button:focus, a:focus, input:focus, textarea:focus, select:focus {
-      outline: 3px solid #009688;
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
-    header a:focus, footer a:focus, .navbar a:focus { background: rgba(0, 150, 136, 0.15); }
-    button:focus-visible { box-shadow: 0 0 0 4px rgba(0,150,136,0.3); }
-
-    /* ==== NAVBAR: normalize across all pages (matches index exactly) ==== */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      /* exact padding used on index.html */
-      padding: 1rem 2rem;
-      background: #009688;
-      gap: 1rem;
-      /* ensure consistent height and box sizing */
-      box-sizing: border-box;
-      min-height: 64px;
     }
 
-    .navbar .logo {
-      font-size: 1.25rem; /* same as index */
-      font-weight: 700;
-      color: white;
-      line-height: 1;
-    }
-
-    .navbar nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.25rem;
-      align-items: center;
-    }
-    .navbar nav ul li a {
-      color: white;
-      font-weight: 500;
-      padding-bottom: 0.25rem;
-      transition: all 0.2s;
-      line-height: 1;
-    }
-
-    /* mobile toggle */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 6px;
-      line-height: 1;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .navbar { padding: 0.75rem 1rem; min-height: auto; }
-      .navbar nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #009688;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-      .navbar nav.open { max-height: 500px; }
-    }
-
-    /* ===== Page hero ===== */
+    /* Hero */
     .hero {
-      background: linear-gradient(180deg,#e9fffb,#ffffff);
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-    }
-    .hero .row { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
-    .hero h1 { color:#00796b; font-size:1.8rem; margin-bottom: .25rem; }
-    .hero p { color:#455; font-weight:600; }
-
-    /* ===== Main layout (not used, but safe) ===== */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-
-    /* ===== Call-to-order content (simple) ===== */
-    .center-card { background:#fff; border-radius:12px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,0.06); }
-    .big-cta { display:inline-flex; gap:.8rem; align-items:center; padding:.9rem 1.1rem; border-radius:10px; font-weight:800; color:#fff; text-decoration:none; }
-    .call-btn { background:#00796b; }
-    .wa-btn { background:#25d366; }
-
-    .steps { margin-top:20px; display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .step { background:#fff; padding:16px; border-radius:10px; box-shadow:0 8px 22px rgba(0,0,0,0.04); }
-    .step h4 { color:#004d40; margin-bottom:.5rem; font-weight:800; }
-    .step p { color:#445; font-weight:600; }
-
-    /* ===== Footer (index styles) ===== */
-    footer {
-      background: #ffffff;
-      border-top: 4px solid #009688;
-      padding: 3rem 1rem 1rem;
-      color: #009688;
-      font-family: 'Poppins', sans-serif;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
-    }
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      padding-bottom: 2rem;
-    }
-    .footer-column h3 {
-      font-weight: 800;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      color: #00796b;
-    }
-    .footer-column ul { list-style: none; padding: 0; margin: 0; }
-    .footer-column ul li { margin-bottom: 0.6rem; }
-    .footer-column ul li a {
-      color: #00796b;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .footer-column ul li a:hover { text-decoration: underline; color: #004d40; }
-
-    .social-icons { display: flex; gap: 0.6rem; }
-    .social-icons a {
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #009688;
-      color: white;
-      font-size: 1rem;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .social-icons a:hover { background: #00695c; transform: translateY(-3px); }
-
-    .footer-bottom {
       text-align: center;
-      font-weight: 800;
-      font-size: 0.95rem;
-      padding-top: 1.5rem;
+      padding: 3rem 1rem;
+      background: #ffffff;
+      border-bottom: 1px solid #eee;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #00695c;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* CTA buttons */
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .cta-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+    .cta-buttons a:hover { transform: translateY(-3px); }
+    .call-btn { background: #00796b; }
+    .wa-btn { background: #25d366; }
+
+    /* Steps */
+    .steps {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+    .step {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+    .step h4 {
+      margin-bottom: 0.5rem;
+      font-weight: 700;
       color: #004d40;
-      border-top: 2px solid rgba(0, 150, 136, 0.2);
+    }
+    .step p {
+      margin: 0;
+      color: #555;
+      font-weight: 500;
     }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 980px) {
-      .hero .row { gap:12px; }
+    /* Small Card with contact info */
+    .contact-card {
+      max-width: 360px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     }
-
-    @media (prefers-color-scheme: dark) {
-      body { background:#031f1c; color:#dff6f0; }
-      .center-card, .step { background: linear-gradient(180deg,#012a27,#00251f); color:#dff6f0; box-shadow:none; }
-      footer { background:#002f2b; color:#e0f2f1; }
+    .contact-card div {
+      font-weight: 700;
+      color: #00695c;
+      margin-bottom: 0.5rem;
+    }
+    .contact-card span {
+      display: block;
+      margin-bottom: 1rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .contact-card a {
+      display: inline-block;
+      background: #00796b;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     }
   </style>
-
-  <!-- ===================== JSON-LD STRUCTURED DATA ===================== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Noor Fatima Healthcare Group",
-    "url": "https://yourdomain.com",
-    "logo": "https://yourdomain.com/assets/logo.png",
-    "sameAs": [
-      "https://facebook.com/yourpage",
-      "https://instagram.com/yourpage",
-      "https://twitter.com/yourpage",
-      "https://linkedin.com/company/yourpage"
-    ],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+91-9999999999",
-      "contactType": "Customer Service",
-      "areaServed": "IN",
-      "availableLanguage": "English"
-    }]
-  }
-  </script>
 </head>
 <body>
-  <a href="#order-main" class="skip-link">Skip to main content</a>
-
   <!-- HEADER / NAVBAR (exact as index, Buy Medicines active) -->
   <header>
     <div class="navbar">
@@ -276,50 +148,39 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main id="order-main" class="container" style="padding:24px 0;">
+  <main>
     <section class="hero">
-      <div class="row">
-        <div style="flex:1; min-width:280px;">
-          <h1 style="color:#00594f;font-size:1.9rem;margin-bottom:.5rem;font-weight:800;">Buy Medicines — easy by Call or WhatsApp</h1>
-          <p style="margin-bottom:1rem;color:#446;font-weight:700;">No online ordering. Call us or message your list on WhatsApp and we'll confirm availability and delivery.</p>
+      <h1>Buy Medicines — Easy via Call or WhatsApp</h1>
+      <p>No complicated online forms. Simply call us or send your list on WhatsApp — we’ll confirm and deliver.</p>
 
-          <div style="display:flex; gap:.8rem; flex-wrap:wrap;">
-            <a class="big-cta call-btn" href="tel:+919999999999" aria-label="Call to order"><i class="fas fa-phone"></i> Call +91 99999 99999</a>
-            <a class="big-cta wa-btn" id="waPrimary" href="https://wa.me/919999999999?text=Hello%20Noor%20Fatima%20Healthcare%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" aria-label="Order via WhatsApp"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
-          </div>
-
-          <p style="margin-top:10px;color:#446;font-weight:600;">Prefer a callback? Call and request one — we’ll return within 15–30 minutes during business hours.</p>
-        </div>
-
-        <div style="width:340px;">
-          <div class="center-card">
-            <div style="font-weight:900;font-size:1.2rem;color:#004d40;margin-bottom:6px;">+91 99999 99999</div>
-            <div style="color:#446;font-weight:700;">Mon–Sat: 9:00 AM — 8:00 PM</div>
-            <div style="margin-top:12px;">
-              <a class="big-cta call-btn" href="tel:+919999999999" style="display:inline-block"><i class="fas fa-phone"></i> Call Now</a>
-            </div>
-          </div>
-        </div>
+      <div class="cta-buttons">
+        <a href="tel:+919999999999" class="call-btn"><i class="fas fa-phone"></i> Call +91 99999 99999</a>
+        <a href="https://wa.me/919999999999?text=Hello%20Noor%20Fatima%20Healthcare%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="wa-btn"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
       </div>
+    </section>
 
-      <div class="steps" style="margin-top:18px;">
-        <div class="step">
-          <h4>Step 1 — Prepare your list</h4>
-          <p>Note medicine name, strength & qty (e.g., Paracetamol 500mg — 1 strip).</p>
-        </div>
-        <div class="step">
-          <h4>Step 2 — Call or WhatsApp</h4>
-          <p>Call or send the list on WhatsApp. Attach prescription photo optionally.</p>
-        </div>
-        <div class="step">
-          <h4>Step 3 — Confirm & pay</h4>
-          <p>We confirm price & time. Pay on delivery or as agreed.</p>
-        </div>
-        <div class="step">
-          <h4>Step 4 — Delivery</h4>
-          <p>Same-day or next-day delivery depending on your area.</p>
-        </div>
+    <div class="contact-card">
+      <div>+91 99999 99999</div>
+      <span>Mon–Sat: 9:00 AM — 8:00 PM</span>
+      <a href="tel:+919999999999"><i class="fas fa-phone"></i> Call Now</a>
+    </div>
+
+    <section class="steps">
+      <div class="step">
+        <h4>Step 1 — Prepare your list</h4>
+        <p>Note medicine name, strength & qty (e.g., Paracetamol 500mg — 1 strip).</p>
+      </div>
+      <div class="step">
+        <h4>Step 2 — Call or WhatsApp</h4>
+        <p>Send the list by call or WhatsApp. Attach prescription if needed.</p>
+      </div>
+      <div class="step">
+        <h4>Step 3 — Confirm & Pay</h4>
+        <p>We confirm availability & price. Pay on delivery or as agreed.</p>
+      </div>
+      <div class="step">
+        <h4>Step 4 — Delivery</h4>
+        <p>Same-day or next-day delivery depending on your area.</p>
       </div>
     </section>
   </main>
@@ -369,20 +230,6 @@
       &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="script-index.js" defer></script>
-  <script>
-    (function() {
-      const toggle = document.querySelector('.menu-toggle');
-      const nav = document.getElementById('primary-nav');
-      if (!toggle || !nav) return;
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-    })();
-  </script>
 </body>
 </html>
+
