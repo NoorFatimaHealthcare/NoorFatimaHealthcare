@@ -2,365 +2,631 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Buy Medicine Online | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Buy medicine online with Noor Fatima Healthcare Group. Trusted delivery, genuine medicines, and expert guidance at your doorstep.">
+  <title>Buy Medicines — Noor Fatima Healthcare Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Buy medicines online — upload prescription or chat on WhatsApp to order. Fast delivery and reliable brands." />
 
-  <!-- Fonts & Icons -->
+  <!-- Fonts & icons (same as index) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Premium Inline Styles -->
+  <!-- Inlined CSS (kept consistent with index styling, tuned for order page) -->
   <style>
-    :root {
-      --primary: #009688;
-      --primary-dark: #00796b;
-      --secondary: #004d40;
-      --light-bg: #f9fdfd;
-      --text: #333;
-      --radius: 14px;
-      --shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
+    /* ===== Base / Reset ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: var(--light-bg);
+      background: #f7fdfc;
+      color: #123;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== Container util ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+    /* ===== Header / navbar (match index) ===== */
+    .navbar {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:1rem; padding: 1rem 2rem; background: #009688; color: white;
+    }
+    .logo { font-weight:700; font-size:1.2rem; color:#fff; }
+    .menu-toggle { display: none; background:none; border: none; color: white; font-size: 1.4rem; }
+    nav ul { display:flex; gap:1rem; list-style:none; align-items:center; }
+    nav ul li a { color:white; font-weight:600; padding:0.2rem 0.15rem; }
+    nav ul li a.active { border-bottom:2px solid #ffc107; padding-bottom:.2rem; }
+
+    /* ===== Page hero ===== */
+    .hero {
+      background: linear-gradient(180deg,#e9fffb,#ffffff);
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .hero .row { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+    .hero h1 { color:#00796b; font-size:1.8rem; margin-bottom: .25rem; }
+    .hero p { color:#455; font-weight:600; }
+
+    /* ===== Main layout ===== */
+    .main-grid {
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      align-items:start;
     }
 
-    /* ───────── Navbar ───────── */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: #009688;
-}
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-}
-.navbar nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.navbar nav ul li a {
-  color: white;
-  font-weight: 500;
-  padding-bottom: 0.25rem;
-  transition: all 0.2s;
-}
-.navbar nav ul li a.active,
-.navbar nav ul li a:hover {
-  color: white;
-  font-weight: 600;
-  border-bottom: 2px solid #ffc107;
-}
+    /* ===== Product grid ===== */
+    .products {
+      background: #fff; border-radius: 12px; padding: 1.1rem; box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+    }
+    .products-header { display:flex; justify-content:space-between; gap:1rem; align-items:center; margin-bottom:1rem; }
+    .search {
+      flex:1; display:flex; gap:.5rem; align-items:center;
+    }
+    .search input {
+      width:100%; padding: .7rem .9rem; border-radius:8px; border:1px solid rgba(0,0,0,0.08);
+      font-weight:600;
+    }
+    .filter {
+      min-width:160px;
+    }
+    .product-grid {
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .product-card {
+      display:flex; gap:1rem; align-items:flex-start; background:#f8fffb; padding:12px; border-radius:10px;
+      border:1px solid rgba(0,0,0,0.03);
+    }
+    .product-image {
+      width:96px; height:96px; border-radius:8px; background:#fff; display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      flex-shrink:0;
+    }
+    .product-meta { flex:1; display:flex; flex-direction:column; gap:.5rem; }
+    .product-title { font-weight:700; color:#00594f; }
+    .product-desc { color:#375; font-size:.95rem; }
+    .product-bottom { display:flex; justify-content:space-between; align-items:center; gap:.5rem; margin-top:auto; }
+    .price { font-weight:800; color:#00796b; }
+    .add-btn {
+      background: #009688; color:#fff; padding: .45rem .8rem; border-radius:8px; border:none; cursor:pointer; font-weight:700;
+    }
+    .add-btn:active { transform: translateY(1px); }
 
-    /* HERO */
-    .order-hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: #fff;
-      text-align: center;
-      padding: 80px 20px;
+    /* ===== Cart (right column) ===== */
+    .cart {
+      background: linear-gradient(180deg,#ffffff,#f7fffc);
+      border-radius:12px; padding: 1rem; box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+      position:sticky; top:18px;
     }
-    .order-hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
+    .cart h3 { color:#00796b; margin-bottom:.75rem; font-weight:800; }
+    .cart-empty { color:#446; padding:1rem 0; text-align:center; }
+    .cart-list { display:flex; flex-direction:column; gap:.75rem; max-height: 320px; overflow:auto; padding-right:.25rem; }
+    .cart-item {
+      display:flex; gap:.8rem; align-items:center; padding:.5rem; background:#fff; border-radius:8px;
+      border:1px solid rgba(0,0,0,0.03);
     }
-    .order-hero p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      font-size: 1.1rem;
-    }
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .cta-btn {
+    .ci-thumb { width:56px; height:56px; border-radius:6px; background:#f1fffb; display:flex; align-items:center; justify-content:center; }
+    .ci-meta { flex:1; }
+    .ci-title { font-weight:700; color:#014d44; font-size:.95rem; }
+    .ci-qty { display:flex; gap:.4rem; align-items:center; margin-top:.35rem; }
+    .qty-btn { padding:.25rem .5rem; border-radius:6px; border:1px solid rgba(0,0,0,0.06); background:#fff; cursor:pointer; }
+    .remove-btn { background:none; border:none; color:#b00020; font-size:.95rem; cursor:pointer; }
+
+    .cart-footer { margin-top:1rem; display:flex; flex-direction:column; gap:.5rem; }
+    .subtotal { display:flex; justify-content:space-between; font-weight:800; color:#00594f; }
+    .checkout-btn { background:#00796b; color:#fff; padding:.8rem 1rem; border-radius:8px; border:none; cursor:pointer; font-weight:800; }
+    .clear-btn { background:none; border:1px solid rgba(0,0,0,0.06); padding:.6rem; border-radius:8px; cursor:pointer; }
+
+    /* ===== Prescription upload ===== */
+    .prescription {
+      margin-top: 1rem;
+      padding: .85rem;
       background: #fff;
-      color: var(--primary);
-      padding: 12px 22px;
-      border-radius: var(--radius);
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      transition: all 0.3s;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.03);
     }
-    .cta-btn i { margin-right: 8px; }
-    .cta-btn:hover {
-      background: var(--secondary);
-      color: #fff;
-      transform: translateY(-2px);
+    .prescription label { display:block; font-weight:700; color:#006; margin-bottom:.45rem; }
+    .prescription input[type="file"] { display:block; }
+    .pres-preview { margin-top:.75rem; display:flex; gap:.5rem; align-items:center; }
+    .pres-preview img { width:64px; height:64px; object-fit:cover; border-radius:6px; border:1px solid rgba(0,0,0,0.05); }
+
+    /* ===== Floating WhatsApp button ===== */
+    .whatsapp-floating {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      display:flex; flex-direction:column; gap:.5rem;
+    }
+    .whatsapp-floating a {
+      background:#25d366; color:#fff; padding:.9rem 1rem; border-radius:50px; font-weight:800; display:flex; gap:.6rem; align-items:center;
+      box-shadow: 0 12px 28px rgba(37,211,102,0.18);
     }
 
-    /* Premium Section */
-    .premium-section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .premium-section h2 {
-      font-size: 2rem;
-      margin-bottom: 14px;
-      color: var(--primary-dark);
-    }
-    .premium-section .sub {
-      font-size: 1rem;
-      color: #666;
-      max-width: 700px;
-      margin: 0 auto 50px;
-    }
-    .premium-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 26px;
-    }
-    .premium-card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 30px 24px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .premium-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-    }
-    .premium-icon {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 14px;
-    }
-    .premium-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-      color: var(--secondary);
-    }
-    .premium-card p {
-      font-size: 0.95rem;
-      color: #555;
+    /* ===== Responsive ===== */
+    @media (max-width: 980px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: 1fr; }
+      .menu-toggle { display:block; }
+      nav { display:none; }
+      nav.open { display:block; }
+      .cart { position:relative; top:auto; }
     }
 
-    /* ===== Footer ===== */
-footer {
-  background: #ffffff;
-  border-top: 4px solid #009688;
-  padding: 3rem 1rem 1rem;
-  color: #009688;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
-}
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  padding-bottom: 2rem;
-}
-.footer-column h3 {
-  font-weight: 800;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: #00796b;
-}
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-column ul li { margin-bottom: 0.6rem; }
-.footer-column ul li a {
-  color: #00796b;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.footer-column ul li a:hover { text-decoration: underline; color: #004d40; }
-.social-icons {
-  display: flex;
-  gap: 0.6rem;
-}
-.social-icons a {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #009688;
-  color: white;
-  font-size: 1rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-.social-icons a:hover { background: #00695c; transform: translateY(-3px); }
-.footer-bottom {
-  text-align: center;
-  font-weight: 800;
-  font-size: 0.95rem;
-  padding-top: 1.5rem;
-  color: #004d40;
-  border-top: 2px solid rgba(0, 150, 136, 0.2);
-}
-@media (max-width: 600px) {
-  .footer-container { text-align: center; }
-  .social-icons { justify-content: center; }
-}
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  footer { background: #002f2b; color: #e0f2f1; }
-  .footer-column h3,
-  .footer-column ul li a { color: #80cbc4; }
-  .footer-column ul li a:hover { color: #b2dfdb; }
-}
+    /* ===== Focus / accessibility helpers ===== */
+    :focus { outline: 3px solid #009688; outline-offset: 2px; border-radius:6px; }
+    button, input[type="file"] { font-family: inherit; }
 
-  <!-- NAVBAR -->
+    /* ===== Dark mode support (keeps consistent) ===== */
+    @media (prefers-color-scheme: dark) {
+      body { background:#031f1c; color:#dff6f0; }
+      .products, .cart, .prescription { background: linear-gradient(180deg,#012a27,#00251f); color:#dff6f0; border-color: rgba(255,255,255,0.04); }
+      .product-card { background: linear-gradient(180deg,#003a36,#00312c); }
+      .add-btn { background:#00a588; }
+      .checkout-btn { background:#00a588; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
   <header>
-    <div class="navbar">
-      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
-      <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
-      <nav>
+    <div class="navbar container" role="banner">
+      <a class="logo" href="index.html" aria-label="Noor Fatima Healthcare Home">Noor Fatima Healthcare</a>
+      <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <nav id="primary-nav" role="navigation" aria-label="Primary navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="order.html" class="active">Buy Medicines</a></li>
+          <li><a href="order.html" class="active" aria-current="page">Buy Medicines</a></li>
           <li><a href="hospitals.html">Hospitals</a></li>
-          <li><a href="clinics.html">Clinics</a></li>
-          <li><a href="diagnostics.html">Diagnostics</a></li>
-          <li><a href="pharmacy.html">Pharmacy</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="order-hero">
-    <h1>Buy Medicine Online</h1>
-    <p>Fast, reliable, and trusted medicine delivery at your doorstep. Upload your prescription or order instantly through our platform.</p>
-    <div class="cta-buttons">
-      <a href="https://wa.me/1234567890" target="_blank" class="cta-btn"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
-      <a href="tel:+1234567890" class="cta-btn"><i class="fas fa-phone-alt"></i> Call to Place Order</a>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="premium-section">
-    <h2>How It Works</h2>
-    <p class="sub">Our simple, streamlined ordering process ensures you get your medicines quickly and safely — every time.</p>
-    <div class="premium-grid">
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-file-prescription"></i></div>
-        <h3>Upload Prescription</h3>
-        <p>Upload your prescription securely via our portal or WhatsApp in seconds.</p>
-      </div>
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-phone-volume"></i></div>
-        <h3>Confirm Order</h3>
-        <p>Our pharmacist will call you to verify details and confirm your order.</p>
-      </div>
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-truck"></i></div>
-        <h3>Fast Delivery</h3>
-        <p>Receive your medicines right at your doorstep — often within hours.</p>
-      </div>
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-user-md"></i></div>
-        <h3>Expert Support</h3>
-        <p>Get professional dosage guidance and usage instructions from our pharmacists.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section class="premium-section">
-    <h2>Why Trust Us?</h2>
-    <p class="sub">We’ve built our reputation on quality, reliability, and transparency — here’s why customers choose us.</p>
-    <div class="premium-grid">
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>100% Genuine Medicines</h3>
-        <p>We source directly from verified suppliers to ensure authenticity.</p>
-      </div>
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-user-md"></i></div>
-        <h3>Verified Pharmacists</h3>
-        <p>All prescriptions are checked by licensed professionals before delivery.</p>
-      </div>
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-clock"></i></div>
-        <h3>24/7 Availability</h3>
-        <p>Order medicines anytime — our team is always ready to assist you.</p>
-      </div>
-      <div class="premium-card">
-        <div class="premium-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Nationwide Reach</h3>
-        <p>We deliver to cities and towns across the country without compromise.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>Products</h3>
-        <ul>
-          <li><a href="order.html">Buy Medicines</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>About</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#">Schedules</a></li>
-          <li><a href="#">Community Initiatives</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Support</h3>
-        <ul>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  <!-- ===== Hero / Intro ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="row">
+        <div>
+          <h1>Buy Medicines Online</h1>
+          <p>Upload prescription, add medicines to cart, and place your order. Fast doorstep delivery across our network.</p>
+        </div>
+        <div>
+          <a class="directions-btn" href="#products" aria-label="Browse products">Browse Products</a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
+  </section>
+
+  <!-- ===== Main ===== -->
+  <main class="container" id="products" style="padding:1.25rem 0 3rem;">
+    <div class="main-grid">
+      <!-- Left: Products -->
+      <section class="products" aria-labelledby="products-heading">
+        <div class="products-header">
+          <div class="search" role="search" aria-label="Search products">
+            <input id="searchInput" type="search" placeholder="Search medicines, e.g., Paracetamol, Cough syrup..." aria-label="Search medicines" />
+          </div>
+          <div class="filter">
+            <select id="categoryFilter" aria-label="Filter by category" style="width:100%; padding:.65rem; border-radius:8px;">
+              <option value="">All categories</option>
+              <option value="pain">Pain & Fever</option>
+              <option value="cough">Cough & Cold</option>
+              <option value="vitamins">Vitamins</option>
+              <option value="digestive">Digestive</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="productGrid" class="product-grid" aria-live="polite">
+          <!-- Product cards injected by JS -->
+        </div>
+      </section>
+
+      <!-- Right: Cart & Prescription -->
+      <aside class="cart" aria-labelledby="cart-heading">
+        <h3 id="cart-heading">Your Cart (<span id="cartCount">0</span>)</h3>
+        <div id="cartList" class="cart-list" aria-live="polite">
+          <div class="cart-empty" id="cartEmpty">No items in cart. Add medicines to get started.</div>
+        </div>
+
+        <div class="cart-footer">
+          <div class="subtotal"><span>Subtotal</span> <span id="cartSubtotal">₹0.00</span></div>
+          <button id="checkoutBtn" class="checkout-btn" aria-label="Checkout">Checkout</button>
+          <button id="clearCartBtn" class="clear-btn" aria-label="Clear cart">Clear cart</button>
+        </div>
+
+        <div class="prescription" id="prescriptionBox">
+          <label for="presUpload">Upload prescription (optional)</label>
+          <input id="presUpload" type="file" accept="image/*,application/pdf" aria-describedby="pres-note" />
+          <div id="presPreviewArea" class="pres-preview" aria-hidden="true"></div>
+          <small id="pres-note" style="display:block;margin-top:.5rem;color:#446;">Accepted: jpg, png, pdf. If image is uploaded we show a preview. Large files may not persist.</small>
+          <button id="removePres" style="margin-top:.6rem; display:none; padding:.5rem; border-radius:8px; border:1px solid rgba(0,0,0,0.06); background:none; cursor:pointer;">Remove uploaded file</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===== Footer (matching index) ===== -->
+  <footer style="margin-top:2rem;">
+    <div class="container" style="padding:2rem 0;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.2rem;">
+        <div>
+          <h4 style="color:#00796b; font-weight:800; margin-bottom:.6rem;">Products</h4>
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li><a href="order.html">Buy Medicines</a></li>
+            <li><a href="store.html">Locate a Store</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#00796b; font-weight:800; margin-bottom:.6rem;">About</h4>
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#00796b; font-weight:800; margin-bottom:.6rem;">Support</h4>
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#00796b; font-weight:800; margin-bottom:.6rem;">Follow us</h4>
+          <div style="display:flex; gap:.5rem;">
+            <a href="#" aria-label="Facebook" style="background:#009688;color:#fff;padding:.55rem;border-radius:6px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="background:#009688;color:#fff;padding:.55rem;border-radius:6px;"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:1.2rem; font-weight:800; color:#004d40;">
+        &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
+      </div>
+    </div>
   </footer>
 
-  <!-- JS -->
+  <!-- ===== Floating WhatsApp button ===== -->
+  <div class="whatsapp-floating" aria-hidden="false">
+    <!-- Replace the phone below with your number in international format without +, e.g. 919876543210 -->
+    <a id="waButton" href="https://wa.me/919999999999?text=Hello%20Noor%20Fatima%20Healthcare%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i> Order via WhatsApp
+    </a>
+  </div>
+
+  <!-- ===== Inlined JS (cart + products + prescription) ===== -->
   <script>
-    (function(){
-      const links = document.querySelectorAll('.navbar nav ul li a');
-      const currentPage = window.location.pathname.split('/').pop();
-      links.forEach(link => {
-        if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
-          link.classList.add('active');
-        }
+    /* ===== Simple product catalog (sample items) =====
+       You can replace, expand or fetch these dynamically later.
+    */
+    const PRODUCTS = [
+      { id: 'p1', title: 'Paracetamol 500mg (Strip of 10)', price: 40, desc: 'Effective for fever and mild pain', category: 'pain', img: '' },
+      { id: 'p2', title: 'Cough Syrup 100ml', price: 120, desc: 'Soothing cough syrup', category: 'cough', img: '' },
+      { id: 'p3', title: 'Vitamin C 500mg (30 tablets)', price: 180, desc: 'Immune support', category: 'vitamins', img: '' },
+      { id: 'p4', title: 'Antacid Tablets (20)', price: 95, desc: 'Relief for acidity', category: 'digestive', img: '' },
+      { id: 'p5', title: 'Ibuprofen 200mg (Strip of 10)', price: 55, desc: 'Pain & inflammation', category: 'pain', img: '' },
+      { id: 'p6', title: 'Multivitamin Syrup 200ml', price: 240, desc: 'For kids & adults', category: 'vitamins', img: '' }
+    ];
+
+    /* ===== Utilities ===== */
+    const formatCurrency = (v) => '₹' + Number(v).toFixed(2);
+
+    /* ===== Persistent localStorage keys ===== */
+    const LS_CART = 'mf_cart_v1';
+    const LS_ORDERS = 'mf_orders_v1';
+    const LS_PRES = 'mf_pres_v1'; // stores {name, dataUrl, type}
+
+    /* ===== State ===== */
+    let cart = {}; // { productId: qty }
+    let pres = null; // prescription object or null
+
+    /* ===== Elements ===== */
+    const productGrid = document.getElementById('productGrid');
+    const cartList = document.getElementById('cartList');
+    const cartCount = document.getElementById('cartCount');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const clearCartBtn = document.getElementById('clearCartBtn');
+    const presUpload = document.getElementById('presUpload');
+    const presPreviewArea = document.getElementById('presPreviewArea');
+    const removePresBtn = document.getElementById('removePres');
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+
+    /* ===== Init ===== */
+    function init() {
+      loadFromStorage();
+      renderProducts();
+      renderCart();
+      wireEvents();
+    }
+
+    function loadFromStorage(){
+      try {
+        const saved = localStorage.getItem(LS_CART);
+        cart = saved ? JSON.parse(saved) : {};
+      } catch(e) { cart = {}; }
+      try {
+        const presSaved = localStorage.getItem(LS_PRES);
+        pres = presSaved ? JSON.parse(presSaved) : null;
+        if (pres) renderPresPreview(pres);
+      } catch(e){ pres = null; }
+    }
+
+    function saveCart() {
+      localStorage.setItem(LS_CART, JSON.stringify(cart));
+    }
+
+    function savePres(p) {
+      if (!p) { localStorage.removeItem(LS_PRES); pres = null; presPreviewArea.innerHTML=''; removePresBtn.style.display='none'; return; }
+      localStorage.setItem(LS_PRES, JSON.stringify(p)); pres = p; renderPresPreview(p);
+    }
+
+    /* ===== Render products ===== */
+    function renderProducts() {
+      const q = (searchInput.value || '').trim().toLowerCase();
+      const cat = categoryFilter.value;
+      const filtered = PRODUCTS.filter(p => {
+        const matchesQ = !q || (p.title + ' ' + p.desc).toLowerCase().includes(q);
+        const matchesCat = !cat || p.category === cat;
+        return matchesQ && matchesCat;
       });
-      const toggle = document.querySelector('.menu-toggle');
-      const navList = document.querySelector('.navbar nav ul');
-      toggle.addEventListener('click', () => navList.classList.toggle('active'));
-    })();
+
+      productGrid.innerHTML = '';
+      if (filtered.length === 0) {
+        productGrid.innerHTML = '<div style="padding:1rem;color:#355;">No medicines found.</div>';
+        return;
+      }
+
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="product-image" aria-hidden="true">
+            <i class="fas fa-pills" style="font-size:28px;color:#009688;"></i>
+          </div>
+          <div class="product-meta">
+            <div class="product-title">${escapeHtml(p.title)}</div>
+            <div class="product-desc">${escapeHtml(p.desc)}</div>
+            <div class="product-bottom">
+              <div class="price">${formatCurrency(p.price)}</div>
+              <div>
+                <button class="add-btn" data-id="${p.id}" aria-label="Add ${escapeHtml(p.title)} to cart">Add</button>
+              </div>
+            </div>
+          </div>
+        `;
+        productGrid.appendChild(card);
+      });
+
+      // wire add buttons
+      productGrid.querySelectorAll('.add-btn').forEach(btn=>{
+        btn.addEventListener('click', (e)=>{
+          const id = btn.getAttribute('data-id');
+          addToCart(id, 1);
+        });
+      });
+    }
+
+    /* ===== Cart management ===== */
+    function addToCart(productId, qty = 1) {
+      if (!PRODUCTS.find(p=>p.id===productId)) return;
+      cart[productId] = (cart[productId] || 0) + qty;
+      if (cart[productId] <= 0) delete cart[productId];
+      saveCart();
+      renderCart();
+    }
+
+    function setCartQty(productId, qty) {
+      if (qty <= 0) { delete cart[productId]; } else { cart[productId] = qty; }
+      saveCart();
+      renderCart();
+    }
+
+    function clearCart() {
+      cart = {};
+      saveCart();
+      renderCart();
+    }
+
+    function renderCart() {
+      const ids = Object.keys(cart);
+      cartCount.textContent = ids.reduce((s,id)=>s+cart[id], 0);
+      if (ids.length === 0) {
+        cartList.innerHTML = '';
+        cartEmpty.style.display = 'block';
+        cartList.appendChild(cartEmpty);
+        cartSubtotal.textContent = formatCurrency(0);
+        return;
+      }
+      cartEmpty.style.display = 'none';
+      cartList.innerHTML = ''; // clear
+      let subtotal = 0;
+      ids.forEach(id=>{
+        const product = PRODUCTS.find(p=>p.id===id);
+        const qty = cart[id];
+        const itemTotal = product.price * qty;
+        subtotal += itemTotal;
+
+        const item = document.createElement('div');
+        item.className = 'cart-item';
+        item.innerHTML = `
+          <div class="ci-thumb" aria-hidden="true"><i class="fas fa-box-open" style="color:#009688;"></i></div>
+          <div class="ci-meta">
+            <div class="ci-title">${escapeHtml(product.title)}</div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="ci-qty">
+                <button class="qty-btn dec" data-id="${id}" aria-label="Decrease quantity">-</button>
+                <div style="min-width:28px; text-align:center; font-weight:700;">${qty}</div>
+                <button class="qty-btn inc" data-id="${id}" aria-label="Increase quantity">+</button>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-weight:800">${formatCurrency(itemTotal)}</div>
+                <button class="remove-btn" data-id="${id}" aria-label="Remove item">Remove</button>
+              </div>
+            </div>
+          </div>
+        `;
+        cartList.appendChild(item);
+      });
+
+      cartSubtotal.textContent = formatCurrency(subtotal);
+
+      // wire qty and remove buttons
+      cartList.querySelectorAll('.qty-btn.inc').forEach(b=>b.addEventListener('click', (e)=>{
+        const id = b.getAttribute('data-id'); addToCart(id, 1);
+      }));
+      cartList.querySelectorAll('.qty-btn.dec').forEach(b=>b.addEventListener('click', (e)=>{
+        const id = b.getAttribute('data-id'); setCartQty(id, (cart[id]||0) - 1);
+      }));
+      cartList.querySelectorAll('.remove-btn').forEach(b=>b.addEventListener('click', (e)=>{
+        const id = b.getAttribute('data-id'); setCartQty(id, 0);
+      }));
+    }
+
+    /* ===== Checkout ===== */
+    checkoutBtn.addEventListener('click', ()=> {
+      const ids = Object.keys(cart);
+      if (ids.length === 0) { alert('Your cart is empty. Add medicines first.'); return; }
+
+      // Create order summary
+      const order = {
+        id: 'ORD-' + Date.now(),
+        createdAt: new Date().toISOString(),
+        items: ids.map(id => {
+          const p = PRODUCTS.find(x=>x.id===id);
+          return { id: p.id, title: p.title, price: p.price, qty: cart[id] };
+        }),
+        prescription: pres || null,
+        subtotal: ids.reduce((s,id)=> s + (PRODUCTS.find(p=>p.id===id).price * cart[id]), 0),
+        status: 'pending'
+      };
+
+      // Save order to localStorage (simple orders archive)
+      try {
+        const raw = localStorage.getItem(LS_ORDERS);
+        const orders = raw ? JSON.parse(raw) : [];
+        orders.unshift(order);
+        localStorage.setItem(LS_ORDERS, JSON.stringify(orders));
+      } catch(e) {
+        console.warn('Could not save order to localStorage', e);
+      }
+
+      // Prepare message to user (you could integrate with server later)
+      let message = `Order placed — ${order.id}\\nSubtotal: ${formatCurrency(order.subtotal)}\\nItems:\\n`;
+      order.items.forEach(it=> message += ` - ${it.title} × ${it.qty} (₹${it.price})\\n`);
+      if (order.prescription) message += 'Prescription: attached\\n';
+      message += '\\nWe saved your order locally. For a real checkout integrate a server or Firebase.';
+
+      alert(message);
+
+      // Optionally open WhatsApp with prefilled message
+      const waText = encodeURIComponent(`Hello, I placed an order ${order.id}. Subtotal: ${formatCurrency(order.subtotal)}. Please confirm.`);
+      // Open WA in new tab
+      window.open('https://wa.me/919999999999?text=' + waText, '_blank');
+
+      // Clear cart but keep prescription (or decide to clear both)
+      clearCart();
+    });
+
+    clearCartBtn.addEventListener('click', ()=> {
+      if (!confirm('Clear all items from cart?')) return;
+      clearCart();
+    });
+
+    /* ===== Prescription upload handling ===== */
+    presUpload.addEventListener('change', async (e)=> {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      // For PDFs we won't preview image but we store a small placeholder
+      if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          const dataUrl = ev.target.result;
+          const obj = { name: file.name, dataUrl, type: file.type, size: file.size };
+          savePres(obj);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        // For PDF store minimal info and do not preview image
+        const obj = { name: file.name, dataUrl: null, type: file.type, size: file.size };
+        savePres(obj);
+        renderPresPreview(obj);
+      }
+    });
+
+    function renderPresPreview(obj) {
+      presPreviewArea.innerHTML = '';
+      if (!obj) { presPreviewArea.setAttribute('aria-hidden','true'); removePresBtn.style.display='none'; return; }
+      presPreviewArea.setAttribute('aria-hidden','false');
+      removePresBtn.style.display='inline-block';
+      if (obj.dataUrl) {
+        const img = document.createElement('img');
+        img.src = obj.dataUrl;
+        img.alt = 'Prescription preview';
+        presPreviewArea.appendChild(img);
+        const name = document.createElement('div');
+        name.textContent = obj.name;
+        name.style.fontWeight = '700';
+        presPreviewArea.appendChild(name);
+      } else {
+        const pdfIcon = document.createElement('div');
+        pdfIcon.style.display='flex';
+        pdfIcon.style.alignItems='center';
+        pdfIcon.innerHTML = '<i class="fas fa-file-pdf" style="font-size:28px;color:#c62828;"></i>';
+        presPreviewArea.appendChild(pdfIcon);
+        const name = document.createElement('div'); name.textContent = obj.name; name.style.fontWeight='700';
+        presPreviewArea.appendChild(name);
+      }
+    }
+
+    removePresBtn.addEventListener('click', ()=>{
+      if (!confirm('Remove uploaded prescription?')) return;
+      presUpload.value = '';
+      savePres(null);
+    });
+
+    /* ===== Search & filter wiring ===== */
+    function wireEvents() {
+      searchInput.addEventListener('input', () => {
+        renderProducts();
+      });
+      categoryFilter.addEventListener('change', () => {
+        renderProducts();
+      });
+
+      // menu toggle (mobile)
+      const mbtn = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('primary-nav');
+      if (mbtn && nav) {
+        mbtn.addEventListener('click', ()=>{
+          const open = nav.classList.toggle('open');
+          mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    }
+
+    /* ===== Small helper: escape html to avoid injection in this template ===== */
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, function(m) {
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m];
+      });
+    }
+
+    /* ===== Kick off ===== */
+    init();
   </script>
 </body>
 </html>
-
-
