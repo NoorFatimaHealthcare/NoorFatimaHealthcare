@@ -37,10 +37,7 @@
   <!-- ===================== INLINED & CLEANED CSS (merged style.css + style-index.css) ===================== -->
   <style>
     /* ------------------------------------------------------------------------
-       Combined & cleaned CSS
-       Sources: style.css and style-index.css merged and pruned to only include
-       rules relevant to the content in this index.html (navbar, health-network,
-       footer, accessibility, responsive, and dark-mode).
+       Combined & cleaned CSS (index) - navbar normalized to match other pages
        ------------------------------------------------------------------------ */
 
     /* ===== Reset & Base Styles ===== */
@@ -81,22 +78,26 @@
     header a:focus, footer a:focus, .navbar a:focus { background: rgba(0, 150, 136, 0.15); }
     button:focus-visible { box-shadow: 0 0 0 4px rgba(0,150,136,0.3); }
 
-    /* ===== Navbar ===== */
+    /* ==== NAVBAR: normalize across pages (matches order/appointment) ==== */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      padding: 1rem 2rem;
+      padding: 1rem 2rem; /* exact padding used elsewhere */
       background: #009688;
       gap: 1rem;
+      box-sizing: border-box;
+      min-height: 64px; /* ensures consistent height */
     }
+
     .navbar .logo {
       font-size: 1.25rem;
       font-weight: 700;
       color: white;
       line-height: 1;
     }
+
     .navbar nav ul {
       list-style: none;
       display: flex;
@@ -108,6 +109,7 @@
       font-weight: 500;
       padding-bottom: 0.25rem;
       transition: all 0.2s;
+      line-height: 1;
     }
     .navbar nav ul li a.active,
     .navbar nav ul li a:hover {
@@ -116,7 +118,7 @@
       border-bottom: 2px solid #ffc107;
     }
 
-    /* Mobile menu toggle (hamburger) */
+    /* mobile toggle adjustments */
     .menu-toggle {
       display: none;
       background: none;
@@ -124,6 +126,8 @@
       color: white;
       font-size: 1.5rem;
       cursor: pointer;
+      padding: 6px;
+      line-height: 1;
     }
 
     /* ===== Health Network (main section present in this index) ===== */
@@ -341,7 +345,7 @@
     .whatsapp-btn a:hover { background-color: #1ebc57; }
   </style>
   <!-- ===================== END INLINED CSS ===================== -->
-  
+
   <!-- ===================== JSON-LD STRUCTURED DATA ===================== -->
   <script type="application/ld+json">
   {
@@ -368,7 +372,7 @@
 </head>
 <body>
   <!-- ===================== ACCESSIBILITY: SKIP LINK ===================== -->
-  <a href="#hero-tv-ultramax" class="skip-link">Skip to main content</a>
+  <a href="#hn-title" class="skip-link">Skip to main content</a>
 
   <!-- ===================== HEADER / NAVBAR ===================== -->
   <header>
@@ -391,7 +395,7 @@
           <li><a href="hospitals.html">Hospitals</a></li>
           <li><a href="clinics.html">Clinics</a></li>
           <li><a href="diagnostics.html">Diagnostics</a></li>
-          <li><a href="appointment.html" class="active">Appointment</a></li>
+          <li><a href="appointment.html">Appointment</a></li>
           <li><a href="pharmacy.html">Pharmacy</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
