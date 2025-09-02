@@ -1,103 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Appointment | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Book your appointment with Noor Fatima Healthcare Group hospitals and clinics. Easy, reliable and fast appointment booking.">
+  <!-- META -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Appointment — Noor Fatima Healthcare Group</title>
+  <meta name="description" content="Book an appointment with Noor Fatima Healthcare Group. Call or WhatsApp to schedule, or use the quick form to send your details." />
 
-  <!-- Global Styles -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style-index.css">
-  <link rel="stylesheet" href="style-appointment.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icons & fonts -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Inlined CSS (keeps consistent with index) -->
+  <style>
+    /* ===== reset & base ===== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{width:100%;min-height:100%;font-family:'Poppins',sans-serif;background:#f7fdfc;color:#123;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+
+    /* skip link */
+    .skip-link{position:absolute;left:0;top:-48px;background:#009688;color:#fff;padding:8px 14px;border-radius:6px;font-weight:700;z-index:9999;transition:top .25s}
+    .skip-link:focus{top:12px}
+
+    /* ===== navbar (exact from index) ===== */
+    .navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#009688;gap:1rem}
+    .navbar .logo{font-size:1.25rem;font-weight:700;color:#fff}
+    .menu-toggle{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+    .navbar nav ul{list-style:none;display:flex;gap:1.25rem;align-items:center}
+    .navbar nav ul li a{color:white;font-weight:500;padding-bottom:.25rem;transition:all .2s}
+    .navbar nav ul li a.active,.navbar nav ul li a:hover{color:white;font-weight:600;border-bottom:2px solid #ffc107}
+
+    /* ===== hero ===== */
+    .hero{background:linear-gradient(180deg,#e9fffb,#ffffff);padding:44px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
+    .hero .wrap{display:flex;gap:2rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .eyebrow{display:inline-block;background:#e6fffb;color:#00796b;padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:1rem}
+    .hero h1{font-size:2.05rem;color:#00594f;line-height:1.06;margin-bottom:.5rem}
+    .hero p{color:#375;font-weight:600}
+
+    .cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+    .btn-call,.btn-wa{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.1rem;border-radius:10px;font-weight:800;cursor:pointer}
+    .btn-call{background:#00796b;color:#fff}
+    .btn-wa{background:#25d366;color:#fff}
+
+    .hero-right{min-width:260px;display:flex;justify-content:center;align-items:center}
+    .card-contact{background:#fff;padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.06);width:100%;text-align:center}
+    .phone-large{font-size:1.25rem;font-weight:900;color:#004d40;margin-bottom:.25rem}
+    .small-note{color:#466;font-weight:600;font-size:.95rem}
+
+    /* ===== appointment form ===== */
+    .appointment { padding:36px 0; }
+    .appointment-grid { display:grid; grid-template-columns: 1fr 380px; gap:1.2rem; align-items:start; }
+    .card { background:#fff;border-radius:12px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,0.06) }
+    .form-row { display:flex; gap:.8rem; margin-bottom:.75rem; flex-wrap:wrap }
+    label { display:block; font-weight:700; margin-bottom:.35rem; color:#00594f }
+    input[type="text"], input[type="tel"], input[type="date"], input[type="time"], select, textarea {
+      width:100%; padding:.7rem .85rem; border-radius:8px; border:1px solid rgba(0,0,0,0.08); font-weight:600;
+    }
+    textarea { min-height:110px; resize:vertical; padding:.8rem }
+
+    .form-actions { display:flex; gap:.6rem; align-items:center; margin-top:1rem; flex-wrap:wrap }
+    .primary { background:#009688; color:#fff; padding:.8rem 1rem; border-radius:8px; font-weight:800; border:none; cursor:pointer }
+    .ghost { background:none; border:1px solid rgba(0,0,0,0.08); padding:.6rem .9rem; border-radius:8px; cursor:pointer; font-weight:700 }
+    .info { color:#446; font-weight:700 }
+
+    /* quick info box */
+    .info-box { background:linear-gradient(180deg,#fbfffe,#ffffff); border-radius:12px; padding:16px; box-shadow:0 10px 24px rgba(0,0,0,0.04) }
+    .info-box h4 { color:#004d40; margin-bottom:.5rem }
+    .info-row { display:flex; gap:.6rem; align-items:center; margin-bottom:.5rem }
+
+    /* FAQ small */
+    .mini-faq { margin-top:12px }
+    .mini-faq p { color:#445; font-weight:600 }
+
+    /* footer (exact from index) */
+    footer{background:#ffffff;border-top:4px solid #009688;padding:3rem 1rem 1rem;color:#009688;font-family:'Poppins',sans-serif;box-shadow:0 -4px 12px rgba(0,0,0,0.05)}
+    .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;padding-bottom:2rem}
+    .footer-column h3{font-weight:800;margin-bottom:1rem;font-size:1.1rem;color:#00796b}
+    .footer-column ul{list-style:none;padding:0;margin:0}
+    .footer-column ul li{margin-bottom:.6rem}
+    .footer-column ul li a{color:#00796b;text-decoration:none;font-weight:600}
+    .footer-bottom{text-align:center;font-weight:800;font-size:.95rem;padding-top:1.5rem;color:#004d40;border-top:2px solid rgba(0,150,136,0.2)}
+
+    /* responsive */
+    @media (max-width:980px) {
+      .appointment-grid { grid-template-columns: 1fr; }
+      .menu-toggle { display:block }
+      .navbar nav { display:none }
+      .form-row { flex-direction:column }
+    }
+
+    /* dark mode */
+    @media (prefers-color-scheme: dark) {
+      body{background:#031f1c;color:#dff6f0}
+      .card,.card-contact,.info-box{background:linear-gradient(180deg,#002a27,#00251f);color:#dff6f0;box-shadow:none}
+      footer{background:#002f2b;color:#e0f2f1}
+      .footer-column h3,.footer-column ul li a{color:#80cbc4}
+    }
+  </style>
 </head>
 <body>
-  <!-- ✅ NAVBAR -->
-  <header class="site-header">
-    <div class="navbar-container">
-      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
+  <!-- skip link -->
+  <a class="skip-link" href="#appointment-main">Skip to main content</a>
+
+  <!-- HEADER / NAVBAR (exact markup from index) -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo" aria-label="Noor Fatima Healthcare Group Home">Noor Fatima Healthcare Group</a>
+
       <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
-      <nav id="primary-nav" class="nav-links">
+
+      <nav id="primary-nav" role="navigation" aria-label="Primary navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="order.html">Buy Medicines</a></li>
           <li><a href="hospitals.html">Hospitals</a></li>
           <li><a href="clinics.html">Clinics</a></li>
           <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="appointment.html" class="active" aria-current="page">Appointment</a></li>
           <li><a href="pharmacy.html">Pharmacy</a></li>
-          <li><a href="appointment.html" class="active">Appointment</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ✅ MAIN CONTENT -->
-  <main>
-    <section class="appointment-section">
-      <div class="form-container">
-        <h1>Book an Appointment</h1>
-        <p class="subtitle">Fill in your details and our team will confirm your appointment shortly.</p>
+  <!-- MAIN -->
+  <main id="appointment-main" class="container" style="padding:24px 0 48px;">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="wrap">
+        <div class="hero-left">
+          <span class="eyebrow">Book an appointment</span>
+          <h1 id="hero-heading">Schedule a consultation quickly — call or WhatsApp</h1>
+          <p>Call or message our team with your preferred date/time and service. Prefer online? Use the quick form below to send your details via Email or WhatsApp.</p>
 
-        <form class="appointment-form" action="#" method="POST">
-          <div class="form-group">
-            <label for="fullname"><i class="fas fa-user"></i> Full Name</label>
-            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+          <div class="cta-row" style="margin-top:12px;">
+            <a class="btn-call" href="tel:+919999999999" aria-label="Call to book"><i class="fas fa-phone"></i> Call +91 99999 99999</a>
+            <a class="btn-wa" href="https://wa.me/919999999999?text=Hello%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp us</a>
           </div>
 
-          <div class="form-group">
-            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-          </div>
+          <p style="margin-top:12px;color:#446;font-weight:700;">Need a callback? Click <a href="tel:+919999999999">Call</a> and ask for a callback.</p>
+        </div>
 
-          <div class="form-group">
-            <label for="email"><i class="fas fa-envelope"></i> Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address">
+        <div class="hero-right">
+          <div class="card-contact" role="region" aria-label="Contact card">
+            <div class="phone-large">+91 99999 99999</div>
+            <div class="small-note">Mon–Sat • 9:00 AM — 8:00 PM</div>
+            <div style="margin-top:12px;">
+              <a href="tel:+919999999999" class="btn-call" style="display:inline-block"><i class="fas fa-phone"></i> Request Callback</a>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="form-group">
-            <label for="department"><i class="fas fa-hospital"></i> Department</label>
-            <select id="department" name="department" required>
-              <option value="">Select Department</option>
-              <option value="general">General Medicine</option>
-              <option value="pediatrics">Pediatrics</option>
-              <option value="cardiology">Cardiology</option>
-              <option value="orthopedics">Orthopedics</option>
-              <option value="gynecology">Gynecology</option>
-              <option value="dermatology">Dermatology</option>
-              <option value="other">Other</option>
-            </select>
+    <!-- APPOINTMENT FORM & INFO -->
+    <section class="appointment" aria-labelledby="appointment-heading">
+      <h2 id="appointment-heading" style="color:#00594f;font-size:1.45rem;margin:18px 0 12px;font-weight:800">Quick appointment form</h2>
+
+      <div class="appointment-grid">
+        <!-- Left: Form -->
+        <div class="card" aria-labelledby="form-head">
+          <h3 id="form-head" style="color:#004d40;margin-bottom:12px">Send your appointment request</h3>
+
+          <form id="apptForm" novalidate>
+            <div class="form-row">
+              <div style="flex:1">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" required placeholder="Your full name" />
+              </div>
+              <div style="width:220px">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" required placeholder="+91 9XXXXXXXXX" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div style="flex:1">
+                <label for="service">Service</label>
+                <select id="service" name="service" aria-label="Choose service">
+                  <option value="">Select service (e.g., General Consultation)</option>
+                  <option>General Consultation</option>
+                  <option>Online Consultation</option>
+                  <option>Pharmacy Pickup</option>
+                  <option>Lab Test Booking</option>
+                </select>
+              </div>
+              <div style="width:180px">
+                <label for="date">Preferred date</label>
+                <input id="date" name="date" type="date" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div style="width:180px">
+                <label for="time">Preferred time</label>
+                <input id="time" name="time" type="time" />
+              </div>
+              <div style="flex:1">
+                <label for="location">Location (optional)</label>
+                <input id="location" name="location" type="text" placeholder="City or area" />
+              </div>
+            </div>
+
+            <div style="margin-top:.6rem">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" name="notes" placeholder="Any details / symptoms / doctor preference"></textarea>
+            </div>
+
+            <div class="form-actions" style="margin-top:10px">
+              <button type="button" id="sendEmail" class="primary" aria-label="Send appointment via email">Send via Email</button>
+              <button type="button" id="sendWA" class="ghost" aria-label="Send appointment via WhatsApp">Send via WhatsApp</button>
+              <div style="margin-left:auto" class="info">We'll respond within 15–60 minutes during business hours</div>
+            </div>
+
+            <div id="formMsg" style="margin-top:12px;color:#0a5;display:none;font-weight:800"></div>
+          </form>
+        </div>
+
+        <!-- Right: Info -->
+        <aside>
+          <div class="info-box">
+            <h4>Before you book</h4>
+            <div class="info-row"><i class="fas fa-check-circle" style="color:#00796b;margin-right:.5rem"></i> Verified specialists & safe care</div>
+            <div class="info-row"><i class="fas fa-clock" style="color:#00796b;margin-right:.5rem"></i> Quick confirmations during working hours</div>
+            <div class="info-row"><i class="fas fa-shield-alt" style="color:#00796b;margin-right:.5rem"></i> Secure & private handling of your details</div>
+
+            <div style="margin-top:12px">
+              <h5 style="color:#004d40;margin-bottom:.5rem">Need urgent help?</h5>
+              <p style="margin-bottom:.6rem;font-weight:700">Call immediately: <a href="tel:+919999999999">+91 99999 99999</a></p>
+              <p style="font-weight:700">Or message: <a href="https://wa.me/919999999999?text=I%20need%20urgent%20help" target="_blank">WhatsApp</a></p>
+            </div>
+
+            <div class="mini-faq" style="margin-top:12px">
+              <h5 style="color:#00594f;margin-bottom:.5rem">Quick FAQ</h5>
+              <p><strong>Do I need to pay now?</strong> — No, payment is arranged on confirmation or at the time of visit/delivery.</p>
+            </div>
           </div>
-
-          <div class="form-group">
-            <label for="date"><i class="fas fa-calendar"></i> Preferred Date</label>
-            <input type="date" id="date" name="date" required>
-          </div>
-
-          <div class="form-group">
-            <label for="time"><i class="fas fa-clock"></i> Preferred Time</label>
-            <input type="time" id="time" name="time" required>
-          </div>
-
-          <div class="form-group">
-            <label for="notes"><i class="fas fa-notes-medical"></i> Notes</label>
-            <textarea id="notes" name="notes" placeholder="Additional details (optional)"></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">
-            <i class="fas fa-paper-plane"></i> Submit Appointment
-          </button>
-        </form>
+        </aside>
       </div>
     </section>
   </main>
 
-  <!-- ✅ FOOTER -->
+  <!-- FOOTER (exact index markup) -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -107,6 +258,7 @@
           <li><a href="store.html">Locate a Store</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h3>About</h3>
         <ul>
@@ -116,6 +268,7 @@
           <li><a href="#">Community Initiatives</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h3>Support</h3>
         <ul>
@@ -124,36 +277,107 @@
           <li><a href="terms.html">Terms & Conditions</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
-    </div>
+
+    <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
 
-  <!-- ✅ Navbar toggle -->
+  <!-- Mobile nav toggle script (same behavior) -->
+  <script>
+    (function(){ const toggle=document.querySelector('.menu-toggle'); const nav=document.getElementById('primary-nav'); if(!toggle||!nav) return; toggle.addEventListener('click', ()=>{ const expanded=toggle.getAttribute('aria-expanded')==='true'; toggle.setAttribute('aria-expanded', String(!expanded)); nav.classList.toggle('open'); }); })();
+  </script>
+
+  <!-- Form handling JS: generates mailto and WhatsApp links from form values; no server -->
   <script>
     (function(){
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!expanded));
+      const form = document.getElementById('apptForm');
+      const sendEmailBtn = document.getElementById('sendEmail');
+      const sendWABtn = document.getElementById('sendWA');
+      const msgBox = document.getElementById('formMsg');
+
+      function gather() {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const service = document.getElementById('service').value.trim();
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const location = document.getElementById('location').value.trim();
+        const notes = document.getElementById('notes').value.trim();
+
+        return { name, phone, service, date, time, location, notes };
+      }
+
+      function validate(data) {
+        if (!data.name) { return 'Please enter your name.'; }
+        if (!data.phone) { return 'Please enter your phone number.'; }
+        // small phone pattern len check (not strict)
+        const onlyDigits = data.phone.replace(/\D/g,'');
+        if (onlyDigits.length < 8) { return 'Please enter a valid phone number.'; }
+        return null;
+      }
+
+      function buildBody(data) {
+        let body = `Appointment request from ${data.name}\\nPhone: ${data.phone}\\n`;
+        if (data.service) body += `Service: ${data.service}\\n`;
+        if (data.date) body += `Preferred date: ${data.date}\\n`;
+        if (data.time) body += `Preferred time: ${data.time}\\n`;
+        if (data.location) body += `Location: ${data.location}\\n`;
+        if (data.notes) body += `Notes: ${data.notes}\\n`;
+        body += `\\n--\\nSent from Noor Fatima Healthcare appointment page.`;
+        return body;
+      }
+
+      // Replace this email with your real booking inbox
+      const BOOKING_EMAIL = 'appointments@yourdomain.com';
+      // Replace this number with your WhatsApp number in international format without plus
+      const WA_NUMBER = '919999999999';
+
+      sendEmailBtn.addEventListener('click', function(){
+        msgBox.style.display='none';
+        const data = gather();
+        const err = validate(data);
+        if (err) { showError(err); return; }
+        const subject = encodeURIComponent('Appointment request: ' + (data.name || ''));
+        const body = encodeURIComponent(buildBody(data));
+        const mailto = `mailto:${BOOKING_EMAIL}?subject=${subject}&body=${body}`;
+        // open default mail client
+        window.location.href = mailto;
+        showSuccess('Email client opened. If it did not, copy details from the form and send to ' + BOOKING_EMAIL + '.');
       });
-      const links = document.querySelectorAll('.nav-links a');
-      const current = location.pathname.split('/').pop() || 'index.html';
-      links.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === current);
+
+      sendWABtn.addEventListener('click', function(){
+        msgBox.style.display='none';
+        const data = gather();
+        const err = validate(data);
+        if (err) { showError(err); return; }
+        const text = encodeURIComponent(buildBody(data));
+        const waLink = 'https://wa.me/' + WA_NUMBER + '?text=' + text;
+        window.open(waLink, '_blank');
+        showSuccess('WhatsApp opened with your message. Send it to complete the request.');
       });
+
+      function showError(text) {
+        msgBox.style.display='block';
+        msgBox.style.color = '#b00020';
+        msgBox.textContent = text;
+        setTimeout(()=> msgBox.style.display='none', 6000);
+      }
+      function showSuccess(text) {
+        msgBox.style.display='block';
+        msgBox.style.color = '#007a3d';
+        msgBox.textContent = text;
+        setTimeout(()=> msgBox.style.display='none', 7000);
+      }
     })();
   </script>
 </body>
