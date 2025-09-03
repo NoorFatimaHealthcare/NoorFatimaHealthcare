@@ -12,14 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ===================== INLINE STYLES (same base as order.html) ===================== -->
+  <!-- ===================== INLINE STYLES ===================== -->
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     html, body { width:100%; min-height:100%; overflow-x:hidden; font-size:clamp(14px,1.2vw,18px); }
     body { font-family:'Poppins',sans-serif; background:#f7fdfc; color:#333; line-height:1.6; }
     a { text-decoration:none; color:inherit; }
 
-    /* === NAVBAR (exactly same as order.html) === */
+    /* === NAVBAR (identical to order.html) === */
     .navbar {
       display:flex; justify-content:space-between; align-items:center;
       width:100%; padding:1rem 2rem; background:#009688; gap:1rem;
@@ -35,10 +35,17 @@
       color:white; font-weight:600; border-bottom:2px solid #ffc107;
     }
 
-    /* === HERO === */
+    /* === HERO (animated gradient) === */
     .hero {
-      background:linear-gradient(135deg,#009688,#00bcd4);
+      background: linear-gradient(135deg, #009688, #00bcd4, #26a69a);
+      background-size: 600% 600%;
+      animation: gradientBG 12s ease infinite;
       color:white; text-align:center; padding:6rem 1rem;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; }
     .hero p { font-size:1.2rem; max-width:800px; margin:0 auto; }
@@ -68,6 +75,10 @@
     .value-card i { font-size:2rem; color:#009688; margin-bottom:1rem; }
     .value-card h3 { font-size:1.2rem; font-weight:700; color:#00594f; margin-bottom:.6rem; }
     .value-card p { font-size:.95rem; color:#475657; }
+
+    /* === FADE-IN EFFECT === */
+    .fade-in { opacity:0; transform:translateY(20px); transition:all 0.8s ease-out; }
+    .fade-in.show { opacity:1; transform:translateY(0); }
   </style>
 </head>
 <body>
@@ -92,13 +103,13 @@
   </header>
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero">
+  <section class="hero fade-in">
     <h1>About Noor Fatima Healthcare Group</h1>
     <p>Transforming healthcare with trust, compassion, and innovation — serving communities with excellence.</p>
   </section>
 
   <!-- ===================== OUR STORY ===================== -->
-  <section>
+  <section class="fade-in">
     <h2 class="section-title">Our Story</h2>
     <p class="section-sub">From humble beginnings to a trusted name in healthcare.</p>
     <div class="story">
@@ -111,55 +122,76 @@
   </section>
 
   <!-- ===================== MISSION / VISION / VALUES ===================== -->
-  <section>
+  <section class="fade-in">
     <h2 class="section-title">Mission, Vision & Values</h2>
     <p class="section-sub">What drives us to make healthcare better.</p>
     <div class="values-grid">
-      <div class="value-card"><i class="fas fa-bullseye"></i><h3>Our Mission</h3><p>Deliver high-quality, affordable, patient-focused healthcare.</p></div>
-      <div class="value-card"><i class="fas fa-eye"></i><h3>Our Vision</h3><p>To be the most trusted and accessible healthcare provider in the region.</p></div>
-      <div class="value-card"><i class="fas fa-hand-holding-heart"></i><h3>Our Values</h3><p>Compassion, trust, and innovation guide everything we do.</p></div>
+      <div class="value-card fade-in"><i class="fas fa-bullseye"></i><h3>Our Mission</h3><p>Deliver high-quality, affordable, patient-focused healthcare.</p></div>
+      <div class="value-card fade-in"><i class="fas fa-eye"></i><h3>Our Vision</h3><p>To be the most trusted and accessible healthcare provider in the region.</p></div>
+      <div class="value-card fade-in"><i class="fas fa-hand-holding-heart"></i><h3>Our Values</h3><p>Compassion, trust, and innovation guide everything we do.</p></div>
     </div>
   </section>
   <!-- ===================== LEADERSHIP ===================== -->
-  <section>
+  <section class="fade-in">
     <h2 class="section-title">Our Leadership</h2>
     <p class="section-sub">Meet the people driving our mission forward.</p>
-    <div class="team-grid">
-      <div class="team-card"><img src="images/team1.jpg" alt="CEO"><h4>Dr. A. Khan</h4><p>Founder & CEO</p></div>
-      <div class="team-card"><img src="images/team2.jpg" alt="Medical Director"><h4>Dr. S. Fatima</h4><p>Medical Director</p></div>
-      <div class="team-card"><img src="images/team3.jpg" alt="Pharmacy Head"><h4>Mr. M. Ali</h4><p>Head of Pharmacy</p></div>
-      <div class="team-card"><img src="images/team4.jpg" alt="Diagnostics Head"><h4>Ms. Z. Ahmed</h4><p>Head of Diagnostics</p></div>
+    <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:1000px;margin:0 auto;">
+      <div class="team-card fade-in"><img src="images/team1.jpg" alt="CEO"><h4>Dr. A. Khan</h4><p>Founder & CEO</p></div>
+      <div class="team-card fade-in"><img src="images/team2.jpg" alt="Medical Director"><h4>Dr. S. Fatima</h4><p>Medical Director</p></div>
+      <div class="team-card fade-in"><img src="images/team3.jpg" alt="Pharmacy Head"><h4>Mr. M. Ali</h4><p>Head of Pharmacy</p></div>
+      <div class="team-card fade-in"><img src="images/team4.jpg" alt="Diagnostics Head"><h4>Ms. Z. Ahmed</h4><p>Head of Diagnostics</p></div>
     </div>
   </section>
 
   <!-- ===================== TIMELINE ===================== -->
-  <section>
+  <section class="fade-in">
     <h2 class="section-title">Our Journey</h2>
     <p class="section-sub">Milestones that shaped who we are today.</p>
     <div class="timeline">
-      <div class="timeline-item"><h4>2010</h4><p>Founded with our first community pharmacy.</p></div>
-      <div class="timeline-item"><h4>2015</h4><p>Expanded into hospitals and clinics.</p></div>
-      <div class="timeline-item"><h4>2020</h4><p>Launched modern diagnostics and digital care.</p></div>
-      <div class="timeline-item"><h4>2025</h4><p>Serving 1M+ patients with a trusted healthcare network.</p></div>
+      <div class="timeline-item fade-in"><h4>2010</h4><p>Founded with our first community pharmacy.</p></div>
+      <div class="timeline-item fade-in"><h4>2015</h4><p>Expanded into hospitals and clinics.</p></div>
+      <div class="timeline-item fade-in"><h4>2020</h4><p>Launched modern diagnostics and digital care.</p></div>
+      <div class="timeline-item fade-in"><h4>2025</h4><p>Serving 1M+ patients with a trusted healthcare network.</p></div>
     </div>
   </section>
 
   <!-- ===================== STATS ===================== -->
-  <section>
+  <section class="fade-in">
     <h2 class="section-title">At a Glance</h2>
     <div class="stats">
-      <div class="stat-card"><h3>200+</h3><p>Doctors</p></div>
-      <div class="stat-card"><h3>10+</h3><p>Hospitals</p></div>
-      <div class="stat-card"><h3>50+</h3><p>Pharmacies</p></div>
-      <div class="stat-card"><h3>1M+</h3><p>Patients Served</p></div>
+      <div class="stat-card fade-in"><h3 data-target="200">0</h3><p>Doctors</p></div>
+      <div class="stat-card fade-in"><h3 data-target="10">0</h3><p>Hospitals</p></div>
+      <div class="stat-card fade-in"><h3 data-target="50">0</h3><p>Pharmacies</p></div>
+      <div class="stat-card fade-in"><h3 data-target="1000000">0</h3><p>Patients Served</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="fade-in" style="background:#e0f7f5;padding:4rem 1.5rem;">
+    <h2 class="section-title">What Our Patients Say</h2>
+    <div class="testimonial-slider" style="max-width:1000px;margin:2rem auto;overflow:hidden;position:relative;">
+      <div class="slides" style="display:flex;transition:transform 0.6s ease;">
+        <div class="testimonial" style="flex:0 0 100%;text-align:center;padding:2rem;">
+          <p style="font-style:italic;color:#444;">"Noor Fatima Healthcare has changed the way my family accesses healthcare. Truly compassionate and reliable."</p>
+          <h4 style="margin-top:1rem;color:#00796b;">— Ayesha, Srinagar</h4>
+        </div>
+        <div class="testimonial" style="flex:0 0 100%;text-align:center;padding:2rem;">
+          <p style="font-style:italic;color:#444;">"From pharmacies to hospitals, their network ensures I never have to worry about quality care."</p>
+          <h4 style="margin-top:1rem;color:#00796b;">— Imran, Ganderbal</h4>
+        </div>
+        <div class="testimonial" style="flex:0 0 100%;text-align:center;padding:2rem;">
+          <p style="font-style:italic;color:#444;">"Professional doctors and staff who genuinely care about patients. Highly recommend."</p>
+          <h4 style="margin-top:1rem;color:#00796b;">— Sara, Baramulla</h4>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===================== CTA ===================== -->
-  <section class="cta">
-    <h2 style="color:#00594f; font-weight:800; margin-bottom:1rem;">Partner With Us</h2>
-    <p style="max-width:600px; margin:0 auto 1.5rem; color:#475657;">Join hands with Noor Fatima Healthcare Group to create healthier communities together.</p>
-    <a href="contact.html">Get in Touch</a>
+  <section class="cta fade-in" style="text-align:center;padding:4rem 1.5rem;background:#009688;color:white;">
+    <h2 style="font-weight:800;margin-bottom:1rem;">Partner With Us</h2>
+    <p style="max-width:600px;margin:0 auto 1.5rem;">Join hands with Noor Fatima Healthcare Group to create healthier communities together.</p>
+    <a href="contact.html" style="background:#ffc107;color:#004d40;padding:0.75rem 1.5rem;border-radius:30px;font-weight:700;">Get in Touch</a>
   </section>
 
   <!-- ===================== FOOTER ===================== -->
@@ -202,120 +234,24 @@
     <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
 
-<style>
-/* === HERO GRADIENT ANIMATION === */
-.hero {
-  background: linear-gradient(135deg, #009688, #00bcd4, #26a69a);
-  background-size: 600% 600%;
-  animation: gradientBG 12s ease infinite;
-}
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+  <!-- ===================== EXTRA SCRIPTS ===================== -->
+  <script>
+  // === SCROLL FADE-IN ===
+  const faders = document.querySelectorAll(".fade-in");
+  const appearOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
 
-/* === FADE-IN ANIMATION === */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === TEAM HOVER OVERLAY === */
-.team-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  text-align: center;
-}
-.team-card img {
-  border-radius: 50%;
-  width: 140px; height: 140px;
-  object-fit: cover; margin-bottom: 1rem;
-  transition: transform 0.4s ease;
-}
-.team-card:hover img { transform: scale(1.08); }
-.team-card::after {
-  content: "View Profile";
-  position: absolute;
-  bottom: -50px; left: 50%; transform: translateX(-50%);
-  background: #009688; color: white; font-size: 0.9rem;
-  padding: 0.5rem 1rem; border-radius: 20px;
-  transition: all 0.4s ease;
-}
-.team-card:hover::after { bottom: 10px; }
-
-/* === TIMELINE ENHANCEMENT === */
-.timeline {
-  position: relative;
-  margin: 2rem auto;
-  max-width: 900px;
-}
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 50%; transform: translateX(-50%);
-  top: 0; bottom: 0;
-  width: 4px; background: #009688;
-}
-.timeline-item {
-  position: relative;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  width: 45%;
-  margin: 1.5rem 0;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-.timeline-item h4 { color:#009688; margin-bottom: 0.5rem; }
-.timeline-item:nth-child(odd) { left: 0; }
-.timeline-item:nth-child(even) { left: 55%; }
-.timeline-item::before {
-  content: "📍";
-  position: absolute;
-  top: 15px; left: -35px;
-  font-size: 1.2rem;
-  background:#fff; border:3px solid #009688;
-  border-radius:50%; padding:6px; line-height:1;
-}
-.timeline-item:nth-child(even)::before { left: auto; right: -35px; }
-
-/* === STATS COUNTER === */
-.stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
-.stat-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-.stat-card h3 { font-size: 2rem; font-weight: 800; color:#009688; }
-.stat-card p { margin-top: 0.5rem; color: #555; }
-</style>
-
-<script>
-// === SCROLL FADE-IN ===
-const faders = document.querySelectorAll(".fade-in");
-const appearOptions = { threshold: 0.2 };
-const appearOnScroll = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      obs.unobserve(entry.target);
-    }
-  });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
-
-// === STATS COUNTER ===
-document.addEventListener("DOMContentLoaded", () => {
+  // === STATS COUNTER ===
   const counters = document.querySelectorAll(".stat-card h3");
-  const speed = 100; // smaller = faster
+  const speed = 100;
   const animateCounters = () => {
     counters.forEach(counter => {
       const target = +counter.getAttribute("data-target");
@@ -327,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
           counter.innerText = count + "+";
           requestAnimationFrame(update);
         } else {
-          counter.innerText = target + "+";
+          counter.innerText = target.toLocaleString() + "+";
         }
       };
       update();
@@ -340,9 +276,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   observer.observe(document.querySelector(".stats"));
-});
-</script>
 
+  // === TESTIMONIAL SLIDER ===
+  const slides = document.querySelector(".slides");
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % 3;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }, 4000);
+  </script>
 </body>
 </html>
-
