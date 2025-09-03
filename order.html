@@ -141,45 +141,94 @@
     </div>
   </header>
 
-  <!-- ===================== MAIN CONTENT ===================== -->
-  <main>
-    <section class="health-network">
-      <div class="container">
-        <h2>Order Medicines</h2>
-        <p class="sub">Get genuine medicines at your doorstep with ease. Just call or WhatsApp us and we’ll take care of the rest.</p>
+  <!-- ===================== ORDER OPTIONS (CALL vs WHATSAPP) ===================== -->
+<section class="health-network">
+  <div class="container">
+    <h2>Choose How You’d Like to Order</h2>
+    <p class="sub">Select the method that suits you best — call us directly or place your order instantly on WhatsApp.</p>
 
+    <div class="order-options">
+      <!-- CALL OPTION -->
+      <div class="option-column">
+        <h3 style="text-align:center; color:#00594f; margin-bottom:1.5rem;">📞 Call to Place Order</h3>
         <div class="steps-grid">
-          <!-- Step 1 -->
           <div class="step-card">
             <div class="step-badge">1</div>
             <div class="step-icon"><i class="fas fa-phone"></i></div>
             <h3 class="step-title">Call Us</h3>
-            <p class="step-desc">Dial <strong>+91-XXXXXXXXXX</strong> and share your medicine requirements with our pharmacist.</p>
+            <p class="step-desc">Dial <strong>+91-XXXXXXXXXX</strong> and talk directly to our pharmacist.</p>
           </div>
-
-          <!-- Step 2 -->
           <div class="step-card">
             <div class="step-badge">2</div>
-            <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
-            <h3 class="step-title">WhatsApp</h3>
-            <p class="step-desc">Send your order details instantly on WhatsApp for quick confirmation.</p>
+            <div class="step-icon"><i class="fas fa-user-check"></i></div>
+            <h3 class="step-title">Confirm Order</h3>
+            <p class="step-desc">Our team verifies medicine availability and order details.</p>
           </div>
-
-          <!-- Step 3 -->
           <div class="step-card">
             <div class="step-badge">3</div>
             <div class="step-icon"><i class="fas fa-truck-medical"></i></div>
             <h3 class="step-title">Delivery</h3>
-            <p class="step-desc">We deliver your medicines safely and quickly right to your doorstep.</p>
+            <p class="step-desc">Your medicines are delivered safely and quickly to your doorstep.</p>
           </div>
         </div>
+        <div class="whatsapp-btn">
+          <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone"></i> Call to Place Order</a>
+        </div>
+      </div>
 
+      <!-- WHATSAPP OPTION -->
+      <div class="option-column">
+        <h3 style="text-align:center; color:#00594f; margin-bottom:1.5rem;">💬 WhatsApp to Place Order</h3>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-badge">1</div>
+            <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
+            <h3 class="step-title">Send Order</h3>
+            <p class="step-desc">Message your medicine details instantly on WhatsApp.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-badge">2</div>
+            <div class="step-icon"><i class="fas fa-user-check"></i></div>
+            <h3 class="step-title">Confirm Order</h3>
+            <p class="step-desc">We confirm availability and order details with you in chat.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-badge">3</div>
+            <div class="step-icon"><i class="fas fa-truck-medical"></i></div>
+            <h3 class="step-title">Delivery</h3>
+            <p class="step-desc">Your medicines are delivered quickly and securely at your home.</p>
+          </div>
+        </div>
         <div class="whatsapp-btn">
           <a href="https://wa.me/91XXXXXXXXXX"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Side-by-side layout */
+  .order-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .option-column { display:flex; flex-direction:column; }
+
+  /* Ensure steps fit nicely inside columns */
+  .option-column .steps-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .order-options { grid-template-columns: 1fr; }
+  }
+</style>
+
 
 
   <!-- ===================== FOOTER ===================== -->
@@ -223,5 +272,6 @@
   </footer>
 </body>
 </html>
+
 
 
