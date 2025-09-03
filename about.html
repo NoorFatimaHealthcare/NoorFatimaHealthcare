@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ===================== META BASICS ===================== -->
+  <!-- ===================== META ===================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,14 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ===================== INLINE STYLES ===================== -->
+  <!-- ===================== UNIFIED CSS ===================== -->
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     html, body { width:100%; min-height:100%; overflow-x:hidden; font-size:clamp(14px,1.2vw,18px); }
     body { font-family:'Poppins',sans-serif; background:#f7fdfc; color:#333; line-height:1.6; }
     a { text-decoration:none; color:inherit; }
 
-    /* === NAVBAR (identical to order.html) === */
+    /* NAVBAR */
     .navbar {
       display:flex; justify-content:space-between; align-items:center;
       width:100%; padding:1rem 2rem; background:#009688; gap:1rem;
@@ -35,7 +35,7 @@
       color:white; font-weight:600; border-bottom:2px solid #ffc107;
     }
 
-    /* === HERO (animated gradient) === */
+    /* HERO */
     .hero {
       background: linear-gradient(135deg, #009688, #00bcd4, #26a69a);
       background-size: 600% 600%;
@@ -50,19 +50,19 @@
     .hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; }
     .hero p { font-size:1.2rem; max-width:800px; margin:0 auto; }
 
-    /* === SECTION BASE === */
+    /* SECTIONS */
     section { padding:4rem 1.5rem; }
     .section-title { text-align:center; color:#00796b; font-size:2rem; font-weight:800; margin-bottom:.5rem; }
     .section-sub { text-align:center; color:#41645f; max-width:800px; margin:0 auto 2rem; font-weight:500; }
 
-    /* === STORY SPLIT === */
+    /* STORY */
     .story {
       display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; max-width:1200px; margin:0 auto;
     }
     .story img { width:100%; border-radius:16px; box-shadow:0 10px 24px rgba(0,0,0,0.1); }
     .story h3 { color:#00594f; font-weight:700; margin-bottom:1rem; }
 
-    /* === VALUES GRID === */
+    /* VALUES */
     .values-grid {
       display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:2rem; max-width:1100px; margin:0 auto;
@@ -76,13 +76,104 @@
     .value-card h3 { font-size:1.2rem; font-weight:700; color:#00594f; margin-bottom:.6rem; }
     .value-card p { font-size:.95rem; color:#475657; }
 
-    /* === FADE-IN EFFECT === */
+    /* FADE-IN */
     .fade-in { opacity:0; transform:translateY(20px); transition:all 0.8s ease-out; }
     .fade-in.show { opacity:1; transform:translateY(0); }
+
+    /* TEAM */
+    .team-card {
+      background:#fff; border-radius:16px; padding:2rem 1rem;
+      text-align:center; box-shadow:0 8px 24px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card:hover { transform: translateY(-6px); box-shadow:0 14px 36px rgba(0,0,0,0.12); }
+    .team-card img {
+      border-radius:50%; width:140px; height:140px; object-fit:cover; margin-bottom:1rem;
+    }
+    .team-card h4 { margin-top:0.5rem; color:#00594f; font-weight:700; }
+    .team-card p { color:#555; font-size:0.95rem; }
+
+    /* TIMELINE */
+    .timeline { position:relative; margin:2rem auto; max-width:900px; }
+    .timeline::before {
+      content:""; position:absolute; left:50%; transform:translateX(-50%);
+      top:0; bottom:0; width:4px; background:#009688;
+    }
+    .timeline-item {
+      background:#fff; border-radius:16px; padding:1.5rem; width:45%;
+      position:relative; margin:2rem 0; box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    }
+    .timeline-item:nth-child(odd) { left:0; }
+    .timeline-item:nth-child(even) { left:55%; }
+    .timeline-item::before {
+      content:"📍"; position:absolute; top:15px; left:-35px;
+      font-size:1.2rem; background:#fff; border:3px solid #009688;
+      border-radius:50%; padding:6px; line-height:1;
+    }
+    .timeline-item:nth-child(even)::before { left:auto; right:-35px; }
+
+    /* STATS */
+    .stats { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2rem; }
+    .stat-card {
+      background:#fff; border-radius:16px; padding:2rem 2rem; text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stat-card:hover { transform:translateY(-6px); box-shadow:0 14px 36px rgba(0,0,0,0.12); }
+    .stat-card h3 { font-size:2rem; font-weight:800; color:#009688; }
+    .stat-card p { margin-top:0.5rem; color:#555; }
+
+    /* TESTIMONIALS */
+    .testimonial { background:#fff; border-radius:16px; padding:2rem;
+      box-shadow:0 8px 24px rgba(0,0,0,0.08); max-width:700px; margin:0 auto; }
+    .testimonial p { font-size:1rem; line-height:1.6; color:#444; }
+    .testimonial h4 { margin-top:1rem; font-weight:700; color:#00594f; }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #009688, #26a69a);
+      color:white; border-radius:20px; max-width:1000px;
+      margin:3rem auto; padding:3rem 1.5rem;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12); text-align:center;
+    }
+    .cta a {
+      background:#ffc107; color:#004d40; padding:0.75rem 1.5rem;
+      border-radius:30px; font-weight:700; display:inline-block;
+      transition:background 0.3s ease;
+    }
+    .cta a:hover { background:#ffb300; }
+
+    /* FOOTER */
+    footer {
+      background:#ffffff; border-top:4px solid #009688;
+      padding:3rem 1rem 1rem; color:#009688; font-family:'Poppins',sans-serif;
+      box-shadow:0 -4px 12px rgba(0,0,0,0.05);
+    }
+    .footer-container {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:2rem; padding-bottom:2rem;
+    }
+    .footer-column h3 { font-weight:800; margin-bottom:1rem; font-size:1.1rem; color:#00796b; }
+    .footer-column ul { list-style:none; }
+    .footer-column ul li { margin-bottom:.6rem; }
+    .footer-column ul li a {
+      color:#00796b; font-weight:600; transition:.3s;
+    }
+    .footer-column ul li a:hover { text-decoration:underline; color:#004d40; }
+    .social-icons { display:flex; gap:.6rem; }
+    .social-icons a {
+      width:35px; height:35px; display:flex; align-items:center; justify-content:center;
+      border-radius:50%; background:#009688; color:white; font-size:1rem;
+      transition:background .3s ease, transform .3s ease;
+    }
+    .social-icons a:hover { background:#00695c; transform:translateY(-3px); }
+    .footer-bottom {
+      text-align:center; font-weight:800; font-size:.95rem; padding-top:1.5rem;
+      color:#004d40; border-top:2px solid rgba(0,150,136,0.2);
+    }
   </style>
 </head>
 <body>
-  <!-- ===================== NAVBAR ===================== -->
+  <!-- NAVBAR -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
@@ -102,13 +193,13 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- HERO -->
   <section class="hero fade-in">
     <h1>About Noor Fatima Healthcare Group</h1>
     <p>Transforming healthcare with trust, compassion, and innovation — serving communities with excellence.</p>
   </section>
 
-  <!-- ===================== OUR STORY ===================== -->
+  <!-- STORY -->
   <section class="fade-in">
     <h2 class="section-title">Our Story</h2>
     <p class="section-sub">From humble beginnings to a trusted name in healthcare.</p>
@@ -121,7 +212,7 @@
     </div>
   </section>
 
-  <!-- ===================== MISSION / VISION / VALUES ===================== -->
+  <!-- VALUES -->
   <section class="fade-in">
     <h2 class="section-title">Mission, Vision & Values</h2>
     <p class="section-sub">What drives us to make healthcare better.</p>
@@ -131,70 +222,74 @@
       <div class="value-card fade-in"><i class="fas fa-hand-holding-heart"></i><h3>Our Values</h3><p>Compassion, trust, and innovation guide everything we do.</p></div>
     </div>
   </section>
-  <!-- ===================== LEADERSHIP ===================== -->
+  <!-- LEADERSHIP -->
   <section class="fade-in">
     <h2 class="section-title">Our Leadership</h2>
     <p class="section-sub">Meet the people driving our mission forward.</p>
-    <div class="team-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:1000px;margin:0 auto;">
-      <div class="team-card fade-in"><img src="images/team1.jpg" alt="CEO"><h4>Dr. A. Khan</h4><p>Founder & CEO</p></div>
-      <div class="team-card fade-in"><img src="images/team2.jpg" alt="Medical Director"><h4>Dr. S. Fatima</h4><p>Medical Director</p></div>
-      <div class="team-card fade-in"><img src="images/team3.jpg" alt="Pharmacy Head"><h4>Mr. M. Ali</h4><p>Head of Pharmacy</p></div>
-      <div class="team-card fade-in"><img src="images/team4.jpg" alt="Diagnostics Head"><h4>Ms. Z. Ahmed</h4><p>Head of Diagnostics</p></div>
-    </div>
-  </section>
-
-  <!-- ===================== TIMELINE ===================== -->
-  <section class="fade-in">
-    <h2 class="section-title">Our Journey</h2>
-    <p class="section-sub">Milestones that shaped who we are today.</p>
-    <div class="timeline">
-      <div class="timeline-item fade-in"><h4>2010</h4><p>Founded with our first community pharmacy.</p></div>
-      <div class="timeline-item fade-in"><h4>2015</h4><p>Expanded into hospitals and clinics.</p></div>
-      <div class="timeline-item fade-in"><h4>2020</h4><p>Launched modern diagnostics and digital care.</p></div>
-      <div class="timeline-item fade-in"><h4>2025</h4><p>Serving 1M+ patients with a trusted healthcare network.</p></div>
-    </div>
-  </section>
-
-  <!-- ===================== STATS ===================== -->
-  <section class="fade-in">
-    <h2 class="section-title">At a Glance</h2>
-    <div class="stats">
-      <div class="stat-card fade-in"><h3 data-target="200">0</h3><p>Doctors</p></div>
-      <div class="stat-card fade-in"><h3 data-target="10">0</h3><p>Hospitals</p></div>
-      <div class="stat-card fade-in"><h3 data-target="50">0</h3><p>Pharmacies</p></div>
-      <div class="stat-card fade-in"><h3 data-target="1000000">0</h3><p>Patients Served</p></div>
-    </div>
-  </section>
-
-  <!-- ===================== TESTIMONIALS ===================== -->
-  <section class="fade-in" style="background:#e0f7f5;padding:4rem 1.5rem;">
-    <h2 class="section-title">What Our Patients Say</h2>
-    <div class="testimonial-slider" style="max-width:1000px;margin:2rem auto;overflow:hidden;position:relative;">
-      <div class="slides" style="display:flex;transition:transform 0.6s ease;">
-        <div class="testimonial" style="flex:0 0 100%;text-align:center;padding:2rem;">
-          <p style="font-style:italic;color:#444;">"Noor Fatima Healthcare has changed the way my family accesses healthcare. Truly compassionate and reliable."</p>
-          <h4 style="margin-top:1rem;color:#00796b;">— Ayesha, Srinagar</h4>
-        </div>
-        <div class="testimonial" style="flex:0 0 100%;text-align:center;padding:2rem;">
-          <p style="font-style:italic;color:#444;">"From pharmacies to hospitals, their network ensures I never have to worry about quality care."</p>
-          <h4 style="margin-top:1rem;color:#00796b;">— Imran, Ganderbal</h4>
-        </div>
-        <div class="testimonial" style="flex:0 0 100%;text-align:center;padding:2rem;">
-          <p style="font-style:italic;color:#444;">"Professional doctors and staff who genuinely care about patients. Highly recommend."</p>
-          <h4 style="margin-top:1rem;color:#00796b;">— Sara, Baramulla</h4>
-        </div>
+    <div class="values-grid">
+      <div class="team-card">
+        <img src="images/team1.jpg" alt="CEO">
+        <h4>Dr. A. Khan</h4>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="team-card">
+        <img src="images/team2.jpg" alt="Medical Director">
+        <h4>Dr. S. Fatima</h4>
+        <p>Medical Director</p>
+      </div>
+      <div class="team-card">
+        <img src="images/team3.jpg" alt="Pharmacy Head">
+        <h4>Mr. M. Ali</h4>
+        <p>Head of Pharmacy</p>
+      </div>
+      <div class="team-card">
+        <img src="images/team4.jpg" alt="Diagnostics Head">
+        <h4>Ms. Z. Ahmed</h4>
+        <p>Head of Diagnostics</p>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CTA ===================== -->
-  <section class="cta fade-in" style="text-align:center;padding:4rem 1.5rem;background:#009688;color:white;">
-    <h2 style="font-weight:800;margin-bottom:1rem;">Partner With Us</h2>
-    <p style="max-width:600px;margin:0 auto 1.5rem;">Join hands with Noor Fatima Healthcare Group to create healthier communities together.</p>
-    <a href="contact.html" style="background:#ffc107;color:#004d40;padding:0.75rem 1.5rem;border-radius:30px;font-weight:700;">Get in Touch</a>
+  <!-- TIMELINE -->
+  <section class="fade-in">
+    <h2 class="section-title">Our Journey</h2>
+    <p class="section-sub">Milestones that shaped who we are today.</p>
+    <div class="timeline">
+      <div class="timeline-item"><h4>2010</h4><p>Founded with our first community pharmacy.</p></div>
+      <div class="timeline-item"><h4>2015</h4><p>Expanded into hospitals and clinics.</p></div>
+      <div class="timeline-item"><h4>2020</h4><p>Launched modern diagnostics and digital care.</p></div>
+      <div class="timeline-item"><h4>2025</h4><p>Serving 1M+ patients with a trusted healthcare network.</p></div>
+    </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- STATS -->
+  <section class="fade-in">
+    <h2 class="section-title">At a Glance</h2>
+    <div class="stats">
+      <div class="stat-card"><h3 data-target="200">0+</h3><p>Doctors</p></div>
+      <div class="stat-card"><h3 data-target="10">0+</h3><p>Hospitals</p></div>
+      <div class="stat-card"><h3 data-target="50">0+</h3><p>Pharmacies</p></div>
+      <div class="stat-card"><h3 data-target="1000000">0+</h3><p>Patients Served</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="fade-in">
+    <h2 class="section-title">What People Say</h2>
+    <div class="testimonial" id="testimonial-slider">
+      <p>"Noor Fatima Healthcare Group provided exceptional care when my family needed it most. Truly compassionate professionals."</p>
+      <h4>- Sarah Ahmed</h4>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta fade-in">
+    <h2 style="font-weight:800; margin-bottom:1rem;">Partner With Us</h2>
+    <p style="max-width:600px; margin:0 auto 1.5rem; color:white;">Join hands with Noor Fatima Healthcare Group to create healthier communities together.</p>
+    <a href="contact.html">Get in Touch</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
@@ -234,11 +329,10 @@
     <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
 
-  <!-- ===================== EXTRA SCRIPTS ===================== -->
+  <!-- ===================== JS ===================== -->
   <script>
-  // === SCROLL FADE-IN ===
+  // Fade-in observer
   const faders = document.querySelectorAll(".fade-in");
-  const appearOptions = { threshold: 0.2 };
   const appearOnScroll = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -246,10 +340,10 @@
         obs.unobserve(entry.target);
       }
     });
-  }, appearOptions);
+  }, { threshold: 0.2 });
   faders.forEach(fader => appearOnScroll.observe(fader));
 
-  // === STATS COUNTER ===
+  // Stats counter
   const counters = document.querySelectorAll(".stat-card h3");
   const speed = 100;
   const animateCounters = () => {
@@ -269,21 +363,29 @@
       update();
     });
   };
-  const observer = new IntersectionObserver(entries => {
+  const statObserver = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
       animateCounters();
-      observer.disconnect();
+      statObserver.disconnect();
     }
   });
-  observer.observe(document.querySelector(".stats"));
+  statObserver.observe(document.querySelector(".stats"));
 
-  // === TESTIMONIAL SLIDER ===
-  const slides = document.querySelector(".slides");
-  let index = 0;
+  // Testimonials slider
+  const testimonials = [
+    { text: "Noor Fatima Healthcare Group provided exceptional care when my family needed it most. Truly compassionate professionals.", author: "- Sarah Ahmed" },
+    { text: "Their pharmacy and diagnostic services are top-notch. I trust them completely for my family’s healthcare needs.", author: "- Imran Malik" },
+    { text: "Professional staff, modern facilities, and a genuine care for patients. Highly recommended!", author: "- Ayesha Khan" }
+  ];
+  let currentTestimonial = 0;
+  const slider = document.getElementById("testimonial-slider");
   setInterval(() => {
-    index = (index + 1) % 3;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  }, 4000);
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    slider.innerHTML = \`
+      <p>"\${testimonials[currentTestimonial].text}"</p>
+      <h4>\${testimonials[currentTestimonial].author}</h4>
+    \`;
+  }, 5000);
   </script>
 </body>
 </html>
