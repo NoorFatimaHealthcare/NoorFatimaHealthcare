@@ -1,32 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ===================== META BASICS ===================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Contact Us | Noor Fatima Healthcare Group</title>
   <meta name="description" content="Get in touch with Noor Fatima Healthcare Group — reach us for appointments, enquiries, and support.">
 
-  <!-- ===================== SOCIAL & SEO META ===================== -->
-  <meta property="og:title" content="Contact Us - Noor Fatima Healthcare Group">
-  <meta property="og:description" content="Contact Noor Fatima Healthcare Group for medicine orders, appointments, and customer support.">
-  <meta property="og:image" content="https://yourdomain.com/assets/og-image.png">
-  <meta property="og:url" content="https://yourdomain.com/contact.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Noor Fatima Healthcare Group">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- ✅ Theme Color -->
-  <meta name="theme-color" content="#009688">
-
-  <!-- ===================== ICONS & FONTS ===================== -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Icons & Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ✅ Import the same inline CSS from index.html -->
   <style>
     /* (unchanged — your full inline CSS here) */
     /* ------------------------------------------------------------------------ */
@@ -323,20 +306,58 @@
       font-size: 1.2rem; font-weight: bold; border-radius: 5px;
     }
     .whatsapp-btn a:hover { background-color: #1ebc57; }
+
+    /* Extra premium touches */
+    .contact-section {
+      margin-top: 2rem;
+      display: grid;
+      gap: 2rem;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #009688;
+    }
+    .contact-form button {
+      padding: 1rem 1.4rem;
+      background: #009688;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover {
+      background: #00796b;
+    }
   </style>
 </head>
 <body>
-  <!-- ===================== ACCESSIBILITY: SKIP LINK ===================== -->
-  <a href="#contact-title" class="skip-link">Skip to main content</a>
-
-  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <!-- Navbar -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav id="primary-nav" aria-label="Primary navigation">
+      <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="order.html">Buy Medicines</a></li>
@@ -345,23 +366,21 @@
           <li><a href="diagnostics.html">Diagnostics</a></li>
           <li><a href="appointment.html">Appointment</a></li>
           <li><a href="pharmacy.html">Pharmacy</a></li>
-          <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ===================== MAIN CONTENT ===================== -->
+  <!-- Main -->
   <main>
     <section class="health-network" aria-labelledby="contact-title">
       <div class="container">
         <h2 id="contact-title">Contact Us</h2>
-        <p class="sub">
-          We’d love to hear from you. Reach out for enquiries, support, or to book an appointment with Noor Fatima Healthcare Group.
-        </p>
+        <p class="sub">We’d love to hear from you. Reach out for enquiries, support, or to book an appointment with Noor Fatima Healthcare Group.</p>
 
+        <!-- Contact Cards -->
         <div class="hn-grid">
-          <!-- Contact Info -->
           <div class="hn-card">
             <div class="hn-icon"><i class="fas fa-phone"></i></div>
             <h3 class="hn-title">Call Us</h3>
@@ -389,25 +408,26 @@
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <div style="margin-top:3rem;">
-          <h3 class="hn-title">Send Us a Message</h3>
-          <form action="#" method="post" style="display:grid;gap:1rem;max-width:600px;">
-            <input type="text" name="name" placeholder="Your Name" required style="padding:0.8rem;border:1px solid #ccc;border-radius:6px;">
-            <input type="email" name="email" placeholder="Your Email" required style="padding:0.8rem;border:1px solid #ccc;border-radius:6px;">
-            <textarea name="message" rows="5" placeholder="Your Message" required style="padding:0.8rem;border:1px solid #ccc;border-radius:6px;"></textarea>
-            <button type="submit" style="padding:0.9rem 1.2rem;background:#009688;color:white;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Send Message</button>
-          </form>
+        <!-- Premium Contact Form Card -->
+        <div class="contact-section">
+          <div class="contact-card">
+            <h3 class="hn-title">Send Us a Message</h3>
+            <form class="contact-form" action="#" method="post" style="display:grid;gap:1rem;">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
         </div>
+
       </div>
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
-  <!-- ===================== FOOTER ===================== -->
+  <!-- Footer -->
   <footer>
     <div class="footer-container">
-      <!-- Column 1 -->
       <div class="footer-column">
         <h3>Products</h3>
         <ul>
@@ -415,8 +435,6 @@
           <li><a href="store.html">Locate a Store</a></li>
         </ul>
       </div>
-
-      <!-- Column 2 -->
       <div class="footer-column">
         <h3>About</h3>
         <ul>
@@ -426,8 +444,6 @@
           <li><a href="#">Community Initiatives</a></li>
         </ul>
       </div>
-
-      <!-- Column 3 -->
       <div class="footer-column">
         <h3>Support</h3>
         <ul>
@@ -436,31 +452,17 @@
           <li><a href="terms.html">Terms & Conditions</a></li>
         </ul>
       </div>
-
-      <!-- Column 4 -->
       <div class="footer-column">
         <h3>Follow Us</h3>
         <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
-
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
-    </div>
+    <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
-
-  <!-- ===================== SCRIPTS ===================== -->
-  <script src="script-index.js" defer></script>
-  <script>
-    /* Copy the same mobile menu & card accessibility script from index.html */
-  </script>
 </body>
 </html>
-
-
