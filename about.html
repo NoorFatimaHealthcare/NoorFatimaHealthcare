@@ -325,45 +325,49 @@
     <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
 
-  <!-- JS -->
   <script>
-  // Stats counter
+// Stats counter
+document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".stat-card h3");
   const speed = 100;
-  const animateCounters = () => {
-    counters.forEach(counter => {
-      const target = +counter.getAttribute("data-target");
-      let count = 0;
-      const update = () => {
-        const increment = Math.ceil(target / speed);
-        count += increment;
-        if (count < target) {
-          counter.innerText = count + "+";
-          requestAnimationFrame(update);
-        } else {
-          counter.innerText = target.toLocaleString() + "+";
-        }
-      };
-      update();
-    });
-  };
-  animateCounters();
+  counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+    const update = () => {
+      const increment = Math.ceil(target / speed);
+      count += increment;
+      if (count < target) {
+        counter.innerText = count + "+";
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target.toLocaleString() + "+";
+      }
+    };
+    update();
+  });
+});
 
-  // Testimonials slider
+// Testimonials slider
+document.addEventListener("DOMContentLoaded", () => {
   const testimonials = [
     { text: "Noor Fatima Healthcare Group provided exceptional care when my family needed it most. Truly compassionate professionals.", author: "- Sarah Ahmed" },
     { text: "Their pharmacy and diagnostic services are top-notch. I trust them completely for my family’s healthcare needs.", author: "- Imran Malik" },
     { text: "Professional staff, modern facilities, and a genuine care for patients. Highly recommended!", author: "- Ayesha Khan" }
   ];
+
   let currentTestimonial = 0;
   const slider = document.getElementById("testimonial-slider");
+
   setInterval(() => {
     currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    slider.innerHTML = \`
-      <p>"\${testimonials[currentTestimonial].text}"</p>
-      <h4>\${testimonials[currentTestimonial].author}</h4>
-    \`;
+    slider.innerHTML = `
+      <p>"${testimonials[currentTestimonial].text}"</p>
+      <h4>${testimonials[currentTestimonial].author}</h4>
+    `;
   }, 5000);
-  </script>
+});
+</script>
+
 </body>
 </html>
+
