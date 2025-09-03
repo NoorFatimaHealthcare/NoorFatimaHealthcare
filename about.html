@@ -89,24 +89,30 @@
     .team-card h4 { margin-top:0.5rem; color:#00594f; font-weight:700; }
     .team-card p { color:#555; font-size:0.95rem; }
 
-    /* TIMELINE */
-    .timeline { position:relative; margin:2rem auto; max-width:900px; }
-    .timeline::before {
-      content:""; position:absolute; left:50%; transform:translateX(-50%);
-      top:0; bottom:0; width:4px; background:#009688;
-    }
-    .timeline-item {
-      background:#fff; border-radius:16px; padding:1.5rem; width:45%;
-      position:relative; margin:2rem 0; box-shadow:0 8px 24px rgba(0,0,0,0.08);
-    }
-    .timeline-item:nth-child(odd) { left:0; }
-    .timeline-item:nth-child(even) { left:55%; }
-    .timeline-item::before {
-      content:"📍"; position:absolute; top:15px; left:-35px;
-      font-size:1.2rem; background:#fff; border:3px solid #009688;
-      border-radius:50%; padding:6px; line-height:1;
-    }
-    .timeline-item:nth-child(even)::before { left:auto; right:-35px; }
+    .timeline {
+  max-width: 800px;
+  margin: 2rem auto;
+  border-left: 4px solid #009688;
+  padding-left: 2rem;
+}
+.timeline-item {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+}
+.timeline-item h4 {
+  color:#009688;
+  font-size:1.3rem;
+  margin-bottom:0.5rem;
+}
+
 
     /* STATS */
     .stats { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2rem; }
@@ -247,16 +253,29 @@
   </section>
 
   <!-- TIMELINE -->
-  <section>
-    <h2 class="section-title">Our Journey</h2>
-    <p class="section-sub">Milestones that shaped who we are today.</p>
-    <div class="timeline">
-      <div class="timeline-item"><h4>2010</h4><p>Founded with our first community pharmacy.</p></div>
-      <div class="timeline-item"><h4>2015</h4><p>Expanded into hospitals and clinics.</p></div>
-      <div class="timeline-item"><h4>2020</h4><p>Launched modern diagnostics and digital care.</p></div>
-      <div class="timeline-item"><h4>2025</h4><p>Serving 1M+ patients with a trusted healthcare network.</p></div>
+<section>
+  <h2 class="section-title">Our Journey</h2>
+  <p class="section-sub">Milestones that shaped who we are today.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>2010</h4>
+      <p>Founded with our first community pharmacy.</p>
     </div>
-  </section>
+    <div class="timeline-item">
+      <h4>2015</h4>
+      <p>Expanded into hospitals and clinics.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>2020</h4>
+      <p>Launched modern diagnostics and digital care.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>2025</h4>
+      <p>Serving 1M+ patients with a trusted healthcare network.</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- STATS -->
   <section>
@@ -341,5 +360,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
