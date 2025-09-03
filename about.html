@@ -6,17 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>About Us | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Learn more about Noor Fatima Healthcare Group, our mission, our values, and our commitment to providing trusted healthcare services.">
+  <meta name="description" content="Learn more about Noor Fatima Healthcare Group, our story, our mission, and our commitment to healthcare excellence.">
 
   <!-- ===================== ICONS & FONTS ===================== -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ===================== INLINE STYLES ===================== -->
+  <!-- ===================== INLINE STYLES (exact same as order.html) ===================== -->
   <style>
-    body { font-family:'Poppins',sans-serif; background:#f7fdfc; color:#333; margin:0; line-height:1.6; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { width:100%; min-height:100%; overflow-x:hidden; font-size:clamp(14px,1.2vw,18px); }
+    body { font-family:'Poppins',sans-serif; background:#f7fdfc; color:#333; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
 
-    /* === NAVBAR (same as index/contact) === */
+    /* === NAVBAR (same to same as order.html) === */
     .navbar {
       display:flex; justify-content:space-between; align-items:center;
       width:100%; padding:1rem 2rem; background:#009688; gap:1rem;
@@ -32,38 +35,29 @@
       color:white; font-weight:600; border-bottom:2px solid #ffc107;
     }
 
-    /* === HERO === */
-    .hero {
-      background:linear-gradient(135deg,#009688,#00bcd4);
-      color:white; text-align:center; padding:4rem 1rem 5rem;
-    }
-    .hero h1 { font-size:2.5rem; font-weight:800; margin-bottom:1rem; }
-    .hero p { font-size:1.2rem; max-width:800px; margin:0 auto; }
+    /* === SECTION === */
+    .health-network { background:linear-gradient(180deg,#f8fffd,#fff); padding:56px 16px; }
+    .health-network .container { max-width:1200px; margin:0 auto; }
+    .health-network h2 { text-align:center; color:#00796b; font-size:2rem; font-weight:800; margin-bottom:.5rem; }
+    .health-network .sub { text-align:center; color:#41645f; max-width:860px; margin:0 auto 2rem; font-weight:500; }
 
     /* === ABOUT CONTENT === */
-    .about-section { max-width:1100px; margin:0 auto; padding:3rem 1.5rem; }
-    .about-section h2 { font-size:2rem; font-weight:700; color:#00796b; margin-bottom:1rem; text-align:center; }
-    .about-section p { font-size:1rem; color:#444; text-align:center; margin-bottom:2rem; }
-
-    /* Mission/Values Grid */
-    .values-grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:1.8rem; margin-top:2rem;
+    .about-cards {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:2rem; margin-top:3rem;
     }
-    .value-card {
-      background:#fff; border-radius:16px; padding:2rem 1.5rem;
-      box-shadow:0 8px 24px rgba(0,0,0,0.06);
-      transition:.3s;
+    .about-card {
+      background:#fff; border-radius:16px; padding:2rem;
       text-align:center;
+      box-shadow:0 10px 24px rgba(0,0,0,0.06);
+      transition:.3s;
     }
-    .value-card:hover { transform:translateY(-6px); box-shadow:0 14px 32px rgba(0,0,0,0.1); }
-    .value-card i {
-      font-size:2rem; color:#009688; margin-bottom:1rem;
-    }
-    .value-card h3 { font-size:1.2rem; font-weight:700; color:#00594f; margin-bottom:.6rem; }
-    .value-card p { font-size:.95rem; color:#475657; }
+    .about-card:hover { transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.1); }
+    .about-card i { font-size:2rem; color:#009688; margin-bottom:1rem; }
+    .about-card h3 { font-size:1.2rem; font-weight:700; color:#00594f; margin-bottom:.5rem; }
+    .about-card p { font-size:.95rem; color:#475657; line-height:1.5; }
 
-    /* === FOOTER (same as index/contact) === */
+    /* === FOOTER (same to same as order.html) === */
     footer {
       background:#ffffff; border-top:4px solid #009688;
       padding:3rem 1rem 1rem; color:#009688; font-family:'Poppins',sans-serif;
@@ -114,41 +108,38 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <h1>About Noor Fatima Healthcare Group</h1>
-    <p>We are committed to making healthcare accessible, reliable, and patient-centric, serving communities with trust and care.</p>
-  </section>
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main>
+    <section class="health-network">
+      <div class="container">
+        <h2>About Us</h2>
+        <p class="sub">At Noor Fatima Healthcare Group, we are dedicated to transforming healthcare into a more accessible, reliable, and compassionate experience for everyone.</p>
 
-  <!-- ===================== ABOUT CONTENT ===================== -->
-  <section class="about-section">
-    <h2>Our Story</h2>
-    <p>Noor Fatima Healthcare Group was founded with a vision to bridge the gap between healthcare providers and patients. From trusted pharmacies to modern diagnostics and hospitals, we bring together services that ensure better care and healthier communities.</p>
-
-    <h2>Our Mission & Values</h2>
-    <div class="values-grid">
-      <div class="value-card">
-        <i class="fas fa-heartbeat"></i>
-        <h3>Compassionate Care</h3>
-        <p>We prioritize patients’ needs, offering care that is empathetic, respectful, and personalized.</p>
+        <div class="about-cards">
+          <div class="about-card">
+            <i class="fas fa-hospital"></i>
+            <h3>Our Story</h3>
+            <p>Founded with a mission to bring trusted healthcare closer to communities, we provide a network of hospitals, pharmacies, and diagnostic centers under one umbrella.</p>
+          </div>
+          <div class="about-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Our Mission</h3>
+            <p>To deliver high-quality, affordable, and patient-centric healthcare that puts compassion and trust at the center of everything we do.</p>
+          </div>
+          <div class="about-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Our Values</h3>
+            <p>We believe in transparency, empathy, and innovation — ensuring every patient feels valued and cared for.</p>
+          </div>
+          <div class="about-card">
+            <i class="fas fa-user-md"></i>
+            <h3>Our Professionals</h3>
+            <p>Our team of expert doctors, pharmacists, and healthcare providers work tirelessly to ensure you receive the best care possible.</p>
+          </div>
+        </div>
       </div>
-      <div class="value-card">
-        <i class="fas fa-hospital"></i>
-        <h3>Accessible Healthcare</h3>
-        <p>Our goal is to provide affordable, accessible, and timely healthcare to everyone in need.</p>
-      </div>
-      <div class="value-card">
-        <i class="fas fa-user-md"></i>
-        <h3>Expert Professionals</h3>
-        <p>We bring together skilled doctors, pharmacists, and caregivers who are committed to excellence.</p>
-      </div>
-      <div class="value-card">
-        <i class="fas fa-handshake"></i>
-        <h3>Trust & Transparency</h3>
-        <p>Honesty and transparency guide our services, building lasting relationships with our patients.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer>
