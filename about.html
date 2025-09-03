@@ -269,15 +269,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section>
-    <h2 class="section-title">What People Say</h2>
-    <div class="testimonial" id="testimonial-slider">
-      <p>"Noor Fatima Healthcare Group provided exceptional care when my family needed it most. Truly compassionate professionals."</p>
-      <h4>- Sarah Ahmed</h4>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta">
     <h2 style="font-weight:800; margin-bottom:1rem;">Partner With Us</h2>
@@ -346,28 +337,9 @@ document.addEventListener("DOMContentLoaded", () => {
     update();
   });
 });
-
-// Testimonials slider
-document.addEventListener("DOMContentLoaded", () => {
-  const testimonials = [
-    { text: "Noor Fatima Healthcare Group provided exceptional care when my family needed it most. Truly compassionate professionals.", author: "- Sarah Ahmed" },
-    { text: "Their pharmacy and diagnostic services are top-notch. I trust them completely for my family’s healthcare needs.", author: "- Imran Malik" },
-    { text: "Professional staff, modern facilities, and a genuine care for patients. Highly recommended!", author: "- Ayesha Khan" }
-  ];
-
-  let currentTestimonial = 0;
-  const slider = document.getElementById("testimonial-slider");
-
-  setInterval(() => {
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    slider.innerHTML = `
-      <p>"${testimonials[currentTestimonial].text}"</p>
-      <h4>${testimonials[currentTestimonial].author}</h4>
-    `;
-  }, 5000);
-});
 </script>
 
 </body>
 </html>
+
 
