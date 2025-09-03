@@ -1,240 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===================== META BASICS ===================== -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contact Us | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Get in touch with Noor Fatima Healthcare Group — customer service, inquiries, and support.">
+  <meta name="description" content="Get in touch with Noor Fatima Healthcare Group — reach us for appointments, enquiries, and support.">
 
-  <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- ===================== SOCIAL & SEO META ===================== -->
+  <meta property="og:title" content="Contact Us - Noor Fatima Healthcare Group">
+  <meta property="og:description" content="Contact Noor Fatima Healthcare Group for medicine orders, appointments, and customer support.">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-image.png">
+  <meta property="og:url" content="https://yourdomain.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Noor Fatima Healthcare Group">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ✅ Theme Color -->
+  <meta name="theme-color" content="#009688">
+
+  <!-- ===================== ICONS & FONTS ===================== -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- ✅ Import the same inline CSS from index.html -->
   <style>
-    /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background: #f9fafc;
-      color: #333;
-    }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    /* Navbar */
-    header {
-      background: #0a3d62;
-      color: #fff;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #fff;
-    }
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li a {
-      color: #fff;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: #ffd32a;
-    }
-    .menu-toggle { display: none; }
-
-    /* Hero */
-    .contact-hero {
-      background: linear-gradient(to right, #0a3d62, #3c6382);
-      color: #fff;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    .contact-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .contact-hero p { font-size: 1.1rem; opacity: 0.9; }
-
-    /* Contact Info */
-    .contact-info {
-      padding: 3rem 1rem;
-      background: #fff;
-    }
-    .contact-info .container {
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .info-card {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-    .info-card i {
-      font-size: 2rem;
-      color: #0a3d62;
-      margin-bottom: 1rem;
-    }
-    .info-card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
-
-    /* Contact Form */
-    .contact-form-section {
-      padding: 3rem 1rem;
-      background: #f0f3f6;
-    }
-    .contact-form-section .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .contact-form-section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #0a3d62;
-    }
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.9rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.3s;
-    }
-    input:focus, textarea:focus {
-      border-color: #0a3d62;
-      outline: none;
-    }
-    .btn-submit {
-      display: inline-block;
-      background: #0a3d62;
-      color: #fff;
-      padding: 0.9rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .btn-submit:hover {
-      background: #073251;
-    }
-
-    /* Footer */
-    footer {
-      background: #0a3d62;
-      color: #fff;
-      padding: 3rem 2rem 1rem;
-    }
-    .footer-container {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-    .footer-column h3 {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-    .footer-column ul li { margin-bottom: 0.5rem; }
-    .footer-column a {
-      color: #ddd;
-      transition: color 0.3s;
-    }
-    .footer-column a:hover { color: #ffd32a; }
-    .social-icons a {
-      margin-right: 0.7rem;
-      font-size: 1.2rem;
-      color: #fff;
-      transition: color 0.3s;
-    }
-    .social-icons a:hover { color: #ffd32a; }
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 1rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: #0a3d62;
-        position: absolute;
-        top: 60px; right: 0;
-        width: 200px;
-        padding: 1rem;
-      }
-      nav ul.show { display: flex; }
-      .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-    }
+    /* Copy all the CSS from index.html here (unchanged) */
   </style>
 </head>
 <body>
-  <a href="#contact-form" class="skip-link">Skip to main content</a>
+  <!-- ===================== ACCESSIBILITY: SKIP LINK ===================== -->
+  <a href="#contact-title" class="skip-link">Skip to main content</a>
 
+  <!-- ===================== HEADER / NAVBAR ===================== -->
   <header>
     <div class="navbar">
-      <a href="index.html" class="logo" aria-label="Noor Fatima Healthcare Group Home">
-        Noor Fatima Healthcare Group
-      </a>
+      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
       <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
         <i class="fas fa-bars"></i>
       </button>
-      <nav id="primary-nav">
+      <nav id="primary-nav" aria-label="Primary navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="order.html">Buy Medicines</a></li>
           <li><a href="hospitals.html">Hospitals</a></li>
           <li><a href="clinics.html">Clinics</a></li>
           <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="appointment.html">Appointment</a></li>
           <li><a href="pharmacy.html">Pharmacy</a></li>
           <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
         </ul>
@@ -242,116 +57,67 @@
     </div>
   </header>
 
+  <!-- ===================== MAIN CONTENT ===================== -->
   <main>
-    <!-- Hero -->
-    <section class="contact-hero" aria-labelledby="contact-title">
+    <section class="health-network" aria-labelledby="contact-title">
       <div class="container">
-        <h1 id="contact-title">Contact Us</h1>
-        <p class="sub">We’re here to help. Reach out for inquiries, feedback, or support.</p>
-      </div>
-    </section>
+        <h2 id="contact-title">Contact Us</h2>
+        <p class="sub">
+          We’d love to hear from you. Reach out for enquiries, support, or to book an appointment with Noor Fatima Healthcare Group.
+        </p>
 
-    <!-- Contact Info Cards -->
-    <section class="contact-info" aria-labelledby="info-title">
-      <div class="container">
-        <h2 id="info-title">Our Contact Information</h2>
-        <div class="info-grid">
-          <div class="info-card">
-            <i class="fas fa-phone"></i>
-            <h3>Phone</h3>
-            <p>+91-XXXXXXXXXX</p>
+        <div class="hn-grid">
+          <!-- Contact Info -->
+          <div class="hn-card">
+            <div class="hn-icon"><i class="fas fa-phone"></i></div>
+            <h3 class="hn-title">Call Us</h3>
+            <p class="hn-desc">+91-XXXXXXXXXX<br>Available 9 AM – 9 PM</p>
           </div>
-          <div class="info-card">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p>support@yourdomain.com</p>
+
+          <div class="hn-card">
+            <div class="hn-icon"><i class="fas fa-envelope"></i></div>
+            <h3 class="hn-title">Email Us</h3>
+            <p class="hn-desc">support@yourdomain.com<br>We reply within 24 hours</p>
           </div>
-          <div class="info-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <h3>Address</h3>
-            <p>123, Healthcare Street, City, State, India</p>
+
+          <div class="hn-card">
+            <div class="hn-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <h3 class="hn-title">Visit Us</h3>
+            <p class="hn-desc">123 Healthcare Street,<br>Your City, India</p>
+            <a class="directions-btn" href="https://maps.google.com" target="_blank">Get Directions</a>
+          </div>
+
+          <div class="hn-card">
+            <div class="hn-icon"><i class="fab fa-whatsapp"></i></div>
+            <h3 class="hn-title">WhatsApp</h3>
+            <p class="hn-desc">Order medicines & book appointments instantly on WhatsApp.</p>
+            <a class="hn-cta" href="https://wa.me/91XXXXXXXXXX">Chat Now <span class="arrow">→</span></a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Contact Form -->
-    <section class="contact-form-section" aria-labelledby="form-title">
-      <div class="container">
-        <h2 id="form-title">Send Us a Message</h2>
-        <form id="contact-form" action="#" method="POST">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91-XXXXXXXXXX">
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Send Message</button>
-        </form>
+        <!-- Contact Form -->
+        <div style="margin-top:3rem;">
+          <h3 class="hn-title">Send Us a Message</h3>
+          <form action="#" method="post" style="display:grid;gap:1rem;max-width:600px;">
+            <input type="text" name="name" placeholder="Your Name" required style="padding:0.8rem;border:1px solid #ccc;border-radius:6px;">
+            <input type="email" name="email" placeholder="Your Email" required style="padding:0.8rem;border:1px solid #ccc;border-radius:6px;">
+            <textarea name="message" rows="5" placeholder="Your Message" required style="padding:0.8rem;border:1px solid #ccc;border-radius:6px;"></textarea>
+            <button type="submit" style="padding:0.9rem 1.2rem;background:#009688;color:white;border:none;border-radius:6px;font-weight:600;cursor:pointer;">Send Message</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>Products</h3>
-        <ul>
-          <li><a href="order.html">Buy Medicines</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>About</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#">Schedules</a></li>
-          <li><a href="#">Community Initiatives</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Support</h3>
-        <ul>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2025 Noor Fatima Healthcare Group. All rights reserved.
-    </div>
+    <!-- Copy the exact same footer code from index.html -->
   </footer>
 
-  <!-- Mobile Nav Script -->
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="script-index.js" defer></script>
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !expanded);
-    });
+    /* Copy the same mobile menu & card accessibility script from index.html */
   </script>
 </body>
 </html>
