@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===================== META & BASIC INFO ===================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Noor Fatima Healthcare Group</title>
   <meta name="description" content="Get in touch with Noor Fatima Healthcare Group — reach us for appointments, enquiries, and support.">
 
-  <!-- Icons & Fonts -->
+  <!-- ===================== ICONS & FONTS ===================== -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- ===================== INLINE STYLES ===================== -->
   <style>
-    /* (unchanged — your full inline CSS here) */
-    /* ------------------------------------------------------------------------ */
+    /* ===================== RESET & BASE STYLES ===================== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100%; min-height: 100%; overflow-x: hidden; font-size: clamp(14px, 1.2vw, 18px); }
     body {
@@ -25,6 +26,7 @@
     }
     a { text-decoration: none; color: inherit; }
 
+    /* ===================== ACCESSIBILITY ===================== */
     .skip-link{
       position: absolute;
       top: -40px;
@@ -39,7 +41,6 @@
       transition: top 0.3s ease;
     }
     .skip-link:focus { top: 10px; }
-
     :focus { outline: 3px solid #009688; outline-offset: 3px; }
     button:focus, a:focus, input:focus, textarea:focus, select:focus {
       outline: 3px solid #009688;
@@ -49,6 +50,7 @@
     header a:focus, footer a:focus, .navbar a:focus { background: rgba(0, 150, 136, 0.15); }
     button:focus-visible { box-shadow: 0 0 0 4px rgba(0,150,136,0.3); }
 
+    /* ===================== NAVBAR ===================== */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -60,14 +62,12 @@
       box-sizing: border-box;
       min-height: 64px;
     }
-
     .navbar .logo {
       font-size: 1.25rem;
       font-weight: 700;
       color: white;
       line-height: 1;
     }
-
     .navbar nav ul {
       list-style: none;
       display: flex;
@@ -87,7 +87,6 @@
       font-weight: 600;
       border-bottom: 2px solid #ffc107;
     }
-
     .menu-toggle {
       display: none;
       background: none;
@@ -99,6 +98,7 @@
       line-height: 1;
     }
 
+    /* ===================== CONTACT SECTION (HEALTH NETWORK) ===================== */
     .health-network {
       background: linear-gradient(180deg,#f8fffd,#ffffff);
       padding: 56px 16px;
@@ -125,13 +125,13 @@
       line-height: 1.5;
     }
 
+    /* ===================== CONTACT CARDS GRID ===================== */
     .hn-grid {
       display: grid;
       gap: 1.5rem;
       grid-template-columns: repeat(4, 1fr);
       margin-top: 1.25rem;
     }
-
     .hn-card {
       background: #fff;
       border-radius: 14px;
@@ -183,13 +183,10 @@
       font-weight: 700;
       font-size: .95rem;
     }
-    .hn-cta .arrow {
-      display: inline-block;
-      transform: translateX(0);
-      transition: transform .2s ease;
-    }
+    .hn-cta .arrow { transition: transform .2s ease; }
     .hn-card:hover .hn-cta .arrow { transform: translateX(6px); }
 
+    /* ===================== FOOTER ===================== */
     footer {
       background: #ffffff;
       border-top: 4px solid #009688;
@@ -219,7 +216,6 @@
       transition: all 0.3s ease;
     }
     .footer-column ul li a:hover { text-decoration: underline; color: #004d40; }
-
     .social-icons { display: flex; gap: 0.6rem; }
     .social-icons a {
       width: 35px;
@@ -234,7 +230,6 @@
       transition: background 0.3s ease, transform 0.3s ease;
     }
     .social-icons a:hover { background: #00695c; transform: translateY(-3px); }
-
     .footer-bottom {
       text-align: center;
       font-weight: 800;
@@ -244,24 +239,18 @@
       border-top: 2px solid rgba(0, 150, 136, 0.2);
     }
 
+    /* ===================== RESPONSIVE DESIGN ===================== */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-
     @media (max-width: 1100px) { .hn-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 820px) { .hn-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
-      .navbar {
-        position: relative;
-        padding: 0.75rem 1rem;
-      }
+      .navbar { position: relative; padding: 0.75rem 1rem; }
       .menu-toggle { display: block; }
       .navbar nav {
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #009688;
-        max-height: 0;
-        overflow: hidden;
+        top: 100%; left: 0;
+        width: 100%; background: #009688;
+        max-height: 0; overflow: hidden;
         transition: max-height 0.3s ease;
       }
       .navbar nav ul { flex-direction: column; gap: 0; padding: 0; }
@@ -274,10 +263,9 @@
       .footer-container { text-align: center; }
       .social-icons { justify-content: center; }
     }
-    @media (max-width: 520px) {
-      .hn-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 520px) { .hn-grid { grid-template-columns: 1fr; } }
 
+    /* ===================== DARK MODE ===================== */
     @media (prefers-color-scheme: dark) {
       .health-network { background: linear-gradient(180deg,#022a28,#00251f); }
       .health-network h2 { color: #8feadc; }
@@ -287,19 +275,18 @@
       .hn-title { color: #dff7f0; }
       .hn-icon { background: linear-gradient(135deg,#004d44,#00695c); color: #e9fff8; }
       .hn-cta { color: #bff4e8; }
-
       footer { background: #002f2b; color: #e0f2f1; }
       .footer-column h3, .footer-column ul li a { color: #80cbc4; }
       .footer-column ul li a:hover { color: #b2dfdb; }
     }
 
+    /* ===================== EXTRA CONTACT FEATURES ===================== */
     .directions-btn {
       display: inline-block; margin-top: 1rem; padding: 0.7rem 1.2rem;
       background-color: #009688; color: white; border-radius: 6px; font-weight: 600;
       text-decoration: none; transition: background 0.3s;
     }
     .directions-btn:hover { background-color: #00796b; }
-
     .whatsapp-btn { text-align: center; margin: 2rem 0; }
     .whatsapp-btn a {
       display: inline-block; background-color: #25d366; color: white; padding: 1rem 2rem;
@@ -307,7 +294,7 @@
     }
     .whatsapp-btn a:hover { background-color: #1ebc57; }
 
-    /* Extra premium touches */
+    /* ===================== CONTACT FORM ===================== */
     .contact-section {
       margin-top: 2rem;
       display: grid;
@@ -334,9 +321,7 @@
       transition: border-color 0.2s;
     }
     .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #009688;
-    }
+    .contact-form textarea:focus { border-color: #009688; }
     .contact-form button {
       padding: 1rem 1.4rem;
       background: #009688;
@@ -347,13 +332,12 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-    .contact-form button:hover {
-      background: #00796b;
-    }
+    .contact-form button:hover { background: #00796b; }
   </style>
 </head>
+
 <body>
-  <!-- Navbar -->
+  <!-- ===================== HEADER / NAVBAR ===================== -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
@@ -372,34 +356,31 @@
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- ===================== MAIN CONTENT ===================== -->
   <main>
     <section class="health-network" aria-labelledby="contact-title">
       <div class="container">
         <h2 id="contact-title">Contact Us</h2>
         <p class="sub">We’d love to hear from you. Reach out for enquiries, support, or to book an appointment with Noor Fatima Healthcare Group.</p>
 
-        <!-- Contact Cards -->
+        <!-- ===================== CONTACT CARDS ===================== -->
         <div class="hn-grid">
           <div class="hn-card">
             <div class="hn-icon"><i class="fas fa-phone"></i></div>
             <h3 class="hn-title">Call Us</h3>
             <p class="hn-desc">+91-XXXXXXXXXX<br>Available 9 AM – 9 PM</p>
           </div>
-
           <div class="hn-card">
             <div class="hn-icon"><i class="fas fa-envelope"></i></div>
             <h3 class="hn-title">Email Us</h3>
             <p class="hn-desc">support@yourdomain.com<br>We reply within 24 hours</p>
           </div>
-
           <div class="hn-card">
             <div class="hn-icon"><i class="fas fa-map-marker-alt"></i></div>
             <h3 class="hn-title">Visit Us</h3>
             <p class="hn-desc">123 Healthcare Street,<br>Your City, India</p>
             <a class="directions-btn" href="https://maps.google.com" target="_blank">Get Directions</a>
           </div>
-
           <div class="hn-card">
             <div class="hn-icon"><i class="fab fa-whatsapp"></i></div>
             <h3 class="hn-title">WhatsApp</h3>
@@ -408,7 +389,7 @@
           </div>
         </div>
 
-        <!-- Premium Contact Form Card -->
+        <!-- ===================== CONTACT FORM ===================== -->
         <div class="contact-section">
           <div class="contact-card">
             <h3 class="hn-title">Send Us a Message</h3>
@@ -425,7 +406,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!------------------------------- Footer -------------------------->
   <footer>
     <div class="footer-container">
       <div class="footer-column">
