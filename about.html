@@ -3,126 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>About Us | Noor Fatima Healthcare Group</title>
-  <meta name="description" content="Discover our mission, vision, values, and journey of Noor Fatima Healthcare Group, founded in 2025 to serve healthcare with compassion and speed.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Learn the story behind Noor Fatima Healthcare Group and our mission to deliver accessible, trusted healthcare services across India.">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    .about-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto 4rem;
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { width:100%; min-height:100%; overflow-x:hidden; font-size:clamp(14px,1.2vw,18px); }
+    body { font-family:'Poppins',sans-serif; background:#f7fdfc; color:#333; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+
+    /* === NAVBAR — copied exactly from blog.html to ensure 1:1 match === */
+    .navbar {
+      display:flex; justify-content:space-between; align-items:center;
+      width:100%; padding:1rem 2rem; background:#009688; gap:1rem;
+      box-sizing:border-box; min-height:64px;
+    }
+    .navbar .logo { font-size:1.25rem; font-weight:700; color:white; }
+    .navbar nav ul { list-style:none; display:flex; gap:1.25rem; }
+    .navbar nav ul li a { color:white; font-weight:500; padding-bottom:.25rem; transition:all .2s; }
+    .navbar nav ul li a.active,
+    .navbar nav ul li a:hover { font-weight:600; border-bottom:2px solid #ffc107; }
+
+    .menu-toggle { display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; }
+
+    /* === PAGE LAYOUT === */
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
       padding: 0 1rem;
     }
-    .about-card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 150, 136, 0.1);
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .about-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 150, 136, 0.15);
-    }
-    .about-card i {
-      font-size: 2rem;
+
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
       color: #00796b;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
     }
-    .about-card h3 {
-      color: #009688;
-      margin-bottom: 0.5rem;
+
+    .section p {
+      font-size: 1.08rem;
+      color: #555;
+      margin-bottom: 1.25rem;
+    }
+
+    .values-list {
+      list-style: disc inside;
+      font-size: 1.05rem;
+      color: #475657;
+    }
+
+    /* === FOOTER — copied exactly from blog.html to ensure 1:1 match === */
+    footer {
+      background:#ffffff; border-top:4px solid #009688; padding:3rem 1rem 1rem;
+      color:#009688; font-family:'Poppins',sans-serif;
+      box-shadow:0 -4px 12px rgba(0,0,0,0.05);
+    }
+    .footer-container {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; padding-bottom:2rem;
+    }
+    .footer-column h3 { font-weight:800; margin-bottom:1rem; font-size:1.1rem; color:#00796b; }
+    .footer-column ul { list-style:none; }
+    .footer-column ul li { margin-bottom:.6rem; }
+    .footer-column ul li a { color:#00796b; font-weight:600; }
+    .social-icons { display:flex; gap:.6rem; }
+    .social-icons a {
+      width:35px; height:35px; display:flex; align-items:center; justify-content:center;
+      border-radius:50%; background:#009688; color:white; font-size:1rem;
+    }
+    .footer-bottom { text-align:center; font-weight:800; font-size:.95rem; padding-top:1.5rem; color:#004d40; }
+
+    /* Responsive niceties — same as blog */
+    @media (max-width:900px) {
+      .section h2 { font-size: 2rem; }
+      .section p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="navbar">
-      <div class="logo">Noor Fatima Healthcare Group</div>
-      <button class="menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="index.html" class="logo">Noor Fatima Healthcare Group</a>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="clinics.html">Clinics</a></li>
+          <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="appointment.html">Appointment</a></li>
+          <li><a href="pharmacy.html">Pharmacy</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="store.html">Locate a Store</a></li>
-          <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <section class="hero">
-    <h1>About Noor Fatima Healthcare Group</h1>
-    <p>Your trusted partner in healthcare—built on compassion, integrity, and innovation.</p>
-  </section>
 
-  <section class="about-intro" style="text-align: center; max-width: 800px; margin: 2rem auto 3rem;">
-    <h2>Who We Are</h2>
-    <p>This platform is a product of <strong>Noor Fatima Healthcare Group</strong>, founded in <strong>2025</strong>. What began as a small retail pharmacy has now evolved into a robust healthcare platform dedicated to delivering genuine medicines and professional care with efficiency and heart.</p>
-  </section>
+  <main>
+    <section class="section" aria-labelledby="our-story">
+      <h2 id="our-story">Our Story</h2>
+      <p>Noor Fatima Healthcare Group was founded on the belief that healthcare should be accessible, affordable, and compassionate for all. From humble beginnings as a local pharmacy, we grew into a comprehensive healthcare provider serving communities across India with integrity and care.</p>
+    </section>
 
-  <section class="about-cards">
-    <a href="mission.html" class="about-card">
-      <i class="fas fa-heartbeat"></i>
-      <h3>Our Mission</h3>
-      <p>Empowering individuals with genuine care and support.</p>
-    </a>
-    <a href="vision.html" class="about-card">
-      <i class="fas fa-bullseye"></i>
-      <h3>Our Vision</h3>
-      <p>To be the most reliable healthcare delivery partner.</p>
-    </a>
-    <a href="values.html" class="about-card">
-      <i class="fas fa-hand-holding-heart"></i>
-      <h3>Core Values</h3>
-      <p>Compassion, integrity, innovation, community.</p>
-    </a>
-    <a href="story.html" class="about-card">
-      <i class="fas fa-history"></i>
-      <h3>Our Story</h3>
-      <p>Founded in 2025 as a local retail pharmacy.</p>
-    </a>
-    <a href="growth.html" class="about-card">
-      <i class="fas fa-chart-line"></i>
-      <h3>Our Growth</h3>
-      <p>Rapidly expanding presence with quality care focus.</p>
-    </a>
-    <a href="future.html" class="about-card">
-      <i class="fas fa-lightbulb"></i>
-      <h3>The Future</h3>
-      <p>Committed to building tech-forward healthcare access.</p>
-    </a>
-  </section>
+    <section class="section" aria-labelledby="mission-vision">
+      <h2 id="mission-vision">Mission &amp; Vision</h2>
+      <p><strong>Mission:</strong> Provide integrated healthcare services to empower individuals and families through trusted hospitals, clinics, pharmacies, diagnostics, and digital solutions.</p>
+      <p><strong>Vision:</strong> Create a healthier India by delivering care that’s transparent, innovative, and patient-centered, reaching even the most underserved communities.</p>
+    </section>
 
-  <footer class="site-footer">
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Service</a> |
-      <a href="contact.html">Contact</a>
+    <section class="section" aria-labelledby="core-values">
+      <h2 id="core-values">Our Core Values</h2>
+      <ul class="values-list">
+        <li><strong>Integrity:</strong> Unwavering ethical and transparent practices.</li>
+        <li><strong>Compassion:</strong> Putting empathy at the heart of our service.</li>
+        <li><strong>Excellence:</strong> Delivering outstanding service quality across all touchpoints.</li>
+        <li><strong>Innovation:</strong> Continuously improving healthcare delivery through advanced solutions.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="order.html">Buy Medicines</a></li>
+          <li><a href="store.html">Locate a Store</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#">Schedules</a></li>
+          <li><a href="#">Community Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</p>
+    <div class="footer-bottom">&copy; 2025 Noor Fatima Healthcare Group. All rights reserved.</div>
   </footer>
-<script>
-  const links = document.querySelectorAll('.navbar nav ul li a');
-  const currentPage = window.location.pathname.split('/').pop();
-
-  links.forEach(link => {
-    if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-</script>
 
 </body>
 </html>
